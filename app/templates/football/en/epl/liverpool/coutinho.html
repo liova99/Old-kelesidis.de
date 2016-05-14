@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+<!doctype html>
+
+<html lang="en">
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
+<script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
+
+<body >
+    <div id="container">
+        <div id="content">
+
+                <h2 class="player_name">PHILIPPE COUTINHO</h2>
+
+            <div id="chart_info_cont">
+                <div class="rating_chart">
+
+                    {{ script|safe }}
+                    {{ div|safe }}
+                </div>
+
+                <div class="player_info">
+
+                    <div class="player-info">
+        </div>
+
+                    <img  src="{{ url_for('static', filename = 'img/coutinho_photo.jpg') }}" >
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+{% endblock %}
+
+
+
+{% block footer %}
+{{ super() }}
+{% endblock %}
+
+</html>
+
