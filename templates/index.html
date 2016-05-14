@@ -1,24 +1,45 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
+    <title> {{ title }}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <meta charset="UTF-8">
-    <title>Kelesidis Levan</title>
+
+
 </head>
 
+
+
+{% block content %}
 <body >
-    <header></header>
-    <div>
-    <h5 align="center">Kelesidis Levan</h5>
-    </div>
-    <h3 align="center">{{ title }}</h3>
-    <br>
-    {% for p in paragraph %}
-    <br>
-    <p> {{ p }}</p>
-    {% endfor %}
+
+<div id="container">
+        <div id="content">
+            <header></header>
+
+            <!-- <a href="pandas"><h4>link to pandas</h4></a> -->
+            <a href="charts"><h4>link to charts</h4></a><br>
+            <a href="finance">link to finance</a><br>
+            <a href="coutinho">Your Never Walk Alone</a>
+            <br>
+
+
+        </div>
+</div>
+
+
+
+
 </body>
+{% endblock  %}
 
-
+{% block footer %}
+{{ super() }}
+{% endblock %}
 </html>
 
 

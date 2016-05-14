@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>{{ title }}</title>
+    <div id="header">
+        <a href="/"> home </a>
+        <h2>This is a header</h2>
+    </div>
+
+</head>
+<body id="body">
+{% block content %}
+
+<div id="container">
+        <div id="content">
+
+
+
+        </div>
+</div>
+{% endblock %}
+</body>
+
+<footer id="footer">
+    {% block footer %}
+    <div >
+        <h2>This is a Footer</h2>
+    </div>
+{% endblock %}
+</footer>
+
+</html>
