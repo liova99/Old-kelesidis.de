@@ -1,5 +1,7 @@
 from bokeh.embed import components
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, abort, url_for
+# from flask.ext.sqlalchemy import SQLAlchemy
+
 
 ### Unused imports ###
 # import pandas as pd
@@ -18,13 +20,23 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+try:
+    @app.route('/static/')
+    def static():
+        return render_template('index.html')
+except:
+
+    pass
 
 
-@app.route('/')
+
+@app.route('/', methods = ['GET', 'POST'])
 def homepage():
     title = 'home'
-    from my_func.football import coutinhno as ct
-    print (ct())
+
+    if request.method == 'POST':
+        f= request.files['the_file']
+        f.save('C:\Users\levan\Desktop')
 
 
     return render_template('index.html', title = title)
@@ -75,7 +87,8 @@ def finance():
     return render_template('finance.html', title = title, script = script, div = div, info = info)
 
 
-
+# with app.test_request_context():
+#     print (url_for('static'  css/'))
 
 
 
