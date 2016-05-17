@@ -1,19 +1,23 @@
+import MySQLdb
+#local password file
+from app.passwords import *
+import os
 
-# From digital ocean tutorial, section Edit config.py using nano
-# https://www.digitalocean.com/community/tutorials/how-to-structure-large-flask-applications
-#
-
-# Statement for enabling the development environment
 DEBUG = True
 
 # Define the application directory
-import os
+
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Define the database - we are working with
-# SQLite for this example
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
-DATABASE_CONNECT_OPTIONS = {}
+#MySQL connection
+def connection():
+    conn = MySQLdb.connect(host= host,
+                           user = user ,
+                           passwd = passwd,
+                           db = db)
+    c = conn.cursor()
+    return c, conn
 
 # Application threads. A common general assumption is
 # using 2 per available processor cores - to handle
@@ -26,7 +30,7 @@ CSRF_ENABLED     = True
 
 # Use a secure, unique and absolutely secret key for
 # signing the data.
-CSRF_SESSION_KEY = "Liova50"
+CSRF_SESSION_KEY = CSRF_KEY
 
 # Secret key for signing cookies
-SECRET_KEY = "Liova50"
+SECRET_KEY = SECRET_KEY

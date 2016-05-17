@@ -76,6 +76,7 @@ def table_companies():
 #import info table for finance()
 def info():
     if request.method == "POST":
+        # 'chart is tha name of inout in html file
         inf = request.form.get('chart')
     else:
         inf = 'CRME'
