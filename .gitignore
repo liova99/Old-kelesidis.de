@@ -88,6 +88,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+<<<<<<< HEAD
 /app/passwords.py
 
 ##pycharm files
@@ -118,6 +119,38 @@ ENV/
 *.iws
 
 # Plugin-specific files:
+=======
+
+#pycharm files
+.idea/
+
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries
+
+# Mongo Explorer plugin:
+.idea/mongoSettings.xml
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+>>>>>>> 599be1d9b9753f424fc1a33a8328af7106a887e7
 
 # IntelliJ
 /out/
