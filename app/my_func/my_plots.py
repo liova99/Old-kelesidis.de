@@ -35,11 +35,11 @@ def PygalLine():
     return line_chart
 
 def HLevelLine():
-    #sample = pd.read_table('http://128.199.61.9/static/data/sample.txt')
+    # sample = pd.read_table('http://128.199.61.9/static/data/sample.txt')
 
     # Use the Sample Data
 
-    #Make a list with the months
+    # Make a list with the months
     ys = [month for month in sample.columns[1:]]
 
     TOOLS = 'pan,wheel_zoom,hover,crosshair,resize,reset'
@@ -76,7 +76,7 @@ def table_companies():
 #import info table for finance()
 def info():
     if request.method == "POST":
-        # 'chart is tha name of inout in html file
+        # 'chart' is the name of <input> tag in html file
         inf = request.form.get('chart')
     else:
         inf = 'CRME'
