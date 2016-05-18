@@ -155,7 +155,7 @@ def finance():
 
 #/notebooks/Liverpool/coutinho_beter_import_v0.3.ipynb
 
-def liverpool():
+def coutinho():
 
     # read the csv, #Add columns name, delede 2 unnamed colums, parse dates,
     # set index, dayfirst True because pandas can read the 5.1.16 as 1.5.16
