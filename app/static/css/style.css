@@ -43,9 +43,11 @@ html, body {
 }
 
 #content {
-  border: 1px solid blue;
-  margin: .4em auto;
-  background-color: #D5EBF2;
+  border: 1px solid #F4FDF9;
+  border-radius: 5px;
+  margin: .4em .2em;
+  background-color: #F4FDF9;
+  height: inherit;
 }
 
 /* ********************** */
@@ -230,19 +232,4 @@ input[name=button_arrow] {
 	
 }
 
-
-#id {
-	padding: .5em;
-	border: solid 1px #efefef;
-	border-radius: 5px;
-	/*margin: 1%;*/
-	width: 50%;
-	height: auto;
-
-}
-
-#test {
-	width: 60%;
-	display: inline-block;
-}
 

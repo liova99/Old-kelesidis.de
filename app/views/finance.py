@@ -17,12 +17,15 @@ def finance_data():
 
     if request.method == "POST":
         fin = str(request.form.get('chart'))
-        c, conn = connection()
+        cur, conn = connection('test')
 
         # MySQL command, for str don't forget the "" ( " %s " )
-        c.execute( 'INSERT INTO finance (search) VALUES( "%s" )' %fin )
+        cur.execute( 'INSERT INTO finance (search) VALUES( "%s" )' %fin )
         conn.commit()
         print ( 'Connected!!!' )
+        cur.close()
+        conn.close()
+        print ('connection closed')
 
     else:
         pass

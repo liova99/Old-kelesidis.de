@@ -53,6 +53,10 @@ def homepage():
         f= request.files['the_file']
         f.save('C:\Users\levan\Desktop')
 
+
+
+
+
     return render_template('index.html', title = title)
 
 

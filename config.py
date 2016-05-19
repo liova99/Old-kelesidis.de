@@ -10,11 +10,12 @@ DEBUG = True
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Define the MySQL database
-def connection():
+#connection takes one argument, the db name.
+def connection(db):
     conn = MySQLdb.connect(host= host,
                            user = user ,
                            passwd = passwd,
-                           db = 'test')
+                           db = db)
     c = conn.cursor()
     return c, conn
 
