@@ -10,7 +10,37 @@
     <div id="container">
         <div id="content">
 
-        
+            <div id="team_info">
+
+                <h4> {{ team }} , in the season 2015/2016 has Atendance {{ full }}  </h4>
+
+            </div>
+
+            <div class="player_name_div">
+                <table id="player_name">
+
+                    <tr>
+                        <th> Players</th>
+                    </tr>
+
+
+                    {%  for name in names  %}
+                        {% if name == 'Coutinho' %}
+                            <tr>
+                                <td> <a href="../coutinho" > {{ name }} </a> </td>
+                            </tr>
+
+                        {% else %}
+                            <tr>
+                                <td>{{ name }}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+
+                </table>
+
+            </div>
+
 
 
 

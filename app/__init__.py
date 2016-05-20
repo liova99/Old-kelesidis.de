@@ -18,7 +18,7 @@ from flask import Flask, render_template, request
 # MySQL connection
 # Warning! the password import must be above the connection import!!
 from app.passwords import *
-from config import connection
+from config import mysql_connect
 
 # Blueprints import
 from app.views.charts import charts_blueprint

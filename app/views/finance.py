@@ -4,7 +4,7 @@ from bokeh.embed import components
 # MySQL connection
 # Warning! the password import must be above the connection import!!
 from app.passwords import *
-from config import connection
+from config import mysql_connect
 
 finance_blueprint = Blueprint('finance_blueprint', __name__)
 
@@ -17,7 +17,7 @@ def finance_data():
 
     if request.method == "POST":
         fin = str(request.form.get('chart'))
-        cur, conn = connection('test')
+        cur, conn = mysql_connect('test')
 
         # MySQL command, for str don't forget the "" ( " %s " )
         cur.execute( 'INSERT INTO finance (search) VALUES( "%s" )' %fin )

@@ -20,8 +20,39 @@ html, body {
   	margin: 0;
 }
 
+/* ========= Players Table ===================*/
 
-/* *************** */
+.player_name_div a.main-nav-item:hover {
+	color: red;
+}
+
+.player_name_div {
+	
+    display: inline-block;
+    float: right;
+    margin: 1.5em;
+}
+
+table#player_name a:hover {
+	color: navy;
+}
+
+table#player_name th {
+    background-color: black;
+    color: white;
+}
+
+table#player_name tr:nth-child(even){
+	background-color: #eee;
+}
+table#player_name tr:nth-child(odd){
+	background-color: white;
+}
+
+/* ========= Players Table ===================*/
+
+
+/* ================ */
 
 #header {
 	text-align: center;
@@ -50,7 +81,7 @@ html, body {
   height: inherit;
 }
 
-/* ********************** */
+/* =========================== */
 
 #pandas_header {
 	color: blue;
