@@ -20,12 +20,9 @@ football_blueprint = Blueprint('football', __name__ )
 def liverpool():
     title = 'Liverpool YNWA'
 
-    connection = httplib.HTTPConnection('api.football-data.org')
-    headers = {'X-Auth-Token': 'ea0299f31f154fcaa9ea2eb42a1c6612', 'X-Response-Control': 'minified'}
-    connection.request('GET', '/v1/teams/64/players/', None, headers)
-    responce = json.loads(connection.getresponse().read().decode('utf-8'))
+    from ..api.football_data_org import players_api
 
-    players = pd.DataFrame.from_dict(responce['players'])
+    players = players_api(64)
     names = players.name
 
 
@@ -34,17 +31,21 @@ def liverpool():
         global Full
         cur, conn = mysql_connect('football_15_16')
         cur.execute(('SELECT Team, Full FROM attendance_epl_s15 WHERE id=%d') % team_id)
+        cur.close()
+        conn.close()
         for (Team, Full) in cur:
             return Team, Full
 
 
-    team_atendance(5)
-    team = Team
-    full = Full
+    team, full = team_atendance(5)
 
+    # team_atendance(5)
+    # team = Team
+    # full = Full
+    photo = ""
 
     return render_template('football/en/epl/liverpool/liverpool.html', title = title,
-                           names = names, team = team, full = full)
+                           names = names, team = team, full = full, photo = photo)
 
 
 @football_blueprint.route('/coutinho/')

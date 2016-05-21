@@ -16,13 +16,36 @@
 
             </div>
 
+            <!--Standings Table-->
+            <div class = standings>
+                <table>
+
+                    <tr>
+                        <th></th> <th>Team</th> <th>Points</th>
+                    </tr>
+                    <!--{{ team }} used above, so use {{ teams }}-->
+                    <tr>
+                        <td>{{ rank }}</td> <td><img src="{{photo}}"> {{ teams }} </td>
+
+
+                    </tr>
+
+
+
+                </table>
+
+
+            </div>
+
+
+
+            <!--Team Player Table-->
             <div class="player_name_div">
                 <table id="player_name">
 
                     <tr>
                         <th> Players</th>
                     </tr>
-
 
                     {%  for name in names  %}
                         {% if name == 'Coutinho' %}
@@ -40,8 +63,6 @@
                 </table>
 
             </div>
-
-
 
 
         </div>
