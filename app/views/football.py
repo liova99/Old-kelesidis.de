@@ -1,9 +1,6 @@
-from flask import Flask, render_template, request, Blueprint
+from flask import  render_template, Blueprint
 from bokeh.embed import components
-#Temp imports for the API
-import httplib
-import json
-import pandas as pd
+# Temp imports for the API
 
 # MySQL connection
 # Warning! the password import must be above the connection import!!
@@ -39,9 +36,6 @@ def liverpool():
 
     team, full = team_atendance(5)
 
-    # team_atendance(5)
-    # team = Team
-    # full = Full
     photo = ""
 
     return render_template('football/en/epl/liverpool/liverpool.html', title = title,
@@ -52,7 +46,7 @@ def liverpool():
 def coutinho():
     title = 'Liverpool YNWA'
 
-    from app.my_func.my_plots import coutinho
+    from ..my_func.my_plots import coutinho
 
     l = coutinho()
     script, div = components(l)

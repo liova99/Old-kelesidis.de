@@ -20,6 +20,7 @@ def finance_data():
         cur, conn = mysql_connect('test')
 
         # MySQL command, for str don't forget the "" ( " %s " )
+        # | finance is the db table, (search) is the column name |
         cur.execute( 'INSERT INTO finance (search) VALUES( "%s" )' %fin )
         conn.commit()
         print ( 'Connected!!!' )

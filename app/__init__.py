@@ -35,16 +35,6 @@ app.register_blueprint(football_blueprint)
 app.register_blueprint(finance_blueprint)
 
 
-# @app.route('/static/')
-# try:
-#     def static():
-#         pass
-# except Exception as e:
-#     e = render_template('index.html')
-#
-#
-#     pass
-
 @app.route('/', methods = ['GET', 'POST'])
 def homepage():
     title = 'home'

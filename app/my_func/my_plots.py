@@ -19,7 +19,7 @@ sample = pd.read_table('http://128.199.61.9/static/data/sample.txt')
 
 ###############################################
 
-######## Charts #############
+#=============== Charts ========================
 
 def PygalLine():
 
@@ -33,6 +33,7 @@ def PygalLine():
         line_chart.add(month, sample[month].tolist())
 
     return line_chart
+
 
 def HLevelLine():
     # sample = pd.read_table('http://128.199.61.9/static/data/sample.txt')
@@ -60,9 +61,10 @@ def HLevelLine():
 
     return p
 
-###### END Charts ###########
+#  =============== End Charts ========================
 
-############ finance ################
+
+#=========== finance ========================
 
 #import companies names for finance()
 def table_companies():

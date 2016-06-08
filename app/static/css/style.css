@@ -55,17 +55,36 @@ table#player_name tr:nth-child(odd){
 /* ================ */
 
 #header {
-	text-align: center;
 	margin: auto;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	border: 1px solid #E7F8FA;
-	background-color: #E7F8FA;
+	border: 1px solid #b4b2ae;
+	background-color: #b4b2ae;
 	border-radius: 5px;
 	width: 80%;
-	
-	
 }
+
+.navbar{
+	display: inline-block;
+	margin: 0.8em;
+}
+
+
+div.navbar a {
+	font-size: 1em;
+	text-decoration: none;
+	color: white;
+}
+div.navbar a:hover {
+	font-size: 1em;
+	text-decoration: none;
+	color: #efefef;
+}
+
+
+
+
+
 
 #container {
   display: table;
@@ -74,10 +93,8 @@ table#player_name tr:nth-child(odd){
 }
 
 #content {
-  border: 1px solid #F4FDF9;
   border-radius: 5px;
   margin: .4em .2em;
-  background-color: #F4FDF9;
   height: inherit;
 }
 
@@ -256,11 +273,16 @@ input[name=button_arrow] {
 	margin: 10px auto;
 	position: static;
 	text-align: center;
-	border: 1px solid #E7F8FA;
-	background-color: #E7F8FA;
+	border: 1px solid #b4b2ae;
+	background-color: #b4b2ae;
 	border-radius: 5px;
 	width: 80%;
 	
+}
+
+#footer p {
+	padding: 0.5em;
+	font-size: 0.8em;
 }
 
 
