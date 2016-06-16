@@ -8,6 +8,7 @@ from bokeh.charts import Line
 from bokeh.models import HoverTool
 from bokeh.plotting import figure
 from bokeh.models.sources import ColumnDataSource as cds
+
 #import the different color background
 from bokeh.models import BoxAnnotation as ba
 
@@ -141,7 +142,7 @@ def finance():
 
     #make line and circle plots
     f.line(df.index, df.Open, source=source2, color='blue')
-    f.circle(df.index, df.Open, source=source1, color='navy', size=0.5, alpha=0.8)
+    # f.circle(df.index, df.Open, source=source1, color='navy', size=0.5, alpha=0.8)
 
     # other hover tool conf
     p_hover = f.select(HoverTool)

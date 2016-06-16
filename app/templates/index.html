@@ -4,13 +4,11 @@
 
 
 <head>
-    <title> {{ title }}</title>
+    {% block head%}
+    {{ super() }}
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    <meta charset="UTF-8">
-
-
-
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
+    {% endblock head %}
 </head>
 
 
@@ -20,8 +18,29 @@
 
 <div id="container">
         <div id="content">
+            <img src="{{ url_for('static', filename = 'img/index/hello.png') }}" style="">
+            <!--<div id="hello"> <h2>Hello</h2></div>-->
+        <!--<div class="main_content">-->
 
+            <!--<div class="m_square_main">-->
+                <!--<h3 >It Blog</h3>-->
+                <!--<div class="m_square">-->
+                    <!--<a href="#"> <img src="{{ url_for('static', filename = 'img/index/tut.jpg') }}"-->
+                    <!--onmouseout= "this.src=' {{ url_for('static', filename = 'img/index/tut.jpg') }}';"-->
+                    <!--onmouseover="this.src=' {{ url_for('static', filename = 'img/index/tut_hover.jpg') }}';"> </a>-->
+                <!--</div>-->
+            <!--</div>-->
 
+            <!--<div id="web_portfolio_main">-->
+                <!--<h3 >My Web Sites Portfolio</h3>-->
+                <!--<div id="web_portfolio">-->
+                    <!--<a href="#"> <img  src="{{ url_for('static', filename = 'img/index/web_portfolio.jpg') }}"-->
+                    <!--onmouseout= "this.src=' {{ url_for('static', filename = 'img/index/web_portfolio.jpg') }}';"-->
+                    <!--onmouseover="this.src=' {{ url_for('static', filename = 'img/index/web_portfolio_hover.jpg') }}';"> </a>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
 
         </div>
 </div>

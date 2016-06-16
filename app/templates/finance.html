@@ -1,48 +1,62 @@
 {% extends "base.html" %}
-<!doctype html>
+{% block top %}
 
+<! Doctype html>
 <html lang="en">
 
+{% endblock top%}
+
+
+
+
+{% block head %}
+{{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
+{% endblock %}
+
+
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
-<script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
 
-<body >
-    <div id="container">
-        <div id="content">
+<!--{# body tag in base tampelate#}-->
 
-            <div id="select_chart_form">
+<div id="container">
+    <div id="content">
 
-                <form action="" method="POST">
+        <div id="select_chart_form">
 
-                    <fieldset id="forms">
-                            <input type="text" name="chart" placeholder=" Chart"/>
-                            <input type="image" title="Geht Los" name="button_arrow" src="{{ url_for('static', filename='img/button_arrow.png') }}">
-                    </fieldset>
+            <form action="" method="POST">
 
-                </form>
+                <fieldset id="forms">
+                        <input type="text" name="chart" placeholder=" Chart"/>
+                        <input type="image" title="Geht Los" name="button_arrow" src="{{ url_for('static', filename='img/button_arrow.png') }}">
+                </fieldset>
 
+            </form>
+
+        </div>
+
+        <div id="main_content">
+
+            <div id="info_table_div">
+                {{ info|safe }}
             </div>
 
-            <div id="main_content">
-
-                <div id="info_table_div">
-                    {{ info|safe }}
-                </div>
-
-                <div id="finance_chart">
-                {{ script|safe }}
-                {{ div|safe }}
-                </div>
-
+            <div id="finance_chart">
+            {{ script|safe }}
+            {{ div|safe }}
             </div>
 
         </div>
+
     </div>
+</div>
 
 
 
-</body>
+
+
+
 {% endblock %}
 
 

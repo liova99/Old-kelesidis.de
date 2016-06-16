@@ -1,33 +1,48 @@
-<!DOCTYPE html>
+{% block top %}
+<! DOCTYPE html>
 <html lang="en">
+{% endblock top%}
+<!--{# Don't forgot the {{ super() }} -->
+<!--http://jinja.pocoo.org/docs/dev/templates/#template-inheritance&ndash;&gt; #}-->
+
 <head>
+{% block head %}
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-
     <title>{{ title }}</title>
-
+{% endblock %}
 </head>
-<body id="body">
-    <div id="header">
+
+
+<body>
+
+{% block header %}
+
+    <header id="header">
         <div class="navbar"><a href="/"><p> Home</p> </a></div>
         <div class="navbar"><a href="{{ url_for('charts.charts') }}"><p> Charts</p> </a></div>
         <div class="navbar"><a href="{{ url_for('finance_blueprint.finance_data') }}"><p> Historical Stock Data</p> </a></div>
         <div class="navbar"><a href="{{ url_for ('football.liverpool') }}"><p> Liverpool</p> </a></div>
         <div class="navbar"><a href="{{ url_for ('football.coutinho') }}"><p> coutinho</p> </a></div>
 
-    </div>
+    </header>
+
+{% endblock header %}
+
 
 {% block content %}
 
 <div id="container">
         <div id="content">
 
-
-
         </div>
 </div>
+
 {% endblock %}
+
+
 </body>
+
 
 <footer id="footer">
     {% block footer %}

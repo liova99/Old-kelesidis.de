@@ -55,13 +55,8 @@ table#player_name tr:nth-child(odd){
 /* ================ */
 
 #header {
-	margin: auto;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	border: 1px solid #b4b2ae;
-	background-color: #b4b2ae;
-	border-radius: 5px;
-	width: 80%;
+	background-color: black;
+	width: 100%;
 }
 
 .navbar{
@@ -73,17 +68,13 @@ table#player_name tr:nth-child(odd){
 div.navbar a {
 	font-size: 1em;
 	text-decoration: none;
-	color: white;
+	color: rgba(255, 255, 255, 0.6);
 }
 div.navbar a:hover {
 	font-size: 1em;
 	text-decoration: none;
-	color: #efefef;
+	color: white;
 }
-
-
-
-
 
 
 #container {
@@ -93,10 +84,89 @@ div.navbar a:hover {
 }
 
 #content {
-  border-radius: 5px;
-  margin: .4em .2em;
-  height: inherit;
+	/*border: solid 1px black;*/
+	border-radius: 5px;
+	margin: .4em .2em;
+	height: inherit;
 }
+
+/* ========= Index ============*/
+
+.main_content {
+	/*border: solid 1px red;*/
+	margin:.2em auto;
+	width: 80%;
+	height: inherit;
+	padding: 1em;
+}
+
+
+#hello {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+div#hello h2 {
+	max-width: 600px;
+	font-family: "Josefin Sans";
+	margin: 0 auto 20px;
+}
+
+/*medium square main*/
+.m_square_main {
+	/*border: solid;*/
+	/*display: inline-block;*/
+	width:200px;
+	margin-left: 1em;
+	float: left;
+}
+
+
+div.m_square_main h3 {
+	text-align:center;
+	margin-bottom: .5em;
+	color: #b4b2ae;
+}
+
+.m_square {
+	display: inline-block;
+	width: 200px;
+	height: 250px;
+	/*margin-left: 2em;*/
+	box-shadow: 0px 0px 7px 5px  #b7b7b7;
+}
+
+div.m_square img {
+	width: 200px;
+	height: 250px;
+}	
+
+#web_portfolio_main{
+	display: inline-block;
+	width: 480;
+	margin-left: 2em;
+}
+
+div#web_portfolio_main h3 {
+	text-align:center;
+	margin-bottom: .5em;
+	color: #b4b2ae;
+}
+
+#web_portfolio {
+	display: inline-block;
+	width: 480px;
+	height: 337px;
+	box-shadow: 0px 0px 7px 5px #b7b7b7;
+}
+
+div##web_portfolio img {
+	width: 480px;
+	height: 337px;
+}
+
 
 /* =========================== */
 
@@ -270,19 +340,16 @@ input[name=button_arrow] {
 /* ********************** */
 
 #footer {
-	margin: 10px auto;
 	position: static;
 	text-align: center;
-	border: 1px solid #b4b2ae;
-	background-color: #b4b2ae;
-	border-radius: 5px;
-	width: 80%;
-	
+	background-color: black;
+	width: 100%;
 }
 
 #footer p {
-	padding: 0.5em;
+	padding: 1.3em;
 	font-size: 0.8em;
+	color: white;
 }
 
 
