@@ -102,16 +102,19 @@ div.navbar a:hover {
 
 
 #hello {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+	margin-top: 10px;
+	text-align: center;
 }
-div#hello h2 {
-	max-width: 600px;
+div#hello h1 {
+	font-size: 6em;
+	color: green;
 	font-family: "Josefin Sans";
-	margin: 0 auto 20px;
+}
+
+div#hello p {
+	color: #0000d8;
+	font-size: 2em;
+	font-family: "Waiting for the Sunrise";
 }
 
 /*medium square main*/
