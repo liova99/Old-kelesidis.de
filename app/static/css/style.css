@@ -176,27 +176,35 @@ div#index_p2 h2 {
 }
 
 #web_logo {
+	background-color: rgba(0, 0, 0, 0.8);
 	text-align: center;
+	color: white;
 }
 
-#intermediate_lev {
-	margin-top: 50px; 
+div#web_logo  h2 {
+	padding: .4em;
 }
 
 #web_knowledge {
-	margin: 50 auto 0 auto;
+	margin: 3em auto 0 auto;
 	width: 650px;
 	text-align: left;
 }
 
 #web_basic {
 	display: inline-block;
-	font-size: 2.1em;
+	font-size: 1.6em;
 }
+
+#intermediate_lev {
+	margin-top: 3em; 
+}
+
+
 
 #photoshop {
 	display: inline-block;
-    font-size: 1.6em;
+    font-size: 1.4em;
     border: 3px solid #31C5F0;
     background-color: #211f39;
     color: #31C5F0;
@@ -206,7 +214,7 @@ div#index_p2 h2 {
 
 #illustrator {
 	display: inline-block;
-	font-size: 1.6em;
+	font-size: 1.4em;
 	border: 3px solid #ff7f18;
 	color: #ff7f18;
 	background-color: #2c1b0f;
@@ -216,7 +224,7 @@ div#index_p2 h2 {
 
 #sony {
     display: inline-block;
-    font-size: 1.6em;
+    font-size: 1.4em;
     border: 3px solid #e6e6ff;
     background-color: #5e5f5f;
     color: #e6e6ff;
@@ -229,7 +237,7 @@ div#index_p2 h2 {
 }
 
 #web_proj {
-	margin: 0 auto;
+	margin: 3em auto 1em auto;
 	width: 1100px;
 }
 
