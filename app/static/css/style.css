@@ -16,8 +16,10 @@ img {max-width: 100%}
 
 html, body {
 	font-size: 100%;
-	height: 98%;
+	height: 100%;
+	width: 100%
   	margin: 0;
+  	min-width: 1100px;
 }
 
 /* ========= Players Table ===================*/
@@ -85,7 +87,7 @@ div.navbar a:hover {
 
 #content {
 	/*border: solid 1px black;*/
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 	margin: .4em .2em;
 	height: inherit;
 }
@@ -104,7 +106,9 @@ div.navbar a:hover {
 #hello {
 	margin-top: 10px;
 	text-align: center;
+	height: 100vh;
 }
+
 div#hello h1 {
 	font-size: 6em;
 	color: green;
@@ -117,10 +121,184 @@ div#hello p {
 	font-family: "Waiting for the Sunrise";
 }
 
+#web_button{
+	color: black;
+	font-family: arial;
+	border: 2px solid #c50101;
+	border-radius: 4px;
+	padding: 7px;
+}
+
+#web_button:hover {
+	cursor: none;
+	background-color: #c50101;
+	color: white;
+	border: solid 2px #c50101;
+	border-radius: 4px;
+}
+
+#index_p2 {
+	margin-top: 10px;
+	text-align: center;
+	height: 100vh;
+}
+
+div#index_p2 p {
+	text-align: left;
+}
+
+/* < Programming skills > */
+div#index_p2 h2 {
+	font-size: 2.5em;
+	font-weight: bold;
+	color: BlueViolet;
+	font-family:'courier new';
+}
+
+#program_text {
+	width: 600px;
+	margin: 90px auto;
+}
+
+#program_text p {
+	font-family:'courier new';
+	font-size: 1.7em;
+	font-weight: bold;
+}
+
+.code_highlited_mag{
+	color: DarkMagenta;
+}
+
+#index_p3 {
+	text-align: center;
+	height: 100vh;
+}
+
+#web_logo {
+	text-align: center;
+}
+
+#intermediate_lev {
+	margin-top: 50px; 
+}
+
+#web_knowledge {
+	margin: 50 auto 0 auto;
+	width: 650px;
+	text-align: left;
+}
+
+#web_basic {
+	display: inline-block;
+	font-size: 2.1em;
+}
+
+#photoshop {
+	display: inline-block;
+    font-size: 1.6em;
+    border: 3px solid #31C5F0;
+    background-color: #211f39;
+    color: #31C5F0;
+    padding: 7px 10px;
+    margin-left: 10px;
+}
+
+#illustrator {
+	display: inline-block;
+	font-size: 1.6em;
+	border: 3px solid #ff7f18;
+	color: #ff7f18;
+	background-color: #2c1b0f;
+	padding: 7px 10px;
+    margin-left: 10px;
+}
+
+#sony {
+    display: inline-block;
+    font-size: 1.6em;
+    border: 3px solid #e6e6ff;
+    background-color: #5e5f5f;
+    color: #e6e6ff;
+    padding: 7px 10px;
+    margin-left: 10px;
+}
+
+#web_proj_content {
+	
+}
+
+#web_proj {
+	margin: 0 auto;
+	width: 1100px;
+}
+
+
+/*image headers*/
+div#web_proj h2{
+	margin-bottom: 1em;
+}
+
+#web_proj_open {
+	text-align: left;
+    margin: 50px 0 20px 50px;
+}
+
+#web_proj_close {
+	margin: 5em 5em 0 0;
+    float: right;
+}
+
+#nikol_port_img {
+	float: left;
+	width: 300px;
+	height: auto;
+	margin: 0 90;
+	
+}
+
+div#nikol_port_img a {
+	text-decoration: none;
+	color: black;
+}
+
+div#nikol_port_img a:hover {
+
+}
+
+div#nikol_port_img img {
+	width: 90%;
+	height: auto;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+ }
+
+div#nikol_port_img img:hover {
+	 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+ }
+
+#saridis_img {
+	float: left;
+	width: 600px;
+	height: auto;
+}
+
+div#saridis_img img {
+	width: 100%;
+	height: auto;
+	padding-top: 10px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  	transition: all 0.3s cubic-bezier(.25,.8,.25,1);}
+
+div#saridis_img img:hover {
+	 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
 /*medium square main*/
-.m_square_main {
+/*.m_square_main {
 	/*border: solid;*/
-	/*display: inline-block;*/
+	/*display: inline-block;
 	width:200px;
 	margin-left: 1em;
 	float: left;
@@ -137,10 +315,9 @@ div.m_square_main h3 {
 	display: inline-block;
 	width: 200px;
 	height: 250px;
-	/*margin-left: 2em;*/
 	box-shadow: 0px 0px 7px 5px  #b7b7b7;
 }
-
+/*
 div.m_square img {
 	width: 200px;
 	height: 250px;
@@ -170,7 +347,7 @@ div##web_portfolio img {
 	height: 337px;
 }
 
-
+*/
 /* =========================== */
 
 #pandas_header {
@@ -311,7 +488,7 @@ input[name=button_arrow] {
 	width: 80%;
 /*	min-width: 20%;
 */	margin: .4em auto;
-	border:solid 2px red;
+	/*border:solid 2px red;*/
 	/*background-color: #efefef;*/
 	overflow: hidden;
 }
@@ -342,11 +519,18 @@ input[name=button_arrow] {
 
 /* ********************** */
 
+#footer-wrapper {
+	background-color: black;
+	width: 100%;
+	margin-top: 2em;
+
+}
+
 #footer {
 	position: static;
 	text-align: center;
-	background-color: black;
-	width: 100%;
+	margin: 0 auto;
+	
 }
 
 #footer p {
@@ -354,5 +538,6 @@ input[name=button_arrow] {
 	font-size: 0.8em;
 	color: white;
 }
+
 
 

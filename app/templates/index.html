@@ -3,36 +3,94 @@
 <html lang="en">
 
 
-<head>
-    {% block head%}
-    {{ super() }}
+
+{% block head%}
+{{ super() }}
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" />
-    {% endblock head %}
-</head>
-
-
+{% endblock head %}
 
 {% block content %}
-<body >
-
 <div id="container">
-        <div id="content">
+    <div id="content">
 
-            <div id="hello">
-                <h1>Hello!</h1>
-                <p>My name is Levan</p>
-                <p>When i grow up i want to be an astronaut</p>
+    <div id="hello">
+        <h1>Hello!</h1>
+        <p><span style="font-weight: bold;">My</span> name is <span style="font-weight: bold;">Levan</span></p>
+        <p>When i grow up i want to be an <span style="font-weight: bold;">astronaut</span></p><br>
+
+        <p>Until then, i want to be a
+        <span style="font-weight: bold;	color: BlueViolet;	font-family:'courier new';">&#60 programmer &#62</span></p>
+        <p>Or maby... a
+        <span id="web_button"> web</span>
+        <span style="font-family:arial;"> | designer</span> ?</p>
+
+        <p><span style="font-family:arial; font-size:2.5em;letter-spacing: -20px;">|</span>
+        <span style="font-family:arial;border-bottom:6px solid; padding-bottom:4px;">Data Analysis</span>
+        is good too!</p>
+    </div>
+
+    <div id="index_p2">
+        <div id=program_head"> <h2>&#60 Programming skills &#62</h2> </div>
+            <div id="program_text">
+                <p><span class="code_highlited_mag"> def</span> python():</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;level = <span style="color:green"> "intermediate"</span></p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code_highlited_mag">pass</span></p>
+                <br><br><br>
+                <p><span class="code_highlited_mag">public class</span> java {</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code_highlited_mag">public static void</span>
+                <span style="color:DodgerBlue"> main</span>(String[] args) {</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code_highlited_mag">String</span>
+                level = <span style="color:green">"beginner";</span></p>
+                <p>}</p>
+            </div>
+    </div>
+
+    <div id="index_p3">
+        <div id="web_logo">
+            <h1 style="font-size:2.5em;"><span style="border:4px solid red; padding:7px; ">Web</span>
+            <span style="color:navy;">design</span></h1>
+        </div>
+
+        <div id="web_knowledge">
+            <div id="web_basic"> <h3>Basic</h3></div>
+            <div id="photoshop"><h3>photoshop</h3></div>
+            <div id="illustrator"><h3>illustrator</h3></div>
+            <div id="sony"><h3>sony vegas </h3></div>
+        </div>
+
+        <div id="intermediate_lev">
+            <h1>&#60 intermediate level of <span class="code_highlited_mag">html</span> and <span class="code_highlited_mag">css</span> &#62</h1>
+        </div>
+
+        <div id="web_proj_content">
+            <div id="web_proj_open"><h2>&#60 <span class="code_highlited_mag">some projects</span> &#62</h2> </div>
+
+            <div id="web_proj">
+
+                    <div id="nikol_port_img">
+                        <a href="http://www.nikol-design.ru" target="_blank"> <h2> Nikol's Portfolio</h2></a>
+                        <a href="http://www.nikol-design.ru" target="_blank"> <img src=" {{ url_for('static', filename='img/index/nikol.jpg') }} "> </a>
+                    </div>
+
+                    <div id="saridis_img">
+                        <h2>Saridis Travel Agency</h2>
+                        <img src="{{ url_for('static', filename='img/index/saridis_s.png') }}">
+                    </div>
+
             </div>
 
+            <div id="web_proj_close"><h2> &#60/ <span class="code_highlited_mag">some projects</span> &#62 </h2></div>
         </div>
+
+    </div>
+
+
+
+    </div>
 </div>
 
-
-
-
-</body>
 {% endblock  %}
 
 {% block footer %}
