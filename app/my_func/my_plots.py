@@ -58,7 +58,7 @@ def PygalLine():
 
 
 def HLevelLine():
-    # sample = pd.read_table('http://128.199.61.9/static/data/sample.txt')
+    # sample = pd.read_table('http://kelesidis.de/static/data/sample.txt')
 
     # Use the Sample Data
 
@@ -91,7 +91,7 @@ def HLevelLine():
 #import companies names for finance()
 def table_companies():
     # import companies, set and sort index, use only needed colums
-    companies = pd.read_csv('http://128.199.61.9/static/data/companies.csv')
+    companies = pd.read_csv('http://kelesidis.de/static/data/companies.csv')
     companies = companies.set_index(['Symbol'])
     companies = companies.sort_index()
     companies = companies[['Name', 'IPOyear', 'Sector', 'Industry']]
@@ -189,7 +189,7 @@ def coutinho():
 
     # read the csv, #Add columns name, delede 2 unnamed colums, parse dates,
     # set index, dayfirst True because pandas can read the 5.1.16 as 1.5.16
-    df = pd.read_excel('http://128.199.61.9/static/data/liverpool/coutinho.xlsx',
+    df = pd.read_excel('http://kelesidis.de/static/data/liverpool/coutinho.xlsx',
                        names=['Com', 'Date', 'HT', 'Score', 'AT', 'NaN', 'NaN', 'Min', 'Rating'])
     df.Date = pd.to_datetime(df.Date, dayfirst=True)
 
@@ -249,8 +249,8 @@ def coutinho():
     #http://128.199.61.9/static/img/Liverpool_competition_ico/
 
     def photo_links_cp():
-        epl = 'http://128.199.61.9/static/img/Liverpool_competition_ico/epl.png'
-        iuc = 'http://128.199.61.9/static/img/Liverpool_competition_ico/iuc.png'
+        epl = 'http://kelesidis.de/static/img/Liverpool_competition_ico/epl.png'
+        iuc = 'http://kelesidis.de/static/img/Liverpool_competition_ico/iuc.png'
         links = []
         for i in df_cp.Com:
             if i == 'EPL':
@@ -264,11 +264,11 @@ def coutinho():
 
     def photo_links_na():
         links = []
-        epl = 'http://128.199.61.9/static/img/Liverpool_competition_ico/epl.png'
-        iuc = 'http://128.199.61.9/static/img/Liverpool_competition_ico/iuc.png'
-        int_fri = 'http://128.199.61.9/static/img/Liverpool_competition_ico/fifa.jpg'
-        ecc = 'http://128.199.61.9/static/img/Liverpool_competition_ico/ecc.jpg'
-        efc = 'http://128.199.61.9/static/img/Liverpool_competition_ico/fa.png'
+        epl = 'http://kelesidis.de/static/img/Liverpool_competition_ico/epl.png'
+        iuc = 'http://kelesidis.de/static/img/Liverpool_competition_ico/iuc.png'
+        int_fri = 'http://kelesidis.de/static/img/Liverpool_competition_ico/fifa.jpg'
+        ecc = 'http://kelesidis.de/static/img/Liverpool_competition_ico/ecc.jpg'
+        efc = 'http://kelesidis.de/static/img/Liverpool_competition_ico/fa.png'
         for i in df_na.Com:
             if i == 'EPL':
                 links.append(epl)

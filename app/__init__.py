@@ -54,7 +54,7 @@ def homepage():
     if request.method == 'POST':
         fin = str(request.form.get('chart')).upper()
 
-        return  redirect('http://127.0.0.1:5000/historical_data/%s' % (fin))
+        return  redirect('http://kelesidis.de/historical_data/%s' % (fin))
 
 
 
