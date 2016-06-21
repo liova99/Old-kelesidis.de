@@ -21,8 +21,8 @@ def finance_data(fin ):
 
 
 
-    if request.method == "POST":
-        fin = str(request.form.get('chart'))
+    if (request.method == "POST") or (fin != 'TSLA'):
+        #fin = str(request.form.get('chart'))
         cur, conn = mysql_connect('test')
 
         # MySQL command, for str don't forget the "" ( " %s " )
@@ -33,6 +33,8 @@ def finance_data(fin ):
         cur.close()
         conn.close()
         print ('connection closed')
+    else:
+        pass
 
 
     f = finance(fin)

@@ -418,7 +418,7 @@ div#saridis_img img:hover {
 .rating_chart_index {
 	display: inline-block;
 	padding: .5em;
-	border: solid 1px #efefef;
+	border: solid 1px #E0E0E0;
 	border-radius: 5px;
 	/*margin: 1%;*/
 	width: 60%;
@@ -519,7 +519,7 @@ div##web_portfolio img {
 	
 	height: auto;
 	width: 48%;
-	border: solid 1px #efefef;
+	border: solid 1px #E0E0E0;
 	border-radius: 5px;
 	margin: 10px;
 	display: inline-block;
@@ -533,7 +533,7 @@ div##web_portfolio img {
 	height: auto;
 	
 	margin: 10px;
-	border: solid 1px #efefef;
+	border: solid 1px #E0E0E0;
 	background-color: #F9F9F9;
 	border-radius: 5px;
 	
@@ -546,7 +546,8 @@ div##web_portfolio img {
 /*    form        */
 #select_chart_form{
 	text-align: center;
-/*	border: 2px solid red; */
+	border-top: solid 1px silver;
+    margin-top: 3em;
 }
 
 
@@ -554,16 +555,17 @@ div##web_portfolio img {
 	display: inline-block;
 	padding: 7px 5px;
 	margin: 15px auto;
-	width: 30%;
+	width: 40%;
 }
 
 
 input[name=chart] {
+	padding: 1em .3em;
 	float: left;
 	font-size: large;
 	height: 25px;
-	width: 70%;
-	border: solid 1px #efefef;
+	width: 85%;
+	border: solid 1px #E0E0E0;
 	border-radius: 3px;
 }	
 	
@@ -585,9 +587,9 @@ input[name=button_arrow] {
 	display: inline-block;
 	float: left;
 	padding: 15px;
-	border: solid 1px #efefef;
+	border: solid 1px #E0E0E0;
 	border-radius: 5px;
-	margin: 10px auto auto 7%;
+	margin: 10px auto auto 50px;
 	min-width: 685px;
 	max-width: 800px;
 	width: 63%;
@@ -603,7 +605,7 @@ input[name=button_arrow] {
 	display: inline-block;
 	padding: 5px;
 	width: auto;
-	border:1px solid #efefef; 
+	border:1px solid #E0E0E0; 
 	border-radius: 5px;
 	float: none;
 	margin:10px 15px;
@@ -634,7 +636,7 @@ input[name=button_arrow] {
 /*	min-width: 20%;
 */	margin: .4em auto;
 	/*border:solid 2px red;*/
-	/*background-color: #efefef;*/
+	/*background-color: #E0E0E0;*/
 	overflow: hidden;
 }
 
@@ -642,7 +644,7 @@ input[name=button_arrow] {
 	
 	display: inline-block;
 	padding: .5em;
-	border: solid 1px #efefef;
+	border: solid 1px #E0E0E0;
 	border-radius: 5px;
 	/*margin: 1%;*/
 	width: 70%;
@@ -654,7 +656,7 @@ input[name=button_arrow] {
 	width: 25%;
 	display: inline-block;
  	/*padding: 10px;*/
-/*	border: 2px solid #efefef;
+/*	border: 2px solid #E0E0E0;
 	border-radius: 5px;
 	margin: 10px 10px 10px 10px;
 */}

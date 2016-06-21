@@ -11,7 +11,7 @@
 #=====================================================
 
 from bokeh.embed import components
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect,url_for
 
 
 
@@ -46,8 +46,20 @@ def homepage():
     d = data_index()
     script1, div1 = components(d)
 
+    f = finance('TSLA')
+    info = info('TSLA')
+    info  = info.to_html(classes='info_table')
+    script2, div2 = components(f)
+
+    if request.method == 'POST':
+        fin = str(request.form.get('chart')).upper()
+
+        return  redirect('http://127.0.0.1:5000/historical_data/%s' % (fin))
+
+
+
     return render_template('index.html', title = title, script = script, div = div,
-                           script1 = script1, div1 = div1)
+                           script1 = script1, div1 = div1, script2 = script2, div2 = div2,info = info)
 
 
 if __name__ == "__main__":

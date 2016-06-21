@@ -101,7 +101,8 @@ def table_companies():
 def info(fin):
     if request.method == "POST":
         # 'chart' is the name of <input> tag in html file
-        inf = request.form.get('chart')
+        inf = request.form.get('chart').upper()
+
     else:
         inf = fin
 
@@ -116,7 +117,7 @@ def finance(fin):
 
 
     if request.method == "POST":
-        chart = request.form.get('chart')
+        chart = request.form.get('chart').upper()
 
     # fin will be defined at finance.py
     else:
