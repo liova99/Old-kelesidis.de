@@ -12,6 +12,7 @@
 
 from bokeh.embed import components
 from flask import Flask, render_template, request, redirect,url_for
+from webbrowser import open
 
 
 
@@ -43,9 +44,7 @@ def homepage():
     p = coutinho()
     script, div = components(p)
 
-    d = data_index()
-    script1, div1 = components(d)
-
+    # 'TSLA' is the default chart
     f = finance('TSLA')
     info = info('TSLA')
     info  = info.to_html(classes='info_table')
@@ -54,9 +53,10 @@ def homepage():
     if request.method == 'POST':
         fin = str(request.form.get('chart')).upper()
 
-        return  redirect('http://kelesidis.de/historical_data/%s' % (fin))
-
-
+        # open chart in a new window & redirect the page to the chart on index page
+        # otherwise it will returned to the top of index page
+        open('http://kelesidis.de/historical_data/%s' % (fin))
+        return redirect('http://kelesidis.de/#finance_chart_index')
 
     return render_template('index.html', title = title, script = script, div = div,
                            script1 = script1, div1 = div1, script2 = script2, div2 = div2,info = info)
