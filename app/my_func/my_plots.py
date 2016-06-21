@@ -16,7 +16,7 @@ from flask import request
 
 # Add the data here
 
-sample = pd.read_table('http://128.199.61.9/static/data/sample.txt')
+sample = pd.read_table('http://kelesidis.de/static/data/sample.txt')
 
 ###############################################
 
