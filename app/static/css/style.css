@@ -102,6 +102,17 @@ div.navbar a:hover {
 	padding: 1em;
 }
 
+#beta {
+    background-color: green;
+    right: -15px;
+    top: 0px;
+    color: white;
+    margin-right: 70px;
+    width: 161px;
+    height: 20%;
+    text-align: center;
+    position: absolute;
+}
 
 #hello {
 	margin-top: 10px;
