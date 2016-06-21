@@ -38,16 +38,16 @@ app.register_blueprint(finance_blueprint)
 @app.route('/', methods = ['GET', 'POST'])
 def homepage():
     title = 'home'
+    from my_func.my_plots import coutinho, data_index, finance,info
 
-    if request.method == 'POST':
-        f= request.files['the_file']
-        f.save('C:\Users\levan\Desktop')
+    p = coutinho()
+    script, div = components(p)
 
+    d = data_index()
+    script1, div1 = components(d)
 
-
-
-
-    return render_template('index.html', title = title)
+    return render_template('index.html', title = title, script = script, div = div,
+                           script1 = script1, div1 = div1)
 
 
 if __name__ == "__main__":

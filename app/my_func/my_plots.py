@@ -4,8 +4,8 @@ import pandas as pd
 import pandas.io.data as web
 import datetime
 import pygal
-from bokeh.charts import Line
-from bokeh.models import HoverTool
+from bokeh.charts import Line, Bar,color
+from bokeh.models import HoverTool, Range1d
 from bokeh.plotting import figure
 from bokeh.models.sources import ColumnDataSource as cds
 
@@ -20,9 +20,30 @@ sample = pd.read_table('http://128.199.61.9/static/data/sample.txt')
 
 ###############################################
 
+# ============== Index  Data Analysis ============
+
+
+def data_index():
+
+
+    # make df
+    df = {'Data_anl': ['Pandas 4/10', 'MySQL 3/10 '], 'Power': [4.5, 3.5]}
+    df = pd.DataFrame(df)
+
+    # make chart
+    d = Bar(df, 'Data_anl', 'Power', bar_width = 0.2, xlabel = '', title = 'Dana Analysis Power', ylabel = 'Power',
+            color = color('Data_anl', palette = ['blue', 'green']))
+    # set y axis default range
+    d.y_range = Range1d(0, 10)
+
+    return d
+
+
 #=============== Charts ========================
 
+
 def PygalLine():
+
 
     line_chart = pygal.Line(width=600, height=450)
     line_chart.title = 'Pygal Line Chart'
@@ -77,12 +98,12 @@ def table_companies():
     return companies
 
 #import info table for finance()
-def info():
+def info(fin):
     if request.method == "POST":
         # 'chart' is the name of <input> tag in html file
         inf = request.form.get('chart')
     else:
-        inf = 'CRME'
+        inf = fin
 
     companies = table_companies()
     pd.options.display.max_colwidth = 150
@@ -91,11 +112,16 @@ def info():
     return info
 
 
-def finance():
-    chart = 'CRME'
+def finance(fin):
+
 
     if request.method == "POST":
         chart = request.form.get('chart')
+
+    # fin will be defined at finance.py
+    else:
+        chart = fin
+
 
     start = datetime.datetime(2010, 3, 1)
     end = datetime.datetime(2016, 4, 1)

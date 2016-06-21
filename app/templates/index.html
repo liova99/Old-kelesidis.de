@@ -7,6 +7,10 @@
 {% block head%}
 {{ super() }}
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
+
+
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" />
 {% endblock head %}
@@ -54,15 +58,15 @@
         </div>
 
         <div id="web_knowledge">
-            <div id="web_basic"> <h3>Basic</h3></div>
+            <!--<div id="web_basic"> <h3>Basic</h3></div>-->
             <div id="photoshop"><h3>photoshop</h3></div>
             <div id="illustrator"><h3>illustrator</h3></div>
             <div id="sony"><h3>sony vegas </h3></div>
         </div>
 
-        <div id="intermediate_lev">
-            <h1>intermediate level of <span class="code_highlited_mag">html</span> and <span class="code_highlited_mag">css</span></h1>
-        </div>
+        <!--<div id="intermediate_lev">-->
+            <!--<h1>intermediate level of <span class="code_highlited_mag">html</span> and <span class="code_highlited_mag">css</span></h1>-->
+        <!--</div>-->
 
         <div id="web_proj_content">
             <div id="web_proj">
@@ -79,6 +83,78 @@
 
     </div>
 
+    <div id="index_p4">
+
+        <div id="data_logo_wrapper">
+            <div id="data_logo"></div>
+            <div id="data_logo_1"></div>
+            <div id="data_logo_2"></div>
+            <div id="data_logo_3"></div>
+            <div id="data_logo_4"></div>
+            <div id="data_logo_5"></div>
+            <div id="data_logo_6"></div>
+            <div id="data_logo_7"></div>
+            <div id="data_logo_8"></div>
+            <div id="data_logo_9"></div>
+            <div id="data_logo_10"></div>
+            <div id="data_logo_11"></div>
+            <div id="data_logo_12"></div>
+            <div id="data_logo_13"></div>
+        </div>
+
+        <div class="index_chart_wrapper">
+
+            <div class="barchart_power_index">
+
+                {{ script1|safe }}
+                {{ div1|safe }}
+
+
+            </div>
+
+            <div class="index_chart_cout">
+                 <div class="rating_chart_index">
+
+                        {{ script|safe }}
+                        {{ div|safe }}
+                </div>
+
+                <div class="index_coutihno_img">
+                    <img  src="{{ url_for('static', filename = 'img/coutinho_photo.JPG') }}" >
+                </div>
+
+            </div>
+
+
+                    <div id="select_chart_form">
+
+            <form action="" method="POST">
+
+                <fieldset id="forms">
+                        <input type="text" name="chart" placeholder=" Chart"/>
+                        <input type="image" title="Geht Los" name="button_arrow" src="{{ url_for('static', filename='img/button_arrow.png') }}">
+                </fieldset>
+
+            </form>
+
+        </div>
+
+        <div id="main_content">
+
+            <div id="info_table_div">
+                {{ info|safe }}
+            </div>
+
+            <div id="finance_chart">
+            {{ script2|safe }}
+            {{ div2|safe }}
+            </div>
+
+        </div>
+
+
+        </div>
+    </div>
 
 
     </div>
