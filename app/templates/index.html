@@ -125,13 +125,13 @@
 
             <div id="index_chart_stock_wrapper">
 
-                <div id="select_chart_form">
+                <div id="select_chart_form_index">
 
-                <form action="" method="POST">
+                <form action="" target="_blank" method="POST">
 
                     <fieldset id="forms">
-                            <input type="text" name="chart" placeholder=" Write a NASDAQ commpany symbol e.g AAPL"/>
-                            <input type="image" title="Geht Los" name="button_arrow" src="{{ url_for('static', filename='img/button_arrow.png') }}">
+                            <input type="text"  name="chart" placeholder=" Write a NASDAQ commpany symbol e.g AAPL"/>
+                            <input type="image" value="Open Window" title="Geht Los" name="button_arrow" src="{{ url_for('static', filename='img/button_arrow.png') }}">
                     </fieldset>
 
                 </form>
@@ -163,7 +163,7 @@
                 <p>This website uses Python Flask under the hood.</p>
                 <p>Data analysis with pandas and MySQL</p>
 
-                <p>The visualizations was made with <a href=""> bokeh</a>.</p>
+                <p>The visualizations was made with <a href="http://bokeh.pydata.org/en/latest/" target="_blank"> bokeh</a>.</p>
 
                 <p>Do not scale the webpage to see if it’s responsive, I don’t like responsive web design.</p>
                  <p><a href="">Read why</a> i prefer to make separate mobile version</p>

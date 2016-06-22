@@ -55,11 +55,12 @@ def homepage():
 
         # open chart in a new window & redirect the page to the chart on index page
         # otherwise it will returned to the top of index page
-        open('http://kelesidis.de/historical_data/%s' % (fin))
-        return redirect('http://kelesidis.de/#finance_chart_index')
+
+        return redirect('http://kelesidis.de/historical_data/%s' % (fin))
+        #return redirect('http://kelesidis.de/#finance_chart_index')
 
     return render_template('index.html', title = title, script = script, div = div,
-                           script1 = script1, div1 = div1, script2 = script2, div2 = div2,info = info)
+                            script2 = script2, div2 = div2,info = info)
 
 
 if __name__ == "__main__":

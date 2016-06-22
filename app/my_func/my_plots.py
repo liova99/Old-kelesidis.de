@@ -90,12 +90,24 @@ def HLevelLine():
 
 #import companies names for finance()
 def table_companies():
-    # import companies, set and sort index, use only needed colums
+    # import companies, set and sort index, use only needed columns
     companies = pd.read_csv('http://kelesidis.de/static/data/companies.csv')
     companies = companies.set_index(['Symbol'])
     companies = companies.sort_index()
     companies = companies[['Name', 'IPOyear', 'Sector', 'Industry']]
-    return companies
+
+    amex = pd.read_csv('http://kelesidis.de/static/data/amex.csv')
+    amex = amex.set_index(['Symbol'])
+    amex = amex.sort_index()
+    amex = amex[['Name', 'IPOyear', 'Sector', 'Industry']]
+
+    nyse = pd.read_csv('http://kelesidis.de/static/data/nyse.csv')
+    nyse = nyse.set_index(['Symbol'])
+    nyse = nyse.sort_index()
+    nyse = nyse[['Name', 'IPOyear', 'Sector', 'Industry']]
+
+
+    return companies, amex, nyse
 
 #import info table for finance()
 def info(fin):
@@ -103,12 +115,24 @@ def info(fin):
         # 'chart' is the name of <input> tag in html file
         inf = request.form.get('chart').upper()
 
+    # fin defined at __init__, or by the user
     else:
         inf = fin
 
-    companies = table_companies()
+    companies, amex, nyse = table_companies()
     pd.options.display.max_colwidth = 150
-    info = pd.DataFrame(companies.loc[inf])
+
+    if inf in companies.index:
+        info = pd.DataFrame(companies.loc[inf])
+
+    elif inf in amex.index:
+        info = pd.DataFrame(amex.loc[inf])
+
+    elif inf in nyse.index:
+        info = pd.DataFrame(nyse.loc[inf])
+
+    else:
+        info = pd.DataFrame(companies.loc['NOT A NASDAQ'])
 
     return info
 
