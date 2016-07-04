@@ -571,10 +571,9 @@ div#index_notes_content p{
 
 
 input[name=chart] {
-	padding: 1em .3em;
+	padding: .3em .3em;
 	float: left;
 	font-size: large;
-	height: 25px;
 	width: 85%;
 	border: solid 1px #E0E0E0;
 	border-radius: 3px;

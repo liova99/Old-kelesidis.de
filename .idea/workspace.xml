@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0885dd5e-ba9e-4770-a3b2-b124b8322601" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/test/test.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Py_group/app/templates/rehnung.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../blog/app/static/img/personal/Thumbs.db" afterPath="$PROJECT_DIR$/../blog/app/static/img/personal/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Py_group/app/__init__.py" afterPath="$PROJECT_DIR$/../Py_group/app/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Py_group/app/templates/index.html" afterPath="$PROJECT_DIR$/../Py_group/app/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/__init__.py" afterPath="$PROJECT_DIR$/app/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/my_func/my_plots.py" afterPath="$PROJECT_DIR$/app/my_func/my_plots.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/css/style.css" afterPath="$PROJECT_DIR$/app/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/data/companies.csv" afterPath="$PROJECT_DIR$/app/static/data/companies.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/base.html" afterPath="$PROJECT_DIR$/app/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/finance.html" afterPath="$PROJECT_DIR$/app/templates/finance.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/index.html" afterPath="$PROJECT_DIR$/app/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
     </list>
     <ignored path="flaskapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,78 +31,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+      <file leaf-file-name="finance.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/finance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-162">
-              <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+            <state relative-caret-position="342">
+              <caret line="30" column="109" selection-start-line="30" selection-start-column="109" selection-end-line="30" selection-end-column="109" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1710">
-              <caret line="165" column="111" selection-start-line="165" selection-start-column="111" selection-end-line="165" selection-end-column="111" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#p#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#1;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#2;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#p#3;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#4;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#p#4;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#p#4;n#div#1;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#p#5;n#div#1;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#span#0;n#h2#0;n#div#0;n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#3;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1062">
-              <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-              <folding>
-                <element signature="e#416#450#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="my_plots.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/my_func/my_plots.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-234">
-              <caret line="96" column="60" selection-start-line="96" selection-start-column="60" selection-end-line="96" selection-end-column="60" />
+            <state relative-caret-position="335">
+              <caret line="132" column="56" selection-start-line="132" selection-start-column="56" selection-end-line="132" selection-end-column="56" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readme.md">
-          <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
-            <state />
-          </provider>
-          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="216">
-                <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -117,8 +59,8 @@
         <option value="flaskapp" />
         <option value="FlaskApp" />
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="Blog" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -129,8 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/views.py" />
-        <option value="$PROJECT_DIR$/app/views/charts.py" />
         <option value="$PROJECT_DIR$/app/views/__init__.py" />
         <option value="$PROJECT_DIR$/app/my_func/football.py" />
         <option value="$PROJECT_DIR$/app/passwords.py" />
@@ -155,10 +95,7 @@
         <option value="$PROJECT_DIR$/../blog/templates/personal/elisabeth_gr.html" />
         <option value="$PROJECT_DIR$/../blog/readme" />
         <option value="$PROJECT_DIR$/../Py_group/__init__.py" />
-        <option value="$PROJECT_DIR$/app/templates/finance.html" />
         <option value="$PROJECT_DIR$/../Py_group/app/passwords.py" />
-        <option value="$PROJECT_DIR$/../Py_group/app/templates/index.html" />
-        <option value="$PROJECT_DIR$/../Py_group/app/__init__.py" />
         <option value="$PROJECT_DIR$/../Py_group/.gitignore" />
         <option value="$PROJECT_DIR$/../blog/app/templates/personal/elisabeth_gr.html" />
         <option value="$PROJECT_DIR$/../blog/app/templates/personal/feed.html" />
@@ -177,9 +114,14 @@
         <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$USER_HOME$/AppData/Local/Temp/Bokeh Docs.url" />
-        <option value="$PROJECT_DIR$/app/templates/index.html" />
         <option value="$PROJECT_DIR$/app/static/data/companies.csv" />
         <option value="$PROJECT_DIR$/app/my_func/my_plots.py" />
+        <option value="$PROJECT_DIR$/../Py_group/readme.md" />
+        <option value="$PROJECT_DIR$/../Py_group/app/templates/index.html" />
+        <option value="$PROJECT_DIR$/../Py_group/app/templates/rehnung.html" />
+        <option value="$PROJECT_DIR$/../Py_group/app/__init__.py" />
+        <option value="$PROJECT_DIR$/app/templates/finance.html" />
+        <option value="$PROJECT_DIR$/app/templates/index.html" />
       </list>
     </option>
   </component>
@@ -261,6 +203,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Py_group" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flaskapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Py_group" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flaskapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Py_group" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flaskapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="flaskapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -276,24 +260,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flaskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flaskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -315,73 +281,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flaskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flaskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flaskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flaskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flaskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flaskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_func" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.23212537" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Py_group/venv/Scripts/python.exe" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -644,8 +553,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.__init__" />
-        <item index="1" class="java.lang.String" itemvalue="Python.__init__ (2)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.__init__ (3)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.__init__ (3)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.__init__ (2)" />
         <item index="3" class="java.lang.String" itemvalue="Python.__init__ (1)" />
         <item index="4" class="java.lang.String" itemvalue="Python.lf_converter" />
       </list>
@@ -669,14 +578,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16504854" sideWeight="0.48333332" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19012944" sideWeight="0.48333332" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22532895" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936978" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25925925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22569445" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ultimate PasteBin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -690,6 +599,26 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22532895" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936978" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.110197365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26858878" sideWeight="0.48333332" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ultimate PasteBin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17246597" sideWeight="0.51666665" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -709,16 +638,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/views.py" />
-    <entry file="file://$PROJECT_DIR$/app/views/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/app/templates/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/new.HTML" />
     <entry file="file://$PROJECT_DIR$/app/templates/base_template.html" />
     <entry file="file://$PROJECT_DIR$/api.py" />
     <entry file="file://$PROJECT_DIR$/app/api/__init__.py">
@@ -811,24 +730,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Py_group/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Py_group/app/passwords.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Py_group/app/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -906,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="45" column="98" selection-start-line="45" selection-start-column="87" selection-end-line="45" selection-end-column="98" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -924,40 +828,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/finance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-505">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="129" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="216">
-            <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
+        <state relative-caret-position="216">
           <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,43 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="165" column="111" selection-start-line="165" selection-start-column="111" selection-end-line="165" selection-end-column="111" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#p#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#1;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#2;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#p#3;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#4;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#p#4;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#p#4;n#div#1;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#p#5;n#div#1;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#h2#0;n#div#0;n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#3;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-          <folding>
-            <element signature="e#416#450#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1009,7 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
           <caret line="3136" column="8" selection-start-line="3136" selection-start-column="8" selection-end-line="3136" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,14 +867,95 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="51" column="31" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="31" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/my_func/my_plots.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234">
-          <caret line="96" column="60" selection-start-line="96" selection-start-column="60" selection-end-line="96" selection-end-column="60" />
+        <state relative-caret-position="288">
+          <caret line="134" column="61" selection-start-line="134" selection-start-column="43" selection-end-line="134" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="216">
+            <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Py_group/readme" />
+    <entry file="file://$PROJECT_DIR$/../Py_group/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="62" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Py_group/app/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Py_group/app/templates/rehnung.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Py_group/app/templates/Michael.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Py_group/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="162" column="54" selection-start-line="162" selection-start-column="54" selection-end-line="162" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/finance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="30" column="109" selection-start-line="30" selection-start-column="109" selection-end-line="30" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="132" column="56" selection-start-line="132" selection-start-column="56" selection-end-line="132" selection-end-column="56" />
           <folding />
         </state>
       </provider>

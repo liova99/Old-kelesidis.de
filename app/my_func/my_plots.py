@@ -132,7 +132,7 @@ def info(fin):
         info = pd.DataFrame(nyse.loc[inf])
 
     else:
-        info = pd.DataFrame(companies.loc['NOT A NASDAQ'])
+        info = pd.DataFrame(companies.loc['INFO NOT AVAILABLE'])
 
     return info
 
