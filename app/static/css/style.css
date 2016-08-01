@@ -6,6 +6,8 @@ the footer don't stay down,  */
 background: url(path or link) repead;
  */ 
 
+
+
 *{
 	margin: 0;
 	padding: 0;
@@ -104,33 +106,39 @@ div.navbar a:hover {
 
 #beta {
     background-color: green;
-    right: -15px;
+    /*right: -15px;*/
     top: 0px;
     color: white;
     margin-right: 70px;
     width: 161px;
-    height: 20%;
+    height: 120px;
     text-align: center;
-    position: absolute;
+    float: right;
 }
 
-#hello {
+.hello {
 	margin-top: 10px;
 	text-align: center;
 	height: 100vh;
 }
 
-div#hello h1 {
+div.hello h1 {
 	font-size: 6em;
 	color: green;
 	font-family: "Josefin Sans";
 }
 
-div#hello p {
+div.hello p {
 	color: #0000d8;
 	font-size: 2em;
 	font-family: "Waiting for the Sunrise";
 }
+
+.ariane_wrapper {}
+.ariane {}
+.ariane_img {}
+
+div.ariane img {}
 
 #web_button{
 	color: black;
@@ -148,18 +156,18 @@ div#hello p {
 	border-radius: 4px;
 }
 
-#index_p2 {
+.index_p2 {
 	margin-top: 10px;
 	text-align: center;
 	height: 100vh;
 }
 
-div#index_p2 p {
+div.index_p2 p {
 	text-align: left;
 }
 
 /* < Programming skills > */
-div#index_p2 h2 {
+div.index_p2 h2 {
 	font-size: 2.5em;
 	font-weight: bold;
 	color: BlueViolet;
@@ -701,5 +709,18 @@ input[name=button_arrow] {
 	color: white;
 }
 
+@media all and (max-height: 600px) {
+
+    .index_p2 {
+        height: auto;
+    }
+    .hello {
+        height: auto;
+        
+    }
+
+
+
+}
 
 

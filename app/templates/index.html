@@ -7,6 +7,8 @@
 {% block head%}
 {{ super() }}
 
+
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
     <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
 
@@ -19,11 +21,12 @@
 <div id="container">
     <div id="content">
 
-        <div id="hello">
+        <div class="hello">
             <h1>Hello!</h1>
             <p><span style="font-weight: bold;">My</span> name is <span style="font-weight: bold;">Levan</span></p>
             <p>When i grow up i want to be an <span style="font-weight: bold;">astronaut</span></p><br>
 
+<!--
             <p>Until then, i want to be a
             <span style="font-weight: bold;	color: BlueViolet;	font-family:'courier new';">&#60 programmer &#62</span></p>
             <p>Or maby... a
@@ -33,20 +36,35 @@
             <p><span style="font-family:arial; font-size:2.5em;letter-spacing: -20px;">|</span>
             <span style="font-family:arial;border-bottom:6px solid; padding-bottom:4px;">Data Analysis</span>
             is good too!</p>
+-->
+                <div class="ariane">
+
+                    <div class="ariane_img">
+                        <img src="{{ url_for('static', filename='img/index/ariane_final.png') }}">
+
+
+                </div>
+            </div>
+
+
         </div>
 
-        <div id="index_p2">
+
+
+        <div class="index_p2">
             <div id=program_head"> <h2>&#60 Programming skills &#62</h2> </div>
                 <div id="program_text">
                     <p><span class="code_highlited_mag"> def</span> python():</p>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;level = <span style="color:green"> "intermediate"</span></p>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code_highlited_mag">pass</span></p>
                     <br><br><br>
-                    <p><span class="code_highlited_mag">public class</span> java {</p>
+                    <p><span class="code_highlited_mag">public class</span> Samsung <span class="code_highlited_mag">extends</span> Apple {</p><br>
+<!--
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code_highlited_mag">public static void</span>
                     <span style="color:DodgerBlue"> main</span>(String[] args) {</p>
+-->
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code_highlited_mag">String</span>
-                    level = <span style="color:green">"beginner";</span></p>
+                    level = <span style="color:green">"beginner"</span>;</p>
                     <p>}</p>
                 </div>
         </div>
