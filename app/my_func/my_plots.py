@@ -89,14 +89,15 @@ def table_companies():
 
 
 # import info table for finance()
-def info(fin):
+def info(selected_company):
     if request.method == "POST":
         # 'chart' is the name of <input> tag in html file
         inf = request.form.get('chart').upper()
 
-    # fin defined at __init__, or by the user
+    # selected_company is the name of the company that  defined  by the user, the default is,
+    # Tesla TSLA witch is defined in the app/__init__.py  or views/finance.py file.
     else:
-        inf = fin
+        inf = selected_company
 
     companies, amex, nyse = table_companies()
     pd.options.display.max_colwidth = 150
@@ -116,13 +117,13 @@ def info(fin):
     return info
 
 
-def finance(fin):
+def finance(selected_company):
     if request.method == "POST":
         chart = request.form.get('chart').upper()
 
-    # fin will be defined at finance.py
+    # selected_company will be defined at app/__init__.py or views/finance.py
     else:
-        chart = fin
+        chart = selected_company
 
     start = datetime.datetime(2010, 3, 1)
     end = datetime.datetime(2016, 4, 1)
@@ -178,9 +179,7 @@ def finance(fin):
 
     return f
 
-
 # ============= END Finance =======================
-
 
 # ============== Coutihno ==============================
 # the next plot used at the home page and http://kelesidis.de/coutinho/,

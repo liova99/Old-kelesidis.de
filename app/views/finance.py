@@ -9,25 +9,21 @@ from config import mysql_connect
 finance_blueprint = Blueprint('finance_blueprint', __name__)
 
 # finance_data() need an argument, so: defaults={'fin': 'TSLA'}
-# <string:fin> now we can add the company name on the link : http://127.0.0.1:5000/historical_data/AAPL
-@finance_blueprint.route('/historical_data/', defaults={'fin': 'TSLA'}, methods = ['GET', 'POST'])
-@finance_blueprint.route('/historical_data/<string:fin>', methods = ['GET', 'POST'])
-def finance_data(fin ):
+# <string:selected_company> now we can add the company name on the link e.g. : http://kelesidis.de/historical_data/AAPL
+@finance_blueprint.route('/historical_data/', defaults={'selected_company': 'TSLA'}, methods = ['GET', 'POST'])
+@finance_blueprint.route('/historical_data/<string:selected_company>', methods = ['GET', 'POST'])
+def finance_data(selected_company):
     title = 'finance'
 
     from ..my_func.my_plots import finance, info
 
-
-
-
-
-    if (request.method == "POST") or (fin != 'TSLA'):
-        #fin = str(request.form.get('chart'))
+    if (request.method == "POST") or (selected_company != 'TSLA'):
+        #selected_company = str(request.form.get('chart'))
         cur, conn = mysql_connect('test')
 
         # MySQL command, for str don't forget the "" ( " %s " )
         # | finance is the db table, (search) is the column name |
-        cur.execute( 'INSERT INTO finance (search) VALUES( "%s" )' %fin )
+        cur.execute( 'INSERT INTO finance (search) VALUES( "%s" )' % selected_company)
         conn.commit()
         print ( 'Connected!!!' )
         cur.close()
@@ -37,10 +33,10 @@ def finance_data(fin ):
         pass
 
 
-    f = finance(fin)
-    info = info(fin)
+    f = finance(selected_company)
+    info = info(selected_company)
     info  = info.to_html(classes='info_table')
 
     script, div = components(f)
 
-    return render_template('finance.html/', title = title, script = script, div = div, info = info)
+    return render_template('finance.html', title = title, script = script, div = div, info = info)

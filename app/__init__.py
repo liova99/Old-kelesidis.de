@@ -14,8 +14,6 @@ from bokeh.embed import components
 from flask import Flask, render_template, request, redirect,url_for
 from webbrowser import open
 
-
-
 # MySQL connection
 # Warning! the password import must be above the connection import!!
 from app.passwords import *
@@ -26,9 +24,7 @@ from app.views.charts import charts_blueprint
 from app.views.finance import finance_blueprint
 from app.views.football import football_blueprint
 
-
 app = Flask(__name__)
-
 
 #Blueprints registers
 app.register_blueprint(charts_blueprint)
@@ -39,12 +35,12 @@ app.register_blueprint(finance_blueprint)
 @app.route('/', methods = ['GET', 'POST'])
 def homepage():
     title = 'home'
-    from my_func.my_plots import coutinho, data_index, finance,info
+    from my_func.my_plots import coutinho, finance, info
 
     p = coutinho()
     script, div = components(p)
 
-    # 'TSLA' is the default chart
+    # Define the default chart ( 'TSLA' )
     f = finance('TSLA')
     info = info('TSLA')
     info  = info.to_html(classes='info_table')
