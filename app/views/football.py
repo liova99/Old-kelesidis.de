@@ -1,3 +1,5 @@
+# link for this page http://kelesidis.de/liverpool/, just to test some API and MySQL
+
 from flask import  render_template, Blueprint
 from bokeh.embed import components
 # Temp imports for the API

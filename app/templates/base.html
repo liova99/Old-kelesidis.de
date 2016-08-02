@@ -36,6 +36,14 @@
         <!--<div class="navbar"><a href="{{ url_for('charts.charts') }}"><p> Charts</p> </a></div>-->
         <div class="navbar"><a href="{{ url_for('finance_blueprint.finance_data') }}"><p> Historical Stock Data</p> </a></div>
         <div class="navbar"><a href="http://blog.kelesidis.de/" target="_blank"><p> Blog</p> </a></div>
+
+        <!-- github ico -->
+        <div class="navbar_github"> <a href="https://github.com/liova99" target="_blank">
+        <img src=" {{ url_for('static', filename='img/index/GitHub-Mark-32px_green.png') }}"
+         onmouseover="this.src= '{{ url_for('static', filename='img/index/GitHub-Mark-32px_white.png') }}' "
+         onmouseout="this.src= '{{ url_for('static', filename='img/index/GitHub-Mark-32px_green.png') }}' "  title="GitHub"> </a></div>
+        <!---------------------------------------- -->
+
         <!--{#<div class="navbar"><a href="{{ url_for ('football.coutinho') }}"><p> coutinho</p> </a></div>#}-->
         <div id="beta"><h1>Beta</h1></div>
     </header>

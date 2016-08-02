@@ -4,48 +4,26 @@ import pandas as pd
 import pandas.io.data as web
 import datetime
 import pygal
-from bokeh.charts import Line, Bar,color
+from bokeh.charts import Line, Bar, color
 from bokeh.models import HoverTool, Range1d
 from bokeh.plotting import figure
 from bokeh.models.sources import ColumnDataSource as cds
 
-#import the different color background
+# import the different color background
 from bokeh.models import BoxAnnotation as ba
 
 from flask import request
 
-# Add the data here
+# Sample data for the http://kelesidis.de/charts/
 
 sample = pd.read_table('http://kelesidis.de/static/data/sample.txt')
 
-###############################################
 
-# ============== Index  Data Analysis ============
-
-
-def data_index():
-
-
-    # make df
-    df = {'Data_anl': ['Pandas 4/10', 'MySQL 3/10 '], 'Power': [4.5, 3.5]}
-    df = pd.DataFrame(df)
-
-    # make chart
-    d = Bar(df, 'Data_anl', 'Power', bar_width = 0.2, xlabel = '', title = 'Dana Analysis Power', ylabel = 'Power',
-            color = color('Data_anl', palette = ['blue', 'green']))
-    # set y axis default range
-    d.y_range = Range1d(0, 10)
-
-    return d
-
-
-#=============== Charts ========================
+# =============== http://kelesidis.de/charts/  page ========================
 
 
 def PygalLine():
-
-
-    line_chart = pygal.Line(width=600, height=450)
+    line_chart = pygal.Line(width = 600, height = 450)
     line_chart.title = 'Pygal Line Chart'
     line_chart.x_labels = map(str, range(1880, 1887))
     ys = [i for i in sample.columns[1:]]
@@ -59,7 +37,6 @@ def PygalLine():
 
 def HLevelLine():
     # sample = pd.read_table('http://kelesidis.de/static/data/sample.txt')
-
     # Use the Sample Data
 
     # Make a list with the months
@@ -69,13 +46,12 @@ def HLevelLine():
     TOOLTIPS = [("Year", "$~x"),
                 ("Temp", "$y")]
 
-    #make our line configurations
-    #import from df, x= the Year column, y = the ys list we created above
-    p = Line(sample, x='Year', y=ys, title="Hight Level Bokeh Line Chart", legend="bottom_left",
-             ylabel='Temp',  tools=TOOLS ,width=600, height=450, responsive = True)
+    # make our line configurations
+    # import from df, x= the Year column, y = the ys list we created above
+    p = Line(sample, x = 'Year', y = ys, title = "Hight Level Bokeh Line Chart", legend = "bottom_left",
+             ylabel = 'Temp', tools = TOOLS, width = 600, height = 450, responsive = True)
 
-
-    #hover tool configuration
+    # hover tool configuration
     p_hover = p.select(HoverTool)
     p_hover.tooltips = TOOLTIPS
 
@@ -83,12 +59,15 @@ def HLevelLine():
 
     return p
 
-#  =============== End Charts ========================
+
+#  =============== End Charts page =====================================================
 
 
-#=========== finance ========================
+# =========== finance =======================================================
 
-#import companies names for finance()
+# ===== Everything must migrate to MySQL DB later =====
+
+# import companies names for finance()
 def table_companies():
     # import companies, set and sort index, use only needed columns
     companies = pd.read_csv('http://kelesidis.de/static/data/companies.csv')
@@ -106,10 +85,10 @@ def table_companies():
     nyse = nyse.sort_index()
     nyse = nyse[['Name', 'IPOyear', 'Sector', 'Industry']]
 
-
     return companies, amex, nyse
 
-#import info table for finance()
+
+# import info table for finance()
 def info(fin):
     if request.method == "POST":
         # 'chart' is the name of <input> tag in html file
@@ -138,15 +117,12 @@ def info(fin):
 
 
 def finance(fin):
-
-
     if request.method == "POST":
         chart = request.form.get('chart').upper()
 
     # fin will be defined at finance.py
     else:
         chart = fin
-
 
     start = datetime.datetime(2010, 3, 1)
     end = datetime.datetime(2016, 4, 1)
@@ -169,53 +145,54 @@ def finance(fin):
     vol = [str(i) for i in df.Volume]
     adj = [str(i) for i in df['Adj Close']]
 
-
     TOOLS = 'pan,wheel_zoom,box_zoom,hover,crosshair,resize,reset'
 
-    source1 = cds({"Date": dates, "Open": open_p, "High": high,
-                                "Low": low, "Close": close_p, "Volume": vol, "Adj": adj})
+    source1 = cds({
+                      "Date": dates, "Open": open_p, "High": high,
+                      "Low": low, "Close": close_p, "Volume": vol, "Adj": adj
+                      })
 
-    source2 = cds({"Date": dates, "Open": open_p, "High": high,
-                                "Low": low, "Close": close_p, "Volume": vol, "Adj": adj})
-
+    source2 = cds({
+                      "Date": dates, "Open": open_p, "High": high,
+                      "Low": low, "Close": close_p, "Volume": vol, "Adj": adj
+                      })
 
     TOOLTIPS = [("Date", "@Date"), ("Open", "@Open"), ("High", "@High"),
                 ("Low", "@Low"), ("Close", "@Close"), ("Volume", "@Volume"), ("Adj Close*", "@Adj")]
 
-
     # Make the figure configuration
-    f = figure(height=270, x_axis_type="datetime", tools=TOOLS, responsive = True)
+    f = figure(height = 270, x_axis_type = "datetime", tools = TOOLS, responsive = True)
 
-    #Add title and label
-    f.title = 'Historical Prices for ' + chart+ " from 1.03.2010 until yesterday"
+    # Add title and label
+    f.title = 'Historical Prices for ' + chart + " from 1.03.2010 until yesterday"
     f.xaxis.axis_label = 'Date'
     f.yaxis.axis_label = 'Open Prices'
 
-    #make line and circle plots
-    f.line(df.index, df.Open, source=source2, color='blue')
+    # make line and circle plots
+    f.line(df.index, df.Open, source = source2, color = 'blue')
     # f.circle(df.index, df.Open, source=source1, color='navy', size=0.5, alpha=0.8)
 
     # other hover tool conf
     p_hover = f.select(HoverTool)
     p_hover.tooltips = TOOLTIPS
 
-
     return f
 
-########## END Finance ##############
+
+# ============= END Finance =======================
 
 
-######## Liverpool ################
+# ============== Coutihno ==============================
+# the next plot used at the home page and http://kelesidis.de/coutinho/,
 
-#/notebooks/Liverpool/coutinho_beter_import_v0.3.ipynb
+# /notebooks/Liverpool/coutinho_beter_import_v0.3.ipynb
 
 def coutinho():
-
     # read the csv, #Add columns name, delede 2 unnamed colums, parse dates,
     # set index, dayfirst True because pandas can read the 5.1.16 as 1.5.16
     df = pd.read_excel('http://kelesidis.de/static/data/liverpool/coutinho.xlsx',
-                       names=['Com', 'Date', 'HT', 'Score', 'AT', 'NaN', 'NaN', 'Min', 'Rating'])
-    df.Date = pd.to_datetime(df.Date, dayfirst=True)
+                       names = ['Com', 'Date', 'HT', 'Score', 'AT', 'NaN', 'NaN', 'Min', 'Rating'])
+    df.Date = pd.to_datetime(df.Date, dayfirst = True)
 
     df = df.drop('NaN', 1)
     df = df.set_index('Date')
@@ -226,7 +203,7 @@ def coutinho():
     df['Game'] = df.HT + ' ' + df.Score.map(str) + ' ' + df.AT
 
     # delete not needed columns
-    df = df.drop(['HT', 'Score', 'AT'], axis=1)
+    df = df.drop(['HT', 'Score', 'AT'], axis = 1)
 
     # change the columns order
     df = df[['Com', 'Game', 'Min', 'Rating']]
@@ -241,19 +218,19 @@ def coutinho():
     # i will fill N/A with 4.7, because othervise the plot will have from 0-6 empty place
     df_na = df_na.fillna(4.7)
 
-    ###### Hover tool Base config #####
+    # ======== Hover tool Base config ===============
 
-    #Now our data is ready, next step is to prepare the data for the Hover Tool
+    # Now our data is ready, next step is to prepare the data for the Hover Tool
 
-    #the dates: convert to series, change format to ( '%d-%m-%y' ) and ad the data to a list,
-    #so we will make 2 list, dates_cp and dates_na one for each df (df_cp & df_na)
+    # the dates: convert to series, change format to ( '%d-%m-%y' ) and ad the data to a list,
+    # so we will make 2 list, dates_cp and dates_na one for each df (df_cp & df_na)
     dates_cp = pd.Series(df_cp.index)
     dates_cp = dates_cp.dt.strftime('%d-%m-%y').tolist()
 
     dates_na = pd.Series(df_na.index)
     dates_na = dates_na.dt.strftime('%d-%m-%y').tolist()
 
-    #Now we will make list for the other data.( hover tool works better with strings)
+    # Now we will make list for the other data.( hover tool works better with strings)
 
     # make lists for hover tool with rating,
     compe_cp = [i for i in df_cp.Com]
@@ -265,12 +242,13 @@ def coutinho():
     game_na = [i for i in df_na.Game]
     min_na = [i for i in df_na.Min]
     rating_na = ['Rating N/A' for i in range(len(df_na))]
+
     # !! Wall time: 500 µs !! #
 
     # define 2 func for each of our df's to loop throught the competitions and make a list with links to the
     # photos for every competition with the correct order.
 
-    #http://128.199.61.9/static/img/Liverpool_competition_ico/
+    # http://kelesidis.de/static/img/Liverpool_competition_ico/
 
     def photo_links_cp():
         epl = 'http://kelesidis.de/static/img/Liverpool_competition_ico/epl.png'
@@ -282,8 +260,9 @@ def coutinho():
             elif i == 'IUC':
                 links.append(iuc)
             else:
-                print ('you miss something')#for debug
+                print ('you miss something')  # for debug
         return links
+
     img_cp = photo_links_cp()
 
     def photo_links_na():
@@ -305,18 +284,19 @@ def coutinho():
             elif i == 'EFC':
                 links.append(efc)
         return links
+
     img_na = photo_links_na()
 
-    #tools that we add to our plot:
+    # tools that we add to our plot:
 
     TOOLS = 'pan,wheel_zoom,hover,crosshair,resize,reset'
 
-    #Create the ColumnDataSource's for each df and eventually for each line plot
+    # Create the ColumnDataSource's for each df and eventually for each line plot
     source_cp = cds(
-        {"Date": dates_cp, 'Comp': compe_cp, 'Game': game_cp, 'Min': min_cp, 'Rating': df_cp.Rating, 'Img': img_cp})
+            {"Date": dates_cp, 'Comp': compe_cp, 'Game': game_cp, 'Min': min_cp, 'Rating': df_cp.Rating, 'Img': img_cp})
 
     source_na = cds(
-        {"Date": dates_na, 'Comp': compe_na, 'Game': game_na, 'Min': min_na, 'Rating': rating_na, 'Img': img_na})
+            {"Date": dates_na, 'Comp': compe_na, 'Game': game_na, 'Min': min_na, 'Rating': rating_na, 'Img': img_na})
 
     # To add img to Hover Tool, we can add custom html to the ToolTips
 
@@ -345,27 +325,27 @@ def coutinho():
             </div>
         """
 
-    ###### Hover tool Base config END #####
+    # ======== Hover tool Base config END =============
 
-    #######   Chart   ###########
+    # =====   Chart =====================
 
-    #make figure,( the tools links to the TOOLS we create earlier, as the source with source_cp / _na )
-    #responsive = True, make the plot to be responsive in web pages, when minimize maximize etc.
-    p_lfc = figure(x_axis_type='datetime', width=800, height=450, tools=TOOLS, responsive = True)
+    # make figure,( the tools links to the TOOLS we create earlier, as the source with source_cp / _na )
+    # responsive = True, make the plot to be responsive in web pages, when minimize maximize etc.
+    p_lfc = figure(x_axis_type = 'datetime', width = 800, height = 450, tools = TOOLS, responsive = True)
 
     # df_cp line
-    p_lfc.line(df_cp.index, df_cp.Rating, color='DodgerBlue', source=source_cp)
-    p_lfc.circle(df_cp.index, df_cp.Rating, size=5, color='DodgerBlue', source=source_cp)
+    p_lfc.line(df_cp.index, df_cp.Rating, color = 'DodgerBlue', source = source_cp)
+    p_lfc.circle(df_cp.index, df_cp.Rating, size = 5, color = 'DodgerBlue', source = source_cp)
 
     # df_na line
-    p_lfc.line(df_na.index, df_na.Rating, color='red', legend='Rating N/A', line_dash=[5, 5], source=source_na)
-    p_lfc.circle(df_na.index, df_na.Rating, size=7, color='red', legend='Rating N/A', source=source_na)
+    p_lfc.line(df_na.index, df_na.Rating, color = 'red', legend = 'Rating N/A', line_dash = [5, 5], source = source_na)
+    p_lfc.circle(df_na.index, df_na.Rating, size = 7, color = 'red', legend = 'Rating N/A', source = source_na)
 
     # Fill the chart background with different colors with the BoxAnnotation
 
-    high_box = ba(plot=p_lfc, bottom=7.49, fill_alpha=0.1, fill_color='#00ff00')
-    mid_box = ba(plot=p_lfc, bottom=6.49, fill_alpha=0.1, top=7.49, fill_color='yellow')
-    low_box = ba(plot=p_lfc, top=6.49, fill_alpha=0.1, fill_color='red')
+    high_box = ba(plot = p_lfc, bottom = 7.49, fill_alpha = 0.1, fill_color = '#00ff00')
+    mid_box = ba(plot = p_lfc, bottom = 6.49, fill_alpha = 0.1, top = 7.49, fill_color = 'yellow')
+    low_box = ba(plot = p_lfc, top = 6.49, fill_alpha = 0.1, fill_color = 'red')
 
     p_lfc.renderers.extend([high_box, mid_box, low_box])
 
@@ -373,39 +353,11 @@ def coutinho():
     # p.legend.location = (40,150) #x,y pixels from botom left corner of screen!
     p_lfc.legend.location = "top_left"
 
-    #Last Hover Tool Configs.( uncomment p_hover.mode to change hover mode ;) )
+    # Last Hover Tool Configs.( uncomment p_hover.mode to change hover mode ;) )
     hover_lfc = p_lfc.select(HoverTool)
     # p_hover.mode = 'vline'
     hover_lfc.tooltips = TOOLTIPS
 
     return p_lfc
 
-####### END Liverpool #################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# ========== END Liverpool ====================================

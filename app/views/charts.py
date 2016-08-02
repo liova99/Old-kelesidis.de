@@ -1,3 +1,5 @@
+# link for this page http://kelesidis.de/charts/, just to test bokeh and pygal
+
 #import thr app from init:
 #app = Flask(__name__)
 #from app import app

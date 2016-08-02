@@ -53,9 +53,8 @@ def homepage():
     if request.method == 'POST':
         fin = str(request.form.get('chart')).upper()
 
-        # open chart in a new window & redirect the page to the chart on index page
+        # open chart in a new window & redirect the page to the selected chart
         # otherwise it will returned to the top of index page
-
         return redirect('http://kelesidis.de/historical_data/%s' % (fin))
         #return redirect('http://kelesidis.de/#finance_chart_index')
 

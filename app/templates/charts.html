@@ -1,13 +1,13 @@
+<!------------ This file is temporally not used------------------------------------->
+
 {% extends "base.html" %}
 <! DOCTYPE html>
 <html lang="en">
 
 {% block content %}
 
-
 <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
 <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
-
 
 <!--
 <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script> -->
@@ -16,18 +16,10 @@
     Bokeh.set_log_level("info");
 </script>
 
-
-
-
-
 <body>
     <div id="container">
         <div id="content">
-            <h3 id="pandas_header">Random Charts </h3>
-
-
-
-
+            <h3 id="pandas_header">Thank's for viewing my source code </h3>
 
             <div id="HLevelLine">
                 {{ script|safe }}
@@ -40,11 +32,6 @@
 
 
             </div>
-
-
-
-
-
 
         </div>
     </div>

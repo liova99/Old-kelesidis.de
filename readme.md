@@ -1,6 +1,4 @@
-# flaskapp
-
-#### A simple webapp with flask
+# kelesidis.de
 
 ### Notes:
 The requiremets.txt is not updated.
