@@ -58,6 +58,14 @@ def homepage():
                             script2 = script2, div2 = div2,info = info)
 
 
+@app.route("/bio/")
+def bio():
+    title = "Kelesidis Levan"
+
+    return render_template("bio.html", title = title)
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 

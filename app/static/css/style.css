@@ -71,7 +71,7 @@ table#player_name tr:nth-child(odd){
 
 .navbar{
 	display: inline-block;
-	margin: 0.8em;
+	margin: .8em;
 }
 
 
@@ -93,8 +93,7 @@ div.navbar a:hover {
 div.navbar_github img{
     width: 25px;
     height: auto;
-    margin-top: 10px;
-    margin-bottom: -10px;
+    margin: 0 0 -.5em .8em;
 
 }
 
@@ -664,6 +663,23 @@ input[name=button_arrow] {
 
 
 /* ********************** */
+
+
+/* ../bio */
+
+.bio {
+    width: 750px;
+    height: auto;
+    padding: 1em;
+    border: 1px solid #efefef;
+    margin: 0 auto;
+    font-size: 1.3em;
+    font-family: georgia;
+
+}
+
+div.bio p{
+}
 
 /* **** Liverpool  ****** */
 

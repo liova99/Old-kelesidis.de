@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+<! DOCTYPE html >
+<html lang="en">
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}" type="text/css"/>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
+
+<body >
+    <div id="container">
+        <div id="content">
+
+            <div class="bio">
+
+                <p>Name: Kelesidis Levan </p>
+                <p>Age: 28</p>
+                <p>Nationality: Greek</p>
+                <br>
+
+                <p style="font-style:italic">Kelesidis Levan is a self-taught developer, he speaks perfectly Greek,
+                Russian (native languages) and English (intermediate).
+                Currently he is learning German and aims to make an “Ausbildung” at Computer science.
+                He loves to code and consider himself as a creative person,
+                he also has a strong willingness to learn and ability to learn fast.
+                Since 2014 he lives in Munich and has worked as a junior CNC Turning machine programmer and operator.</p>
+                <br>
+
+                <p style="font-weight:bold;" >Programming Skills: Python.</p>
+                <p>Created mini web app witch takes as input a symbol of a NASDAQ company
+                (e.g. TSLA for Tesla, AAPL for apple) store it in a MySQL DB and return
+                a beautiful chart with historical stock prices from 2010 until the last trade day.</p>
+                <a href="http://kelesidis.de/historical_data/" target="_blank">http://kelesidis.de/historical_data </a>
+                <br><br>
+
+                <p style="font-weight:bold;">Web development: HTML/CSS</p>
+                <p>Worked as a freelancer in Moscow (2012), created some static websites like,</p>
+                <a href="http://nikol-design.ru/" target="_blank"> http://nikol-design.ru</a>
+                <br><br>
+
+                <p style="font-weight:bold;" >Data: MySQL, Python Pandas</p>
+                <p>Basic Knowledge on databases and data analysis,</p>
+                <a href="http://kelesidis.de/coutinho/" target="_blank">http://kelesidis.de/coutinho</a>
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+</body>
+{% endblock %}
+
+
+
+{% block footer %}
+{{ super() }}
+{% endblock %}
+
+</html>
