@@ -36,8 +36,9 @@ def contact():
 
 @contact_success_blueprint.route("/contact_success/")
 def contact_success():
+    title = "Message sent"
 
-    return render_template("contact_success.html")
+    return render_template("contact_success.html", title = title)
 
 
 class contact_form(Form):

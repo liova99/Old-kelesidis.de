@@ -151,7 +151,10 @@ div.hello p {
 }
 
 .ariane_wrapper {}
-.ariane {}
+.ariane {
+    width: 470px;
+    margin: 0 auto;
+}
 .ariane_img {}
 
 div.ariane img {}
@@ -672,6 +675,7 @@ input[name=button_arrow] {
     height: auto;
     padding: 1em;
     border: 1px solid #efefef;
+    border-radius: 4px;
     margin: 0 auto;
     font-size: 1.3em;
     font-family: georgia;
@@ -853,6 +857,13 @@ form input#submit:hover {
   background-image: -o-linear-gradient(top, #dbdbdb, #cccccc);
   background-image: linear-gradient(top, #dbdbdb, #cccccc);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#dbdbdb, endColorstr=#cccccc);
 */}
+
+#contact_success {
+    width: 700px;
+    margin: 0 auto;
+    font-size: 1.3em;
+    font-family: "georgia"
+}
 
 /* Message flashing */
 .flash {
