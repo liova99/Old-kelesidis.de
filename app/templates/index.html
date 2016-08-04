@@ -5,6 +5,11 @@
 {% block head%}
 {{ super() }}
 
+    <meta name="description" content="Kelesidis Levan is a self-taught developer.
+     He loves to code and consider himself as a creative person">
+    <meta property="og:image" content="{{ url_for('static', filename = 'img/kelesidis levan.jpg') }}" />
+
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
     <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
 
@@ -149,10 +154,7 @@
                 <p>The visualizations was made with <a href="http://bokeh.pydata.org/en/latest/" target="_blank"> bokeh</a>.</p>
                 <p>Source code on <a href="https://github.com/liova99/kelesidis.de" target="_blank">GitHub</a>. </p>
 
-<!--
-                <p>Do not scale the webpage to see if it’s responsive, I don’t like responsive web design.</p>
-                 <p><a href="#">Read why</a> i prefer to make separate mobile version</p>
--->
+                <p>Do not scale the webpage to see if it’s responsive, it isn't yet. </p>
 
                 <p></p>
 

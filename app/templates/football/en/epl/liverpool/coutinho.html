@@ -4,6 +4,14 @@
 <! DOCTYPE html>
 <html lang="en">
 
+{% block head%}
+{{ super() }}
+
+<meta name="description" content="Chart with Philippe Coutinho raintings on season 2015/2016">
+
+{% endblock head %}
+
+
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
 <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>

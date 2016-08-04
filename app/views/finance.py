@@ -13,7 +13,7 @@ finance_blueprint = Blueprint('finance_blueprint', __name__)
 @finance_blueprint.route('/historical_data/', defaults={'selected_company': 'TSLA'}, methods = ['GET', 'POST'])
 @finance_blueprint.route('/historical_data/<string:selected_company>', methods = ['GET', 'POST'])
 def finance_data(selected_company):
-    title = 'finance'
+    title = 'Historical Stock Prices'
 
     from ..my_func.my_plots import finance, info
 

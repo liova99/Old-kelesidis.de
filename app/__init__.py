@@ -34,7 +34,7 @@ app.register_blueprint(finance_blueprint)
 
 @app.route('/', methods = ['GET', 'POST'])
 def homepage():
-    title = 'home'
+    title = 'Kelesidis Levan'
     from my_func.my_plots import coutinho, finance, info
 
     p = coutinho()
@@ -60,7 +60,7 @@ def homepage():
 
 @app.route("/bio/")
 def bio():
-    title = "Kelesidis Levan"
+    title = "Kelesidis Levan Bio"
 
     return render_template("bio.html", title = title)
 

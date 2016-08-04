@@ -8,6 +8,11 @@
 
 {% block head %}
 {{ super() }}
+
+    <meta name="description" content=" A mini web app witch takes as input a symbol of a NASDAQ company
+     and returns a chart with historical stock prices.">
+    <meta name="keywords" content="Kelesidis,Levan,Historical Stock Prices, ">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
     <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
 {% endblock %}

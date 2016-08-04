@@ -1,4 +1,4 @@
-import MySQLdb
+from MySQLdb import connect
 # local password file
 from app.passwords import *
 import os
@@ -12,7 +12,7 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 # Define MySQL database
 #connection takes one argument, the db name.
 def mysql_connect(db):
-    conn = MySQLdb.connect(host= host,
+    conn = connect(host= host,
                            user = user ,
                            passwd = passwd,
                            db = db)
