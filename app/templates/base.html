@@ -32,11 +32,12 @@
 {% block header %}
 
     <header id="header">
-        <div class="navbar"><a href="/"><p> Home</p> </a></div>
+        <div class="navbar"><a href="/"><p>Home</p> </a></div>
         <!--<div class="navbar"><a href="{{ url_for('charts.charts') }}"><p> Charts</p> </a></div>-->
-        <div class="navbar"><a href="{{ url_for('finance_blueprint.finance_data') }}"><p> Historical Stock Data</p> </a></div>
-        <div class="navbar"><a href="http://blog.kelesidis.de/" target="_blank"><p> Blog</p> </a></div>
-        <div class="navbar"><a href="/bio/"><p> Bio</p> </a></div>
+        <div class="navbar"><a href="{{ url_for('finance_blueprint.finance_data') }}"><p>Historical Stock Data</p> </a></div>
+        <div class="navbar"><a href="http://blog.kelesidis.de/" target="_blank"><p>Blog</p> </a></div>
+        <div class="navbar"><a href="/bio/"><p>Bio</p> </a></div>
+        <div class="navbar"><a href="{{ url_for('contact.contact') }}"><p>Contact</p> </a></div>
 
         <!-- github ico -->
         <div class="navbar_github"> <a href="https://github.com/liova99" target="_blank">

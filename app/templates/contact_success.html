@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+<! DOCTYPE html >
+<html lang="en">
+
+{% block head%}
+{{ super() }}
+
+<!--{# Redirect tag #}-->
+<!--<meta http-equiv="refresh" content="3; url=http://www.kelesidis.de/" />-->
+
+{% endblock head %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}" type="text/css"/>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
+
+<body >
+    <div id="container">
+        <div id="content">
+
+            <h3>Thank's for your message. We'll get back to you shortly </h3>
+            <h4>Redirecting in 3 seconds...</h4>
+
+
+
+        </div>
+    </div>
+
+
+
+</body>
+{% endblock %}
+
+
+
+{% block footer %}
+{{ super() }}
+{% endblock %}
+
+</html>

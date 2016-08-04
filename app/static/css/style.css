@@ -665,7 +665,7 @@ input[name=button_arrow] {
 /* ********************** */
 
 
-/* ../bio */
+/******* ../bio  ************/
 
 .bio {
     width: 750px;
@@ -675,11 +675,8 @@ input[name=button_arrow] {
     margin: 0 auto;
     font-size: 1.3em;
     font-family: georgia;
-
 }
 
-div.bio p{
-}
 
 /* **** Liverpool  ****** */
 
@@ -744,6 +741,128 @@ div.bio p{
 	color: white;
 }
 
+
+/* Contact form */
+
+#contact_wrapper {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+#contact_info {
+    width: 300px;
+    float: left;
+    font-family: "courier new";
+    margin-right: 60px;
+    padding: 10px;
+    color: #4b4949;
+      
+}
+
+#contact {
+    width: 500px;
+    float: left;
+}
+
+form[name=contact ] p{
+  font-size: 1.1em;
+  font-weight: bold;
+  display: block;
+  padding: 10px 0;
+  font-family: "courier new";
+  color: #4b4949;
+}
+ 
+form input#name,
+form input#email {
+    width: 400px;
+    background-color: #fafafa;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 2px solid #008000;;
+    padding: 5px;
+    font-size: 1em;
+    font-family: georgia;
+}
+
+
+form input#name:hover,
+form input#email:hover {
+    border: 2px solid #6bca6f;
+
+}
+form input#name:focus,
+form input#email:focus {
+    border: 2px solid #6bca6f;
+    outline: 0;
+
+}
+ 
+form textarea#message {
+    width: 500px;
+    height: 100px;
+    background-color: #fafafa;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 2px solid #008000;;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 1em;
+    font-family: georgia;
+}
+form textarea#message:hover {
+    border: 2px solid #6bca6f;
+}
+form textarea#message:focus {
+    border: 2px solid #6bca6f;
+    outline: 0;
+}
+
+ 
+form input#submit {
+    font-size: 1.5em;
+    font-family: "courie new";
+    width: 6em;
+    height: 1.6em;
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px;
+    border-radius: 4px;
+    border:2px solid #008000;
+    font-weight:bold; 
+    text-align: center; 
+    color: #ffffff; 
+    background-color: #008000;
+/*    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #e5e5e5));
+    background-image: -webkit-linear-gradient(top, #f4f4f4, #e5e5e5);
+    background-image: -moz-linear-gradient(top, #f4f4f4, #e5e5e5);
+    background-image: -ms-linear-gradient(top, #f4f4f4, #e5e5e5);
+    background-image: -o-linear-gradient(top, #f4f4f4, #e5e5e5);
+    background-image: linear-gradient(top, #f4f4f4, #e5e5e5);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f4f4f4, endColorstr=#e5e5e5);
+*/}
+ 
+form input#submit:hover {
+  cursor: pointer;
+  border:2px solid #04a604; 
+  background-color: #04a604;
+/*  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dbdbdb), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(top, #dbdbdb, #cccccc);
+  background-image: -moz-linear-gradient(top, #dbdbdb, #cccccc);
+  background-image: -ms-linear-gradient(top, #dbdbdb, #cccccc);
+  background-image: -o-linear-gradient(top, #dbdbdb, #cccccc);
+  background-image: linear-gradient(top, #dbdbdb, #cccccc);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#dbdbdb, endColorstr=#cccccc);
+*/}
+
+/* Message flashing */
+.flash {
+  background-color: #FBB0B0;
+  padding: 10px;
+  width: 400px;
+}
+
+
+
 @media all and (max-height: 600px) {
 
     .index_p2 {
@@ -752,9 +871,6 @@ div.bio p{
         height: auto;
         
     }
-
-
-
 }
 
 

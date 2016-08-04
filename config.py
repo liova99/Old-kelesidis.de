@@ -29,10 +29,17 @@ THREADS_PER_PAGE = 2
 
 # Enable protection agains *Cross-site Request Forgery (CSRF)*
 CSRF_ENABLED     = True
+WTF_CSRF_ENABLED = True
 
 # Use a secure, unique and absolutely secret key for
 # signing the data.
 CSRF_SESSION_KEY = CSRF_KEY
 
-# Secret key for signing cookies
+# Secret key for signing cookies, and WTF
 SECRET_KEY = SECRET_KEY
+
+MAIL_SERVER = "smtp.gmail.com"
+MAIL_PORT = 465
+MAIL_USE_SSL = True
+MAIL_USERNAME = google_username
+MAIL_PASSWORD = google_password

@@ -13,23 +13,37 @@
 from bokeh.embed import components
 from flask import Flask, render_template, request, redirect,url_for
 from webbrowser import open
+from flask_mail import Mail, Message
 
 # MySQL connection
 # Warning! the password import must be above the connection import!!
 from app.passwords import *
 from config import mysql_connect
 
+app = Flask(__name__)
+mail = Mail()
+
 # Blueprints import
 from app.views.charts import charts_blueprint
 from app.views.finance import finance_blueprint
 from app.views.football import football_blueprint
+from app.views.contact import contact_blueprint
+from app.views.bio import bio_blueprint
+from app.views.contact import contact_success_blueprint
 
-app = Flask(__name__)
 
-#Blueprints registers
+# Tell flask you use the configuration from  config
+app.config.from_object('config')
+
+mail.init_app(app)
+
+# Blueprints registers
 app.register_blueprint(charts_blueprint)
 app.register_blueprint(football_blueprint)
 app.register_blueprint(finance_blueprint)
+app.register_blueprint(contact_blueprint)
+app.register_blueprint(bio_blueprint)
+app.register_blueprint(contact_success_blueprint)
 
 
 @app.route('/', methods = ['GET', 'POST'])
@@ -58,16 +72,9 @@ def homepage():
                             script2 = script2, div2 = div2,info = info)
 
 
-@app.route("/bio/")
-def bio():
-    title = "Kelesidis Levan Bio"
-
-    return render_template("bio.html", title = title)
-
-
-
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 #========================== INFO =====================================

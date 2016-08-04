@@ -13,8 +13,6 @@ from config import mysql_connect
 football_blueprint = Blueprint('football', __name__ )
 
 
-
-
 @football_blueprint.route('/liverpool/')
 def liverpool():
     title = 'Liverpool YNWA'

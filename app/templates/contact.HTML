@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+<! DOCTYPE html >
+<html lang="en">
+{% block content %}
+
+<body >
+    <div id="container">
+        <div id="content">
+            <div id="contact_wrapper">
+                <div id="contact_info">
+
+                    <h3>Kelesidis Levan</h3><br>
+                    <h3>levan.kelesidis@gmail.com</h3><br>
+                    <h3>+49 152 12699 413</h3>
+
+                </div>
+                <div id="contact">
+                            <!--{# Flash message #}-->
+                    {% for message in form.name.errors %}
+                      <div class="flash">{{ message }}</div>
+                    {% endfor %}
+
+                    {% for message in form.email.errors %}
+                      <div class="flash">{{ message }}</div>
+                    {% endfor %}
+
+                    {% for message in form.message.errors %}
+                      <div class="flash">{{ message }}</div>
+                    {% endfor %}
+
+
+                    <form action="{{ url_for('contact.contact') }}" method="post" name="contact">
+
+
+                        <!--{# use CSRF  #}-->
+                        {{ form.hidden_tag() }}
+
+                        <!--{# create form#}-->
+
+                        <p>Name*</p>
+                        {{ form.name(size=30) }}
+
+                        <p>Email*</p>
+                        {{ form.email(size=30) }}
+
+                        <p>Message*</p>
+                        {{ form.message }}
+
+                        {{ form.submit }}
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>
+{% endblock %}
+
+
+
+{% block footer %}
+{{ super() }}
+{% endblock %}
+
+</html>
