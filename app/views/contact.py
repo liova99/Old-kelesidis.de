@@ -23,7 +23,7 @@ def contact():
             return render_template("contact.html",form = form, title = title)
 
         else:
-            msg = Message(form.name.data, sender = 'levan.list@gmail.com', recipients = ['levan.kelesidis@gmail.com'] )
+            msg = Message(form.name.data, sender = 'levan@kelesidis.de', recipients = ['levan@kelesidis.de'] )
             msg.body = """
             From: %s <%s>
             %s

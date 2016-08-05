@@ -38,8 +38,8 @@ CSRF_SESSION_KEY = CSRF_KEY
 # Secret key for signing cookies, and WTF
 SECRET_KEY = SECRET_KEY
 
-MAIL_SERVER = "smtp.gmail.com"
+MAIL_SERVER = "smtp.zoho.com"
 MAIL_PORT = 465
 MAIL_USE_SSL = True
-MAIL_USERNAME = google_username
-MAIL_PASSWORD = google_password
+MAIL_USERNAME = zoho_username
+MAIL_PASSWORD = zoho_password
