@@ -65,7 +65,7 @@ def HLevelLine():
 
 # =========== finance =======================================================
 
-# ===== Everything must migrate to MySQL DB later =====
+# TODO: merge and migrate to MySQL DB later
 
 # import companies names for finance()
 def table_companies():

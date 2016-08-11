@@ -26,8 +26,19 @@ html, body {
 
 a {
     text-decoration: none;
-    color: #8b008b;
+    color: #008000;
+    border-bottom: 1px dotted #008000;
 }
+a:hover {
+    color: 00a200;
+    border-bottom: 1px dotted #00a200;
+}
+
+.img_link {
+    border: none;
+}
+.img_link:hover {
+    border:none;
 }
 
 /* ========= Players Table ===================*/

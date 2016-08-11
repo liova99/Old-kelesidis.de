@@ -8,7 +8,6 @@ from time import sleep
 from app import mail
 
 
-
 contact_blueprint = Blueprint("contact", __name__)
 contact_success_blueprint = Blueprint("contact_success", __name__)
 

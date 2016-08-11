@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+<! DOCTYPE html >
+<html lang="en">
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}" type="text/css"/>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
+
+<body >
+    <div id="container">
+        <div id="content">
+
+            <div id="add_product">
+
+                <form action=""  method="POST">
+
+                    <input id="product_name" name="product_name" size="30" type="text" placeholder="Add Product Name">
+                    <input id="product_description" name="product_description" size="30" type="text" placeholder="Add Description" >
+                    <input id="price" name="price" size="10" type="number" placeholder="Add Price">
+
+                    <select name="categories">
+                        <option value="">Select a category</option>
+
+                        {% for category in categories %}
+                            <option name="{{category}}">{{category}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <button id="submit" name="add" type="submit" value="add_product"> Add </button>
+
+                </form>
+
+                <!--<h1> </h1>-->
+                <!--<h1>{{product_description}}</h1>-->
+                <!--<h1>{{price}}</h1>-->
+                <!--<h1>{{category}}</h1>-->
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+</body>
+{% endblock %}
+
+
+
+{% block footer %}
+{{ super() }}
+{% endblock %}
+
+</html>

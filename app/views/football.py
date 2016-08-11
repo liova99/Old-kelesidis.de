@@ -27,6 +27,7 @@ def liverpool():
         global Team
         global Full
         cur, conn = mysql_connect('football_15_16')
+        # self explanatory, select column "team" and "full" from table attenadace....
         cur.execute(('SELECT Team, Full FROM attendance_epl_s15 WHERE id=%d') % team_id)
         cur.close()
         conn.close()

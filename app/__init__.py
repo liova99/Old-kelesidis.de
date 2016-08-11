@@ -30,7 +30,7 @@ from app.views.football import football_blueprint
 from app.views.contact import contact_blueprint
 from app.views.bio import bio_blueprint
 from app.views.contact import contact_success_blueprint
-
+from app.views.leo_markt import leo_markt_blueprint
 
 # Tell flask you use the configuration from  config
 app.config.from_object('config')
@@ -44,7 +44,7 @@ app.register_blueprint(finance_blueprint)
 app.register_blueprint(contact_blueprint)
 app.register_blueprint(bio_blueprint)
 app.register_blueprint(contact_success_blueprint)
-
+app.register_blueprint(leo_markt_blueprint)
 
 @app.route('/', methods = ['GET', 'POST'])
 def homepage():
