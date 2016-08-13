@@ -1,36 +1,93 @@
-from flask import request
+from flask import request, flash, render_template,redirect
 from config import mysql_connect
 
-if request.method == "POST":
-    product_name = request.form.get("product_name")
-    product_description = request.form.get("product_description")
-    price = request.form.get("price")
-    category = request.form.get("categories")
-    print("variables ready")
-else:
-    print ("pizdariki")
 
 def import_categories():
     cur, conn = mysql_connect("leo_markt")
-
     cur.execute('SELECT name FROM category')
     cur.close()
     conn.close()
     categories = []
     for category in cur:
-        categories.extend(category)
+        categories.extend(category)  # cursor return a tuple from MySQL so i put it out of tuple with extend
     return categories
 
 
 def add_product():
+    # TODO user input checks, unicode error
     if request.method == "POST":
+        product_name = request.form.get("product_name")
+        product_description = request.form.get("product_description")
+        price = request.form.get("price")
+        category = request.form.get("categories")
+
         cur, conn = mysql_connect("leo_markt")
-        cur.execute('INSERT INTO products (name, description, price, category) VALUES ("%s","%s","%s","%s")'
-                    % (product_name, product_description, price, category))
+        cur.execute("""INSERT INTO products (name, description, price, category) VALUES (%s,%s,%s,%s)""",
+                    (product_name, product_description, price, category))
         conn.commit()
         print ("changes committed")
         cur.close()
         conn.close()
         print ("Connection closed")
+        flash("%s was added" % product_name)
+
+
+def add_category():
+
+    from app.views import leo_markt
+    leo_markt = leo_markt
+    def category_exists():
+        if request.method == "POST":
+            categories = import_categories()
+            categories_lower = [category.lower() for category in categories]
+            new_category = request.form.get("category_name").lower()
+            print (new_category)
+            if new_category in categories_lower:
+                return False
+
+    # TODO "to be or not to be" to.title() or not.title()
+    title = "Market DataBase Example"  # html page title
+    categories = import_categories()
+    new_category = request.form.get("category_name").title()
+
+    # TODO: check if input is empty
+
+    if (request.method == "POST") and (category_exists() == False):
+            flash("%s category already exists" % new_category)
+            return render_template("/leo_markt/leo_markt.html", title =title, categories = categories)
+
+    else:
+        cur, conn = mysql_connect("leo_markt")
+        cur.execute("""INSERT INTO category (name) VALUES (%s) """, (new_category,))
+        conn.commit()
+        print ("changes committed")
+        cur.close()
+        conn.close()
+        print ("Connection closed")
+        flash("%s category added" % new_category)
+        # TODO make auto refresh and update the category list (Ajax/js)
+
+
+def remove_category():
+
+
+    if request.method == "POST":
+        selected_category = request.form.get("categories_to_remove")
+        cur, conn = mysql_connect("leo_markt")
+        cur.execute("""DELETE FROM category WHERE name = %s """, (selected_category,))
+        conn.commit()
+        print("category Deledet")
+        cur.close()
+        conn.close()
+        print("connection closed")
+        flash("%s category was removed" % selected_category)
+
+def show_products():
+    if request.method == "POST":
+        selected_category = request.form.get("show_products")
+        cur, conn = mysql_connect("leo_markt")
+        pass
+
+# TODO make a Rename category func.
 
 

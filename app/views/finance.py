@@ -21,6 +21,7 @@ def finance_data(selected_company):
         #selected_company = str(request.form.get('chart'))
         cur, conn = mysql_connect('test')
 
+        # TODO MySQL bug, from Historical Stock Data page saves to DB always TSLA
         # MySQL command, for str don't forget the "" ( " %s " )
         # | finance is the db table, (search) is the column name |
         cur.execute( 'INSERT INTO finance (search) VALUES( "%s" )' % selected_company)

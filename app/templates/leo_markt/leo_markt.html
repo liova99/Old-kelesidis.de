@@ -2,6 +2,7 @@
 <! DOCTYPE html >
 <html lang="en">
 {% block content %}
+{# <!-- js of the visualisations visualisation --> #}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}" type="text/css"/>
 <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
 
@@ -12,11 +13,9 @@
             <div id="add_product">
 
                 <form action=""  method="POST">
-
                     <input id="product_name" name="product_name" size="30" type="text" placeholder="Add Product Name">
-                    <input id="product_description" name="product_description" size="30" type="text" placeholder="Add Description" >
+                    <textarea  id="product_description" name="product_description" placeholder="Add Description" ></textarea>
                     <input id="price" name="price" size="10" type="number" placeholder="Add Price">
-
                     <select name="categories">
                         <option value="">Select a category</option>
 
@@ -24,20 +23,65 @@
                             <option name="{{category}}">{{category}}</option>
                         {% endfor %}
                     </select>
-
-                    <button id="submit" name="add" type="submit" value="add_product"> Add </button>
-
+                    <button id="submit_product" name="add" type="submit" value="add_product"> Add </button>
                 </form>
-
-                <!--<h1> </h1>-->
-                <!--<h1>{{product_description}}</h1>-->
-                <!--<h1>{{price}}</h1>-->
-                <!--<h1>{{category}}</h1>-->
-
 
             </div>
 
+            <div id="add_category">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages%}
+                        {% for message in messages %}
+                            <div class="flash">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <form action="" method="POST">
+                    <input id="category_name" name="category_name" size="30" type="text" placeholder="Add Category Name">
+                    <button id="submit_category" name="add" type="submit" value="add_category"> Add </button>
+                </form>
+            </div>
 
+            <div id="delete_category">
+                <form action="" method="POST">
+                    <select name="categories_to_remove">
+                        <option value="">Select a category to delete</option>
+                        {% for category in categories %}
+                        <option name="{{category}}">{{category}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <button id="category" name="add" type="submit" value="remove_category"> Remove </button>
+                </form>
+            </div>
+
+            <div id="refresh_button">
+                <form action="" method="POST">
+                    {# <!--The name atr. of the button must be the same, otherwise bad request error --> #}
+                    <button id="refresh" name="add" type="submit" value="refresh">Refresh</button>
+                </form>
+            </div>
+
+            <div id="show_products">
+                <form>
+                    <select name="show_products">
+                        <option value="">Select a category</option>
+                        {% for category in categories %}
+                        <option name="{{category}}">{{category}}</option>
+                        {% endfor %}
+                    </select>
+                    <button id="show" name="add" type="submit" value="show_products">Show</button>
+                </form>
+
+                <div id="products_list">
+
+
+
+                </div>
+
+            </div>
 
 
         </div>
