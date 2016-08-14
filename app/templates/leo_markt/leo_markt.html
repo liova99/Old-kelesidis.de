@@ -30,7 +30,7 @@ window.onclick = function(event) {
 
             <div id="add_product">
 
-                <form id="add_product_form" action=""  method="POST">
+                <form  class="add_product_form" action=""  method="POST">
                     <input id="product_name" name="product_name"  type="text" placeholder="Add Product Name"><br>
                     <textarea  id="product_description" name="product_description" placeholder="Add Description" ></textarea><br>
                     <input id="product_price" name="price"  type="number" placeholder="Add Price"><br>
@@ -38,7 +38,7 @@ window.onclick = function(event) {
                     <select name="categories" id="categories">
                         <option value="">Select a category</option>
                         {% for category in categories %}
-                            <option name="{{category}}">{{category}}</option>
+                            <option  name="{{category}}">{{category}}</option>
                         {% endfor %}
                     </select><br>
                     <button id="submit_product_btn" name="add" type="submit" value="add_product"> Add </button>
@@ -46,52 +46,47 @@ window.onclick = function(event) {
             </div>
 
             <button id="add_product_btn" onclick="document.getElementById('add_product').style.display='block'"> add product</button>
-<script>
-// Get the modal
-var modal = document.getElementById('add_product');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-            <div id="add_category">
-                {% with messages = get_flashed_messages() %}
-                    {% if messages%}
-                        {% for message in messages %}
-                            <div class="flash">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-                <form action="" method="POST">
-                    <input id="category_name" name="category_name" size="30" type="text" placeholder="Add Category Name">
-                    <button id="submit_category" name="add" type="submit" value="add_category"> Add </button>
-                </form>
-            </div>
-
-            <div id="delete_category">
-                <form action="" method="POST">
-                    <select name="categories_to_remove">
-                        <option value="">Select a category to delete</option>
-                        {% for category in categories %}
-                        <option name="{{category}}">{{category}}</option>
-                        {% endfor %}
-                    </select>
-
-                    <button id="category" name="add" type="submit" value="remove_category"> Remove </button>
-                </form>
-            </div>
 
             <div id="refresh_button">
                 <form action="" method="POST">
                     {# <!--The name atr. of the button must be the same, otherwise bad request error --> #}
                     <button id="refresh" name="add" type="submit" value="refresh">Refresh</button>
                 </form>
+            </div>
+
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages%}
+                    {% for message in messages %}
+                        <div class="flash">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+
+            <div id="edit_categories">
+                <div id="add_category">
+                    <form action="" method="POST">
+                        <input id="category_name" name="category_name" size="30" type="text" placeholder="Add Category Name">
+                        <button id="submit_category" name="add" type="submit" value="add_category"> Add </button>
+                    </form>
+                </div>
+
+                <div id="delete_category">
+                    <form action="" method="POST">
+                        <select name="categories_to_remove">
+                            <option value="">Select a category to delete</option>
+                            {% for category in categories %}
+                            <option name="{{category}}">{{category}}</option>
+                            {% endfor %}
+                        </select>
+
+                        <button id="category" name="add" type="submit" value="remove_category"> Remove </button>
+                    </form>
+                </div>
             </div>
 
             <div id="show_products">
@@ -168,6 +163,19 @@ window.onclick = function(event) {
 
 
 </body>
+
+<script>
+// Get the modal
+var modal = document.getElementById('add_product');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
 {% endblock %}
 
 
