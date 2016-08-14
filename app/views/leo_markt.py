@@ -1,14 +1,13 @@
 # coding=utf-8
 from flask import render_template, Blueprint, flash, request,redirect
 
+from ..my_func.leo_markt import *  # my functions
+
 leo_markt_blueprint = Blueprint("leo_markt", __name__)
 
 
 @leo_markt_blueprint.route("/leo_markt/", methods = ["GET", "POST"])
 def leo_martk():
-
-    from ..my_func.leo_markt import (import_categories, add_product, add_category, remove_category, show_products,
-                                     delete_product)
 
     title = "Market DataBase Example"
 
@@ -30,9 +29,20 @@ def leo_martk():
     elif (request.method == "POST") and (request.form['add'] == "show_products"):
         print("show products")
         show_products()
+    elif (request.method == "POST" ) and (request.form['add'] == "sell_product"):
+        sell_product()
+    elif (request.method == "POST") and (request.form['add'] == "show_details"):
+        # show_details()
+        details_name, details_description, details_price, details_category, details_availability =  show_details()
+        return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
+                               products_zip = products_zip, details_name = details_name,
+                               details_description = details_description,
+                               details_price = details_price, details_category = details_category,
+                               details_availability = details_availability)
 
     else:
-        print("nothing hapend")
+        print("nothing pressed")
 
+    print("returnet here")
     return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
                            products_zip = products_zip)

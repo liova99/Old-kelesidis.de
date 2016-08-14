@@ -2,6 +2,8 @@
 <! DOCTYPE html >
 <html lang="en">
 {% block content %}
+
+
 {# <!-- js of the visualisations visualisation --> #}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}" type="text/css"/>
 <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
@@ -10,24 +12,51 @@
     <div id="container">
         <div id="content">
 
+
+
+<!--<script>
+// Get the modal
+var modal = document.getElementById('show_details_box');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>-->
+
+
+
             <div id="add_product">
 
-                <form action=""  method="POST">
-                    <input id="product_name" name="product_name" size="30" type="text" placeholder="Add Product Name">
-                    <textarea  id="product_description" name="product_description" placeholder="Add Description" ></textarea>
-                    <input id="price" name="price" size="4" type="number" placeholder="Add Price">
-                    <input id="availability" name="availability" size="4" type="number" placeholder="Availability">
-                    <select name="categories">
+                <form id="add_product_form" action=""  method="POST">
+                    <input id="product_name" name="product_name"  type="text" placeholder="Add Product Name"><br>
+                    <textarea  id="product_description" name="product_description" placeholder="Add Description" ></textarea><br>
+                    <input id="product_price" name="price"  type="number" placeholder="Add Price"><br>
+                    <input id="availability" name="product_availability"  type="number" placeholder="Availability"><br>
+                    <select name="categories" id="categories">
                         <option value="">Select a category</option>
-
                         {% for category in categories %}
                             <option name="{{category}}">{{category}}</option>
                         {% endfor %}
-                    </select>
-                    <button id="submit_product" name="add" type="submit" value="add_product"> Add </button>
+                    </select><br>
+                    <button id="submit_product_btn" name="add" type="submit" value="add_product"> Add </button>
                 </form>
-
             </div>
+
+            <button id="add_product_btn" onclick="document.getElementById('add_product').style.display='block'"> add product</button>
+<script>
+// Get the modal
+var modal = document.getElementById('add_product');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
             <div id="add_category">
                 {% with messages = get_flashed_messages() %}
@@ -77,31 +106,58 @@
                 </form>
 
                 <div id="products_list">
-                        <table >
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Category</th>
-                            </tr>
-                        {% for pr_name, pr_description, pr_price,pr_categories in products_zip %}
-                            <tr>
-                                <td>{{ pr_name }}</td>
-                                <td>{{ pr_description }}</td>
-                                <td>{{ pr_price }}</td>
-                                <td>{{ pr_categories }}</td>
-                                <td>
-                                    <form action="" method="POST">
-                                        <input  type="hidden" value="{{ pr_name }}" name="product_to_delete">
-                                        <button id="delete_product" name="add" type="submit" value="delete_product" >Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
+                    <table >
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Availability</th>
+                            <th>Category</th>
+                        </tr>
+                    {% for pr_id, pr_name, pr_price, pr_availability, pr_categories in products_zip %}
+                        <tr>
+                            <td>{{ pr_name }}</td>
+                            <td>{{ pr_price }}</td>
+                            <td>{{ pr_availability }}</td>
+                            <td>{{ pr_categories }}</td>
+                            <td>
+                                <form action="" method="POST" id="show_details_form" >
+                                    <input  type="hidden" value="{{ pr_id }}" name="show_details_id">
+                                    <input  type="hidden" value="{{ pr_name }}" name="show_details">
+                                    <button id="show_details" name="add" type="submit" value="show_details">show</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="" method="POST">
+                                    <input  type="hidden" value="{{ pr_id }}" name="sell_product_id">
+                                    <input  type="hidden" value="{{ pr_name }}" name="sell_product">
+                                    <button id="sell_product" name="add" type="submit" value="sell_product" >Sell</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="" method="POST">
+                                    <input  type="hidden" value="{{ pr_id }}" name="product_to_delete_id">
+                                    <input  type="hidden" value="{{ pr_name }}" name="product_to_delete">
+                                    <button id="delete_product" name="add" type="submit" value="delete_product" >Delete</button>
+                                </form>
+                            </td>
 
-                        {% endfor %}
-                        </table>
+                        </tr>
+
+                    {% endfor %}
+                    </table>
 
                 </div>
+
+                <div id="show_details_box" style="margin-top:100px;">
+                    <h1>{{details_name}}</h1>
+                    <h1>{{ details_description }}</h1>
+                    <h1>{{details_price}} </h1>
+                    <h1>{{details_category}} </h1>
+                    <h1>{{details_availability}} </h1>
+
+                </div>
+
+
 
             </div>
 
