@@ -3,8 +3,6 @@ from flask_wtf import Form
 from wtforms import (StringField, BooleanField, TextAreaField, SubmitField,
                      validators, ValidationError)
 from flask_mail import Mail, Message
-
-from time import sleep
 from app import mail
 
 

@@ -15,7 +15,8 @@
                 <form action=""  method="POST">
                     <input id="product_name" name="product_name" size="30" type="text" placeholder="Add Product Name">
                     <textarea  id="product_description" name="product_description" placeholder="Add Description" ></textarea>
-                    <input id="price" name="price" size="10" type="number" placeholder="Add Price">
+                    <input id="price" name="price" size="4" type="number" placeholder="Add Price">
+                    <input id="availability" name="availability" size="4" type="number" placeholder="Availability">
                     <select name="categories">
                         <option value="">Select a category</option>
 
@@ -65,8 +66,8 @@
             </div>
 
             <div id="show_products">
-                <form>
-                    <select name="show_products">
+                <form action="" method="POST">
+                    <select name="category_to_show">
                         <option value="">Select a category</option>
                         {% for category in categories %}
                         <option name="{{category}}">{{category}}</option>
@@ -76,8 +77,29 @@
                 </form>
 
                 <div id="products_list">
+                        <table >
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                            </tr>
+                        {% for pr_name, pr_description, pr_price,pr_categories in products_zip %}
+                            <tr>
+                                <td>{{ pr_name }}</td>
+                                <td>{{ pr_description }}</td>
+                                <td>{{ pr_price }}</td>
+                                <td>{{ pr_categories }}</td>
+                                <td>
+                                    <form action="" method="POST">
+                                        <input  type="hidden" value="{{ pr_name }}" name="product_to_delete">
+                                        <button id="delete_product" name="add" type="submit" value="delete_product" >Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
 
-
+                        {% endfor %}
+                        </table>
 
                 </div>
 

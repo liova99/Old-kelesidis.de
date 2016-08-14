@@ -1,6 +1,10 @@
-from flask import request, flash, render_template,redirect
-from config import mysql_connect
+# coding=utf-8
 
+from flask import request, flash, render_template,redirect, url_for
+from config import mysql_connect
+import pandas as pd
+
+# TODO make a Rename category func.
 
 def import_categories():
     cur, conn = mysql_connect("leo_markt")
@@ -14,7 +18,7 @@ def import_categories():
 
 
 def add_product():
-    # TODO user input checks, unicode error
+    # TODO user input checks, unicode error, negative price
     if request.method == "POST":
         product_name = request.form.get("product_name")
         product_description = request.form.get("product_description")
@@ -34,8 +38,8 @@ def add_product():
 
 def add_category():
 
-    from app.views import leo_markt
-    leo_markt = leo_markt
+    # from app.views import leo_markt
+    # leo_markt = leo_markt
     def category_exists():
         if request.method == "POST":
             categories = import_categories()
@@ -51,7 +55,7 @@ def add_category():
     new_category = request.form.get("category_name").title()
 
     # TODO: check if input is empty
-
+    # TODO replace return render_template with return redirect
     if (request.method == "POST") and (category_exists() == False):
             flash("%s category already exists" % new_category)
             return render_template("/leo_markt/leo_markt.html", title =title, categories = categories)
@@ -70,7 +74,6 @@ def add_category():
 
 def remove_category():
 
-
     if request.method == "POST":
         selected_category = request.form.get("categories_to_remove")
         cur, conn = mysql_connect("leo_markt")
@@ -82,12 +85,42 @@ def remove_category():
         print("connection closed")
         flash("%s category was removed" % selected_category)
 
+
 def show_products():
+
+    cur, conn = mysql_connect("leo_markt")
+    selected_category = request.form.get("category_to_show")
+
+    if (request.method == "POST") and (request.form['add'] == "show_products") :
+        df = pd.read_sql(""" SELECT * FROM products where category = '%s' """ % selected_category, con = conn)
+    elif (request.method == "POST") and (request.form['add'] == "refresh"):
+        print("refresh pushed")
+        df = pd.read_sql(""" SELECT * FROM products """, con = conn)
+    else:
+        df = pd.read_sql(""" SELECT * FROM products """, con = conn)
+
+    df = df.set_index('id')
+    pr_names = df.name.tolist()
+    pr_descriptions = df.description.tolist()
+    pr_prices = df.price.tolist()
+    # change format from 1,000.00 to 1.000,00
+    pr_prices = ['{:,.2f}€'.format(i).replace(",", "X").replace(".", ",").replace("X", ".")  for i in pr_prices]
+    pr_prices = [i.decode('utf-8') for i in pr_prices]  # euro symbol not in ASCII
+    pr_categories = df.category.tolist()
+
+    products_zip = zip(pr_names, pr_descriptions, pr_prices, pr_categories)
+    cur.close()
+    conn.close()
+    return products_zip
+
+
+def delete_product():
     if request.method == "POST":
-        selected_category = request.form.get("show_products")
+        product_to_delete = request.form.get("product_to_delete")
         cur, conn = mysql_connect("leo_markt")
-        pass
-
-# TODO make a Rename category func.
-
+        cur.execute(""" DELETE FROM products WHERE name = %s """, (product_to_delete,))
+        conn.commit()
+        cur.close()
+        conn.close()
+        flash("%s was deleted" % product_to_delete)
 
