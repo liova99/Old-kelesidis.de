@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}" type="text/css"/>
 <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
 
+
+{# <!-- define the root --> #}
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+
 <body >
     <div id="container">
         <div id="content">
@@ -25,6 +31,16 @@ window.onclick = function(event) {
     }
 }
 </script>-->
+
+       <form>
+        <input id="ajax_id"  type="hidden" value="24" name="ajax_id">
+        <button name="submit_id" value="grab" type="button" id="submit_id"  >grab </button>
+        </form>
+
+        <div id="results">
+
+
+                </div>
 
 
 
@@ -68,26 +84,28 @@ window.onclick = function(event) {
 
 
             <div id="edit_categories">
-                <div id="add_category">
-                    <form action="" method="POST">
+                <div id="edit_categories_container">
+                    <form class="edit_categories_form" action="" method="POST">
                         <input id="category_name" name="category_name" size="30" type="text" placeholder="Add Category Name">
-                        <button id="submit_category" name="add" type="submit" value="add_category"> Add </button>
+                        <button id="submit_category_btn" name="add" type="submit" value="add_category"> Add </button>
                     </form>
-                </div>
 
-                <div id="delete_category">
-                    <form action="" method="POST">
-                        <select name="categories_to_remove">
+                    <form class="edit_categories_form" action="" method="POST">
+                        <select id="categories_to_remove" name="categories_to_remove">
                             <option value="">Select a category to delete</option>
                             {% for category in categories %}
                             <option name="{{category}}">{{category}}</option>
                             {% endfor %}
                         </select>
 
-                        <button id="category" name="add" type="submit" value="remove_category"> Remove </button>
+                        <button id="remove_category_btn" name="add" type="submit" value="remove_category"> Remove </button>
                     </form>
                 </div>
             </div>
+
+                <button id="edit_categories_btn" onclick="document.getElementById('edit_categories').style.display='block'">Edit Categories</button>
+
+
 
             <div id="show_products">
                 <form action="" method="POST">
@@ -115,10 +133,13 @@ window.onclick = function(event) {
                             <td>{{ pr_availability }}</td>
                             <td>{{ pr_categories }}</td>
                             <td>
-                                <form action="" method="POST" id="show_details_form" >
-                                    <input  type="hidden" value="{{ pr_id }}" name="show_details_id">
+                                <!--<form action="" method="POST" id="show_details_form"  >-->
+                                <form method="POST" action="/leo_markt_details" name="show_details">
+<!--
+                                    <input  type="hidden" value="{{ pr_id }}" name="show_details_id" id="show_details_id">
                                     <input  type="hidden" value="{{ pr_name }}" name="show_details">
-                                    <button id="show_details" name="add" type="submit" value="show_details">show</button>
+-->
+                                    <button id="{{ pr_id }}" onclick="id_num(this)" name="add" type="button" value="show_details" >show</button>
                                 </form>
                             </td>
                             <td>
@@ -143,37 +164,37 @@ window.onclick = function(event) {
 
                 </div>
 
-                <div id="show_details_box" style="margin-top:100px;">
-                    <h1>{{details_name}}</h1>
-                    <h1>{{ details_description }}</h1>
-                    <h1>{{details_price}} </h1>
-                    <h1>{{details_category}} </h1>
-                    <h1>{{details_availability}} </h1>
+            </div>
 
-                </div>
+            <div id="show_details_box" style="margin-top:100px;">
+                <h3>{{ show_details_json_data }}</h3>
 
-
+<!--
+                <h1>{{details_name}}</h1>
+                <p>{{ details_description }}</p>
+                <h1>{{details_price}} </h1>
+                <h1>{{details_category}} </h1>
+                <h1>{{details_availability}} </h1>
+-->
 
             </div>
 
 
-        </div>
+        </div>{# <!--Content--> #}
     </div>
 
 
 
 </body>
 
-<script>
-// Get the modal
-var modal = document.getElementById('add_product');
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"> </script>
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+<script>
+
+
+
+
 </script>
 
 {% endblock %}

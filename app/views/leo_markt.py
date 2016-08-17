@@ -5,6 +5,20 @@ from ..my_func.leo_markt import *  # my functions
 
 leo_markt_blueprint = Blueprint("leo_markt", __name__)
 
+# Get ajax Form:
+@leo_markt_blueprint.route("/leo_markt_details", methods = ["GET", "POST"])
+def leo_markt_details():
+    show_details_id = request.form.get("details_id")
+    print(show_details_id)
+    detailes = show_details(show_details_id)
+    # product_id = {"tweets" :[
+    #               {"content" : "hello"},
+    #               {"message" : "jsajdjd"} ]
+    #               }
+    # # product_id =  request.form.get("show_details_id")
+    # print (product_id)
+
+    return detailes #json.dumps(detailes)
 
 @leo_markt_blueprint.route("/leo_markt/", methods = ["GET", "POST"])
 def leo_martk():
@@ -31,14 +45,20 @@ def leo_martk():
         show_products()
     elif (request.method == "POST" ) and (request.form['add'] == "sell_product"):
         sell_product()
-    elif (request.method == "POST") and (request.form['add'] == "show_details"):
-        # show_details()
-        details_name, details_description, details_price, details_category, details_availability =  show_details()
-        return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
-                               products_zip = products_zip, details_name = details_name,
-                               details_description = details_description,
-                               details_price = details_price, details_category = details_category,
-                               details_availability = details_availability)
+    # elif (request.method == "POST") and (request.form['add'] == "show_details"):
+    #     show_details_json = show_details()
+    #     return show_details_json
+
+
+
+
+            # # show_details()
+        # details_name, details_description, details_price, details_category, details_availability =  show_details()
+        # return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
+        #                        products_zip = products_zip, details_name = details_name,
+        #                        details_description = details_description,
+        #                        details_price = details_price, details_category = details_category,
+        #                        details_availability = details_availability)
 
     else:
         print("nothing pressed")

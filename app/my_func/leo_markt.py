@@ -1,4 +1,5 @@
 # coding=utf-8
+from pandas import json
 
 from flask import request, flash, render_template,redirect, url_for
 from config import mysql_connect
@@ -126,16 +127,19 @@ def sell_product():
 
         cur, conn = mysql_connect("leo_markt")
         cur.execute("""  UPDATE products SET availability = availability - 1 where id = %s  """, (product_to_sell_id,))
+        cur.execute("""INSERT INTO sold select id,name,description, price, category from products where id=%s """,
+                    (product_to_sell_id,))
+        #cur.execute("""DELETE FROM products where id=%s """, (product_to_sell_id,))
         conn.commit()
         cur.close()
         conn.close()
         flash("%s Sold" % product_to_sell)
 
 
-def show_details():
-    if (request.method == "POST") and (request.form['add'] == "show_details"):
-        show_details_id = request.form.get("show_details_id")
-        show_details = request.form.get("show_details")
+def show_details(show_details_id):
+    # if (request.method == "POST") and (request.form['add'] == "show_details"):
+        # show_details_id = request.form.get("show_details_id")
+        # show_details = request.form.get("show_details")
 
         cur, conn = mysql_connect("leo_markt")
 
@@ -143,18 +147,30 @@ def show_details():
                     (show_details_id,))
 
         # cur returns a tuple, use for looop to extract data and add to variables
-        for i in cur:
-            name = i[0]
-            description = i[1]
-            price = '{:,.2f}€'.format(i[2]).replace(",", "X").replace(".", ",").replace("X", ".")
-            price = price.decode('utf-8')
-            category = i[3]
-            availability = i[4]
-            return name, description, price, category, availability
+        # for i in cur:
+        #     name = i[0]
+        #     description = i[1]
+        #     price = '{:,.2f}€'.format(i[2]).replace(",", "X").replace(".", ",").replace("X", ".")
+        #     price = price.decode('utf-8')
+        #     category = i[3]
+        #     availability = i[4]
 
+        items = cur.fetchall()
+        items_list = [
+            items[0][0],
+            items[0][1],
+            '{:,.2f}€'.format(items[0][2]).replace(",", "X").replace(".", ",").replace("X", "."),
+            items[0][3],
+            items[0][4]
+        ]
 
+        show_details_json = json.dumps(items_list)
         cur.close()
         conn.close()
+
+        return show_details_json
+
+
 
 
 def delete_product():
