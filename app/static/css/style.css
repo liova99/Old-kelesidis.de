@@ -1031,7 +1031,51 @@ input[name=button_arrow] {
     width: 80%;
 }
 
+/* category Table*/
 
+#products_list{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+table#products_list_table th{
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: .5em;
+}
+
+table#products_list_table td{
+    padding: 0.5em;    
+}
+
+
+table#products_list_table tr:nth-child(even){
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+table#products_list_table tr:nth-child(even):hover{
+    background-color:  #EBEBEB;
+    cursor: pointer;
+}
+
+
+table#products_list_table tr:nth-child(odd){
+    background-color: #1f9f1f;
+    color: white;
+    cursor: pointer;
+}
+
+table#products_list_table tr:nth-child(odd):hover{
+    background-color: #0b8b0b;
+    cursor: pointer;
+}
+
+
+table#products_list_table tr{
+    height: 30px;
+}
 
 
 

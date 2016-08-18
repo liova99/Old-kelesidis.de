@@ -128,8 +128,8 @@ def sell_product():
 
         cur, conn = mysql_connect("leo_markt")
         cur.execute("""  UPDATE products SET availability = availability - 1 where id = %s  """, (product_to_sell_id,))
-        cur.execute("""INSERT INTO sold select id,name,description, price, category from products where id=%s """,
-                    (product_to_sell_id,))
+        cur.execute("""INSERT INTO sold (id,name,description,price,category)
+         select id,name,description, price, category from products where id= %s """, (product_to_sell_id,))
         #cur.execute("""DELETE FROM products where id=%s """, (product_to_sell_id,))
         conn.commit()
         cur.close()

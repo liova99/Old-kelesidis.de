@@ -85,39 +85,39 @@
                 <button id="edit_categories_btn" onclick="document.getElementById('edit_categories').style.display='block'">Edit Categories</button>
 
             <div id="show_products">
-                <form action="" method="POST">
-                    <select name="category_to_show">
-                        <option value="">Select a category</option>
-                        {% for category in categories %}
-                        <option name="{{category}}">{{category}}</option>
-                        {% endfor %}
-                    </select>
-                    <button id="show" name="add" type="submit" value="show_products">Show</button>
-                </form>
+
 
                 <div id="products_list">
-                    <table >
+                    <table id="products_list_table">
                         <tr>
                             <th>Name</th>
                             <th>Price</th>
                             <th>Availability</th>
                             <th>Category</th>
+                            <th style="width:180px;">
+                                <form action="" method="POST">
+                                    <select name="category_to_show">
+                                        <option value="">Select a category</option>
+                                        {% for category in categories %}
+                                        <option name="{{category}}">{{category}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <button id="show" name="add" type="submit" value="show_products">Show</button>
+                                </form>
+                            </th>
                         </tr>
                     {% for pr_id, pr_name, pr_price, pr_availability, pr_categories in products_zip %}
-                        <tr>
+                        <tr id="{{ pr_id }}" onclick="id_num(this);
+                        document.getElementById('show_details_box').style.display='block';">
                             <td>{{ pr_name }}</td>
                             <td>{{ pr_price }}</td>
                             <td>{{ pr_availability }}</td>
                             <td>{{ pr_categories }}</td>
                             <td>
-                                <form method="POST" action="/leo_markt_details" name="show_details">
-{# <!--
-                                    <input  type="hidden" value="{{ pr_id }}" name="show_details_id" id="show_details_id">
-                                    <input  type="hidden" value="{{ pr_name }}" name="show_details">
---> #}
-                                    <button id="{{ pr_id }}" onclick="id_num(this);
-                                     document.getElementById('show_details_box').style.display='block';" name="add" type="button" value="show_details" >show</button>
-                                </form>
+                                <!--<form method="POST" action="/leo_markt_details" name="show_details">-->
+                                    <!--<button id="{{ pr_id }}" onclick="id_num(this);-->
+                                     <!--document.getElementById('show_details_box').style.display='block';" name="add" type="button" value="show_details" >show</button>-->
+                                <!--</form>-->
                             </td>
                             <td>
                                 <form action="" method="POST">
@@ -132,6 +132,16 @@
                                     <input  type="hidden" value="{{ pr_name }}" name="product_to_delete">
                                     <button id="delete_product" name="add" type="submit" value="delete_product" >Delete</button>
                                 </form>
+                            </td>
+
+                            <td>
+                                <form action="" method="POST">
+                                    <input  type="hidden" value="{{ pr_id }}" name="update_availability_id">
+                                    <input type="number" value="update_availability_qty">
+                                    <button id="update_availability_btn" name="add" type="submit" value="update_availability">Add</button>
+
+                                </form>
+
                             </td>
 
                         </tr>
