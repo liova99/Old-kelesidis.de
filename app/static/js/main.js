@@ -11,6 +11,12 @@ function id_num(elem_id){
 }
 */
 
+
+function do_nothing(){
+    
+}
+
+
 //TODO replace jquery with JS. http://youmightnotneedjquery.com/
 
 /* ***************Ajax **************/

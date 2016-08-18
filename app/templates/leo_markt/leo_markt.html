@@ -88,23 +88,23 @@
 
 
                 <div id="products_list">
-                    <table id="products_list_table">
+                    <table class="products_list_table">
                         <tr>
                             <th>Name</th>
                             <th>Price</th>
                             <th>Availability</th>
                             <th>Category</th>
-                            <th style="width:180px;">
-                                <form action="" method="POST">
-                                    <select name="category_to_show">
-                                        <option value="">Select a category</option>
-                                        {% for category in categories %}
-                                        <option name="{{category}}">{{category}}</option>
-                                        {% endfor %}
-                                    </select>
-                                    <button id="show" name="add" type="submit" value="show_products">Show</button>
-                                </form>
-                            </th>
+                            <!--<th style="width:180px;">-->
+                                <!--<form action="" method="POST">-->
+                                    <!--<select name="category_to_show">-->
+                                        <!--<option value="">Select a category</option>-->
+                                        <!--{% for category in categories %}-->
+                                        <!--<option name="{{category}}">{{category}}</option>-->
+                                        <!--{% endfor %}-->
+                                    <!--</select>-->
+                                    <!--<button id="show" name="add" type="submit" value="show_products">Show</button>-->
+                                <!--</form>-->
+                            <!--</th>-->
                         </tr>
                     {% for pr_id, pr_name, pr_price, pr_availability, pr_categories in products_zip %}
                         <tr id="{{ pr_id }}" onclick="id_num(this);
@@ -113,40 +113,49 @@
                             <td>{{ pr_price }}</td>
                             <td>{{ pr_availability }}</td>
                             <td>{{ pr_categories }}</td>
-                            <td>
-                                <!--<form method="POST" action="/leo_markt_details" name="show_details">-->
-                                    <!--<button id="{{ pr_id }}" onclick="id_num(this);-->
-                                     <!--document.getElementById('show_details_box').style.display='block';" name="add" type="button" value="show_details" >show</button>-->
-                                <!--</form>-->
-                            </td>
-                            <td>
-                                <form action="" method="POST">
-                                    <input  type="hidden" value="{{ pr_id }}" name="sell_product_id">
-                                    <input  type="hidden" value="{{ pr_name }}" name="sell_product">
-                                    <button id="sell_product" name="add" type="submit" value="sell_product" >Sell</button>
-                                </form>
-                            </td>
-                            <td>
-                                <form action="" method="POST">
-                                    <input  type="hidden" value="{{ pr_id }}" name="product_to_delete_id">
-                                    <input  type="hidden" value="{{ pr_name }}" name="product_to_delete">
-                                    <button id="delete_product" name="add" type="submit" value="delete_product" >Delete</button>
-                                </form>
-                            </td>
-
-                            <td>
-                                <form action="" method="POST">
-                                    <input  type="hidden" value="{{ pr_id }}" name="update_availability_id">
-                                    <input type="number" value="update_availability_qty">
-                                    <button id="update_availability_btn" name="add" type="submit" value="update_availability">Add</button>
-
-                                </form>
-
-                            </td>
-
-                        </tr>
 
                     {% endfor %}
+                        </tr>
+                    </table >
+
+                    <table class="products_list_table_2">
+
+                        <tr>
+                            <th style="width:180px;">
+                                <form action="" method="POST">
+                                    <select name="category_to_show">
+                                        <option value="">Select a category</option>
+                                        {% for category in categories %}
+                                        <option name="{{category}}">{{category}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <button class="product_list_btn" id="show" name="add" type="submit" value="show_products">Show</button>
+                                </form>
+                            </th>
+                        </tr>
+                        {% for pr_id, pr_name, pr_price, pr_availability, pr_categories in products_zip %}
+
+                        <tr>
+                            <td>
+                                <form action="" method="POST" >
+                                    <input  type="hidden" value="{{ pr_id }}" name="sell_product_id">
+                                    <input  type="hidden" value="{{ pr_name }}" name="sell_product">
+                                    <button class="product_list_btn" id="sell_product" name="add" type="submit" value="sell_product" >Sell</button>
+                                </form>
+                                    <form action="" method="POST">
+                                    <input  type="hidden" value="{{ pr_id }}" name="product_to_delete_id">
+                                    <input  type="hidden" value="{{ pr_name }}" name="product_to_delete">
+                                    <button class="product_list_btn" id="delete_product" name="add" type="submit" value="delete_product" >Delete</button>
+                                </form>
+                                    <p style="display:inline-block; margin:0 7px;">|</p>
+                                    <form action="" method="POST">
+                                    <input  type="hidden" value="{{ pr_id }}" name="update_availability_id">
+                                    <input type="number" value="update_availability_qty" style="width:40px;">
+                                    <button class="product_list_btn" id="update_availability_btn" name="add" type="submit" value="update_availability">Add</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
                     </table>
 
                 </div>
