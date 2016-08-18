@@ -1,6 +1,5 @@
+/* Alternativ way to post data
 
-
-/*
 function id_num(elem_id){
     var details_id = elem_id.id
     $.post(
@@ -10,11 +9,13 @@ function id_num(elem_id){
         $('div#results').text(data);
     });
 }
-
 */
 
+//TODO replace jquery with JS. http://youmightnotneedjquery.com/
+
+/* ***************Ajax **************/
 function id_num(elem_id)  {
-    
+
     var details_id = elem_id.id
 
     $.ajax({
@@ -22,28 +23,35 @@ function id_num(elem_id)  {
         type: 'POST',
         data: {details_id : details_id },
         success: function(data) {
-            $("div#results").text(data);
+            var result = data;
+            obj = JSON.parse(result);
+            document.getElementById("show_name").innerHTML =  obj.name;
+            document.getElementById("show_description").innerHTML =  obj.description;
+            document.getElementById("show_price").innerHTML =  obj.price;
+            document.getElementById("show_availability").innerHTML = "Availability " + obj.availability;
+            //document.getElementById("show_category").innerHTML =  obj.category;
+
+            // modal
+
+
+            // $("div#results").text(data);
         }
     });
     return false;
 }
 
+/* ******** Modals  ***************************/
 
-// Get the modal
 var modal = document.getElementById('add_product');
 var modal_2 = document.getElementById('edit_categories');
-
+var modal_3 = document.getElementById('show_details_box');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal || event.target == modal_2) {
+    if ((event.target == modal) || (event.target == modal_2) || (event.target == modal_3)) {
         modal.style.display = "none";
         modal_2.style.display = "none";
-
+        modal_3.style.display = "none";
     }
 }
-
-
-
-
 

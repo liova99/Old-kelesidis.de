@@ -123,6 +123,7 @@ def show_products():
 def sell_product():
     if request.method == "POST":
         product_to_sell_id = request.form.get("sell_product_id")
+        print (product_to_sell_id)
         product_to_sell = request.form.get("sell_product")
 
         cur, conn = mysql_connect("leo_markt")
@@ -147,28 +148,33 @@ def show_details(show_details_id):
                     (show_details_id,))
 
         # cur returns a tuple, use for looop to extract data and add to variables
-        # for i in cur:
-        #     name = i[0]
-        #     description = i[1]
-        #     price = '{:,.2f}€'.format(i[2]).replace(",", "X").replace(".", ",").replace("X", ".")
-        #     price = price.decode('utf-8')
-        #     category = i[3]
-        #     availability = i[4]
 
-        items = cur.fetchall()
-        items_list = [
-            items[0][0],
-            items[0][1],
-            '{:,.2f}€'.format(items[0][2]).replace(",", "X").replace(".", ",").replace("X", "."),
-            items[0][3],
-            items[0][4]
-        ]
+        # items = cur.fetchall()
+        # items_list = [
+        #     items[0][0],
+        #     items[0][1],
+        #     '{:,.2f}€'.format(items[0][2]).replace(",", "X").replace(".", ",").replace("X", "."),
+        #     items[0][3],
+        #     items[0][4]
+        # ]
+        #
 
-        show_details_json = json.dumps(items_list)
-        cur.close()
-        conn.close()
+        for i in cur:
+            items_dict = {
+                "name": i[0],
+                "description": i[1],
+                "price": '{:,.2f}'.format(i[2]).replace(",", "X").replace(".", ",").replace("X", ".") + "€",
+                # price = price.decode('utf-8')
+                "category": i[3],
+                "availability": i[4]
+            }
 
-        return show_details_json
+            show_details_json = json.dumps(items_dict)
+
+            cur.close()
+            conn.close()
+
+            return show_details_json
 
 
 

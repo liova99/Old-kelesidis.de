@@ -18,31 +18,10 @@
     <div id="container">
         <div id="content">
 
+            <div id="sales_chars">
 
 
-<!--<script>
-// Get the modal
-var modal = document.getElementById('show_details_box');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>-->
-
-       <form>
-        <input id="ajax_id"  type="hidden" value="24" name="ajax_id">
-        <button name="submit_id" value="grab" type="button" id="submit_id"  >grab </button>
-        </form>
-
-        <div id="results">
-
-
-                </div>
-
-
+            </div>
 
             <div id="add_product">
 
@@ -105,8 +84,6 @@ window.onclick = function(event) {
 
                 <button id="edit_categories_btn" onclick="document.getElementById('edit_categories').style.display='block'">Edit Categories</button>
 
-
-
             <div id="show_products">
                 <form action="" method="POST">
                     <select name="category_to_show">
@@ -133,13 +110,13 @@ window.onclick = function(event) {
                             <td>{{ pr_availability }}</td>
                             <td>{{ pr_categories }}</td>
                             <td>
-                                <!--<form action="" method="POST" id="show_details_form"  >-->
                                 <form method="POST" action="/leo_markt_details" name="show_details">
-<!--
+{# <!--
                                     <input  type="hidden" value="{{ pr_id }}" name="show_details_id" id="show_details_id">
                                     <input  type="hidden" value="{{ pr_name }}" name="show_details">
--->
-                                    <button id="{{ pr_id }}" onclick="id_num(this)" name="add" type="button" value="show_details" >show</button>
+--> #}
+                                    <button id="{{ pr_id }}" onclick="id_num(this);
+                                     document.getElementById('show_details_box').style.display='block';" name="add" type="button" value="show_details" >show</button>
                                 </form>
                             </td>
                             <td>
@@ -166,17 +143,19 @@ window.onclick = function(event) {
 
             </div>
 
-            <div id="show_details_box" style="margin-top:100px;">
-                <h3>{{ show_details_json_data }}</h3>
+            <div id="show_details_box" >
+                <div id="product_image"></div>
+                <div id="show_detail_content" >
+                    <h1 id="show_head" >Item Details</h1>
+                    <!--<h1 id="show_category"> </h1>-->
+                    <div id="name_price">
+                        <h1 id="show_name"></h1>
+                        <h1 id="show_price"> </h1>
+                    </div>
+                    <p id="show_description"></p>
+                    <h4 id="show_availability"> </h4>
 
-<!--
-                <h1>{{details_name}}</h1>
-                <p>{{ details_description }}</p>
-                <h1>{{details_price}} </h1>
-                <h1>{{details_category}} </h1>
-                <h1>{{details_availability}} </h1>
--->
-
+                </div>
             </div>
 
 

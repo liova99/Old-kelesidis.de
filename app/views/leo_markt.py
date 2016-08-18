@@ -8,17 +8,23 @@ leo_markt_blueprint = Blueprint("leo_markt", __name__)
 # Get ajax Form:
 @leo_markt_blueprint.route("/leo_markt_details", methods = ["GET", "POST"])
 def leo_markt_details():
-    show_details_id = request.form.get("details_id")
-    print(show_details_id)
-    detailes = show_details(show_details_id)
-    # product_id = {"tweets" :[
-    #               {"content" : "hello"},
-    #               {"message" : "jsajdjd"} ]
-    #               }
-    # # product_id =  request.form.get("show_details_id")
-    # print (product_id)
+    if request.method == "POST":
+        show_details_id = request.form.get("details_id")
+        print(show_details_id)
+        details = show_details(show_details_id)
+        # product_id = {"tweets" :[
+        #               {"content" : "hello"},
+        #               {"message" : "jsajdjd"} ]
+        #               }
+        # # product_id =  request.form.get("show_details_id")
+        # print (product_id)
 
-    return detailes #json.dumps(detailes)
+        @leo_markt_blueprint.context_processor
+        def utility_processor():
+            details = leo_markt_details()
+            return dict(details = details)
+
+        return details #json.dumps(detailes)
 
 @leo_markt_blueprint.route("/leo_markt/", methods = ["GET", "POST"])
 def leo_martk():
