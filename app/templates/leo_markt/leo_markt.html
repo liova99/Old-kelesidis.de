@@ -54,6 +54,14 @@
                     {# <!--Add product - Edit Categories, drop down menu--> #}
                     <div id="add_product">
 
+                        {% with messages = get_flashed_messages(category_filter=["error"]) %}
+                            {% if messages%}
+                                {% for message in messages %}
+                                    {{ message }}
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+
                         <form  class="add_product_form" action=""  method="POST" style="display:block">
                             <input id="product_name" name="product_name"  type="text" placeholder="Add Product Name"><br>
                             <textarea  id="product_description" name="product_description" placeholder="Add Description" ></textarea><br>

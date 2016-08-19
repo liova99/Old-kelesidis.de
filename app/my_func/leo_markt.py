@@ -10,6 +10,14 @@ import pandas as pd
 # The chart is in my_plots.py
 
 # TODO make a Rename category func.
+def is_valid_name(name):
+    if (not name.strip(" ")) or ((len(name) > 32) or (len(name) < 2)):
+        return False
+
+
+def is_valid_texx(text):
+    if (not text.strip(" ")) or ((len(text) > 255) or (len(text) < 2)):
+        return False
 
 
 def import_categories():
@@ -33,15 +41,22 @@ def add_product():
         category = request.form.get("categories")
         availability = request.form.get("product_availability")
 
-        cur, conn = mysql_connect("leo_markt")
-        cur.execute("""INSERT INTO products (name, description, price, category, availability) VALUES (%s,%s,%s,%s,%s)""",
-                    (product_name, product_description, price, category, availability))
-        conn.commit()
-        print ("changes committed")
-        cur.close()
-        conn.close()
-        print ("Connection closed")
-        flash("%s was added" % product_name)
+        # validation checks
+        if (not product_name.strip()) or ((len(product_name) > 32) or (len(product_name) < 2)) and \
+        (not product_description.strip()) or ((len(product_description) > 255) or (len(product_description) < 2)) and \
+        (not price.strip() or (price > 99999,99)) and (category == "Select a category") and (availability > 11):
+            flash("Error", "error")
+        else:
+
+            cur, conn = mysql_connect("leo_markt")
+            cur.execute("""INSERT INTO products (name, description, price, category, availability) VALUES (%s,%s,%s,%s,%s)""",
+                        (product_name, product_description, price, category, availability))
+            conn.commit()
+            print ("changes committed")
+            cur.close()
+            conn.close()
+            print ("Connection closed")
+            flash("%s was added" % product_name)
 
 def update_availability():
 
