@@ -46,7 +46,7 @@
             <div id="refresh_button">
                 <form action="" method="POST">
                     {# <!--The name atr. of the button must be the same, otherwise bad request error --> #}
-                    <button id="refresh" name="add" type="submit" value="refresh">Refresh</button>
+                    <button id="refresh" name="add" type="submit" value="refresh"><img src="{{ url_for('static', filename='img/refresh-button_green.png') }}" ></button>
                 </form>
             </div>
 
@@ -121,7 +121,7 @@
                     <table class="products_list_table_2">
 
                         <tr>
-                            <th style="width:180px;">
+                            <th>
                                 <form action="" method="POST">
                                     <select name="category_to_show">
                                         <option value="">Select a category</option>
