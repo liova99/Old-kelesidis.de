@@ -6,8 +6,6 @@ the footer don't stay down,  */
 background: url(path or link) repead;
  */ 
 
-
-
 *{
 	margin: 0;
 	padding: 0;
@@ -35,10 +33,10 @@ a:hover {
 }
 
 .img_link {
-    border: none;
+    border: 0;
 }
 .img_link:hover {
-    border:none;
+    border:0;
 }
 
 /* ========= Players Table ===================*/
@@ -90,6 +88,7 @@ div.navbar a {
 	font-size: 1em;
 	text-decoration: none;
 	color: rgba(255, 255, 255, 0.6);
+    border: none;
 }
 div.navbar a:hover {
 	font-size: 1em;
@@ -848,26 +847,7 @@ input[name=button_arrow] {
 
 #categories_dropdown {}
 
-#add_product_btn {
-    font-size: 1.3em;
-    font-family: "courie new";
-    width: 6em;
-    height: 1.6em;
-    -webkit-border-radius: 3px; 
-    -moz-border-radius: 3px;
-    border-radius: 4px;
-    border:2px solid #008000;
-    font-weight:bold; 
-    text-align: center; 
-    color: #ffffff; 
-    background-color: #008000;
-    margin: 7px auto;
-}
 
-#add_product_btn:hover {
-    cursor: pointer;
-    opacity: .7;
-}
 
 /**** Edit Categories *****/
 
@@ -895,7 +875,7 @@ input[name=button_arrow] {
     margin: 10px auto;
     padding: 50px 40px;
     -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
+    animation: animatezoom 0.6s;
 }
 #category_name {
     height: 35px;
@@ -943,28 +923,7 @@ input[name=button_arrow] {
     outline: 0;
 }
 
-#edit_categories_btn {
-    font-size: 1.3em;
-    font-family: "courie new";
-    width: auto;
-    height: auto;
-    -webkit-border-radius: 3px; 
-    -moz-border-radius: 3px;
-    border-radius: 4px;
-    border:2px solid #008000;
-    font-weight:bold; 
-    text-align: center; 
-    color: #ffffff; 
-    background-color: #008000;
-    margin: 7px auto;
-    padding: .3em;
 
-}
-
-#edit_categories_btn:hover {
-    opacity: .7;
-    cursor: pointer;
-}
 
 #submit_category_btn {
     font-size: 1.3em;
@@ -1008,6 +967,8 @@ input[name=button_arrow] {
     background-color: #fa6a5f;    
 }
 
+/**** Show details ****************/
+
 #show_details_box {
     display: none;  
     position: fixed; 
@@ -1032,7 +993,7 @@ input[name=button_arrow] {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
+    animation: animatezoom 0.6s;
 
 }
 
@@ -1071,6 +1032,100 @@ input[name=button_arrow] {
     width: 80%;
 }
 
+
+
+/**** Add - Edit Menu ******/
+
+#add_edit_menu {
+    width: 55px;
+    height: 150px;
+    float: left;
+    cursor: pointer;
+    margin-left: 160px;
+}
+
+/* Show the drop down*/
+
+#add_edit_menu:hover #add_edit_content{
+    display: block;
+    left: -100px;
+    top: -3px;
+    display: block;
+    position: relative;
+} 
+
+
+#add_edit_content {
+    display: none;
+    
+}
+
+
+div#add_edit_menu img {
+    width: 35px;
+    float: right;
+    margin: 0 .5em .5em .5em;
+}    
+
+#edit_categories_btn {
+    font-size: 1em;
+    font-family: "courie new";
+    width: 9em;
+    height: auto;
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px;
+    border-radius: 4px;
+    border:2px solid #008000;
+    font-weight:bold; 
+    text-align: center; 
+    color: #ffffff; 
+    background-color: #008000;
+    margin: 7px auto;
+    padding: .3em;
+
+}
+
+#edit_categories_btn:hover {
+    opacity: .9;
+    cursor: pointer;
+}
+
+#add_product_btn {
+    font-size: 1em;
+    font-family: "courie new";
+    width: 9em;
+    height: auto;
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px;
+    border-radius: 4px;
+    border:2px solid #008000;
+    font-weight:bold; 
+    text-align: center; 
+    color: #ffffff; 
+    background-color: #008000;
+    margin: 7px auto;
+    padding: .3em;
+}
+
+#add_product_btn:hover {
+    cursor: pointer;
+    opacity: .9;
+}
+
+/**** refresh button */
+
+/*div*/
+#refresh_button{
+    width: 28px;
+    position: relative;
+    left: 124px;
+    top: 33px;
+}
+div#refresh_button img {
+    width: 28px;
+}
+
+/*button*/
 #refresh {
     width: 40px;
     background-color: white;
@@ -1081,16 +1136,16 @@ input[name=button_arrow] {
     cursor: pointer;
 }
 
+
 /**** category Table *******/
 
 #products_list{
-    width: 820px;
+    width: 1100px;
     margin: 0 auto;
 }
 
 div#products_list form{
     display: inline-block;
-
 }
 
 div#products_list table {
@@ -1158,7 +1213,6 @@ table.products_list_table_2 select:focus {
 table.products_list_table_2 select > option {
     background-color: #f5f5f5;
     color: black;
-    cursor: pointer;
 }
 
 table.products_list_table_2 tr {
@@ -1366,11 +1420,72 @@ form input#submit:hover {
 }
 
 /* Message flashing */
-.flash {
-  background-color: #FBB0B0;
-  padding: 10px;
-  width: 400px;
+
+.flash_wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    z-index: 1; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+
 }
+
+.flash_content {
+    background-color: #ffffff;
+    padding: 2em;
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.flash_message {
+    font-size: x-large;
+    font-family: "courier-new";
+}
+
+#close_message_btn {
+    border: 2px solid #F44336;
+    color: #ffffff;
+    background-color: #F44336;
+    font-family: "courie new";
+    font-size: larger;
+    padding: 0.2em;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    padding: 0.3em 2em;
+    cursor: pointer;
+}
+
+#close_message_btn:hover {
+    opacity: .9;
+}
+
+
+@-moz-document url-prefix() {
+
+/*    .img_link {
+        
+    }
+
+    .navbar {
+        margin: .7em;
+    }
+*/
+}
+
 
 @font-face {
     font-family: "verona script";

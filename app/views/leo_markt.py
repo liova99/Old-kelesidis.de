@@ -34,9 +34,12 @@ def leo_martk():
     categories = import_categories()
     products_zip = show_products()
 
+    # request.form[" form name"] == "form value"
     if (request.method == "POST") and (request.form["add"] == "add_product"):
         add_product()
-        print ("added")
+        print ("product added")
+    elif (request.method== "POST") and (request.form["add"] == "update_availability"):
+        update_availability()
     elif (request.method == "POST") and (request.form['add'] == "add_category"):
         add_category()
     elif (request.method == "POST" ) and (request.form['add'] == "remove_category"):
@@ -51,24 +54,9 @@ def leo_martk():
         show_products()
     elif (request.method == "POST" ) and (request.form['add'] == "sell_product"):
         sell_product()
-    # elif (request.method == "POST") and (request.form['add'] == "show_details"):
-    #     show_details_json = show_details()
-    #     return show_details_json
-
-
-
-
-            # # show_details()
-        # details_name, details_description, details_price, details_category, details_availability =  show_details()
-        # return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
-        #                        products_zip = products_zip, details_name = details_name,
-        #                        details_description = details_description,
-        #                        details_price = details_price, details_category = details_category,
-        #                        details_availability = details_availability)
-
     else:
         print("nothing pressed")
 
-    print("returnet here")
+    print("render Template")
     return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
                            products_zip = products_zip)

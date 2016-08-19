@@ -181,6 +181,7 @@ def finance(selected_company):
 
 # ============= END Finance =======================
 
+
 # ============== Coutihno ==============================
 # the next plot used at the home page and http://kelesidis.de/coutinho/,
 
@@ -360,3 +361,4 @@ def coutinho():
     return p_lfc
 
 # ========== END Liverpool ====================================
+

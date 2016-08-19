@@ -1,11 +1,16 @@
 # coding=utf-8
 from pandas import json
 
-from flask import request, flash, render_template,redirect, url_for
+from flask import request, flash, render_template  # , redirect, url_for
 from config import mysql_connect
 import pandas as pd
 
+# ====== info =================
+# request.form.get("input name")
+# The chart is in my_plots.py
+
 # TODO make a Rename category func.
+
 
 def import_categories():
     cur, conn = mysql_connect("leo_markt")
@@ -38,11 +43,31 @@ def add_product():
         print ("Connection closed")
         flash("%s was added" % product_name)
 
+def update_availability():
+
+    product_id = request.form.get("update_availability_id")
+    update_availability_qty = request.form.get("update_availability_qty")
+    current_qty = request.form.get("current_qty")
+    product_to_update = request.form.get("product_to_update")
+    new_qty = int(current_qty) + int(update_availability_qty)
+
+    cur, conn = mysql_connect("leo_markt")
+    cur.execute(""" UPDATE products SET availability = availability + %s WHERE id= %s """, (update_availability_qty, product_id))
+    conn.commit()
+
+    cur.close()
+    conn.close()
+
+    if new_qty == 1:
+        flash(""" Done!
+        You have now 1 %s """ % product_to_update)
+    else:
+        flash(""" Done!
+        you have now %s %s' s """ % (new_qty, product_to_update))
+
 
 def add_category():
 
-    # from app.views import leo_markt
-    # leo_markt = leo_markt
     def category_exists():
         if request.method == "POST":
             categories = import_categories()
@@ -106,7 +131,7 @@ def show_products():
 
     pr_id = df.index.tolist()
     pr_names = df.name.tolist()
-    pr_descriptions = df.description.tolist()
+    # pr_descriptions = df.description.tolist()
     pr_prices = df.price.tolist()
     # change format from 1,000.00 to 1.000,00
     pr_prices = ['{:,.2f} €'.format(i).replace(",", "X").replace(".", ",").replace("X", ".") for i in pr_prices]
@@ -130,7 +155,6 @@ def sell_product():
         cur.execute("""  UPDATE products SET availability = availability - 1 where id = %s  """, (product_to_sell_id,))
         cur.execute("""INSERT INTO sold (id,name,description,price,category)
          select id,name,description, price, category from products where id= %s """, (product_to_sell_id,))
-        #cur.execute("""DELETE FROM products where id=%s """, (product_to_sell_id,))
         conn.commit()
         cur.close()
         conn.close()
@@ -138,10 +162,6 @@ def sell_product():
 
 
 def show_details(show_details_id):
-    # if (request.method == "POST") and (request.form['add'] == "show_details"):
-        # show_details_id = request.form.get("show_details_id")
-        # show_details = request.form.get("show_details")
-
         cur, conn = mysql_connect("leo_markt")
 
         cur.execute(""" SELECT name, description, price, category, availability FROM products WHERE id = %s """,
@@ -158,7 +178,6 @@ def show_details(show_details_id):
         #     items[0][4]
         # ]
         #
-
         for i in cur:
             items_dict = {
                 "name": i[0],
@@ -175,8 +194,6 @@ def show_details(show_details_id):
             conn.close()
 
             return show_details_json
-
-
 
 
 def delete_product():

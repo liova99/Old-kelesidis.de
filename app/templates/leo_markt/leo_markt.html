@@ -18,76 +18,95 @@
     <div id="container">
         <div id="content">
 
-            <div id="sales_chars">
+            <div id="sales_charts">
 
 
             </div>
 
-            <div id="add_product">
 
-                <form  class="add_product_form" action=""  method="POST">
-                    <input id="product_name" name="product_name"  type="text" placeholder="Add Product Name"><br>
-                    <textarea  id="product_description" name="product_description" placeholder="Add Description" ></textarea><br>
-                    <input id="product_price" name="price"  type="number" placeholder="Add Price"><br>
-                    <input id="availability" name="product_availability"  type="number" placeholder="Availability"><br>
-                    <select name="categories" id="categories">
-                        <option value="">Select a category</option>
-                        {% for category in categories %}
-                            <option  name="{{category}}">{{category}}</option>
-                        {% endfor %}
-                    </select><br>
-                    <button id="submit_product_btn" name="add" type="submit" value="add_product"> Add </button>
-                </form>
-            </div>
-
-            <button id="add_product_btn" onclick="document.getElementById('add_product').style.display='block'"> add product</button>
-
-
-            <div id="refresh_button">
-                <form action="" method="POST">
-                    {# <!--The name atr. of the button must be the same, otherwise bad request error --> #}
-                    <button id="refresh" name="add" type="submit" value="refresh"><img src="{{ url_for('static', filename='img/refresh-button_green.png') }}" ></button>
-                </form>
-            </div>
 
 
             {% with messages = get_flashed_messages() %}
                 {% if messages%}
                     {% for message in messages %}
-                        <div class="flash">
-                            {{ message }}
+                        <div class="flash_wrapper">
+                            <div class="flash_content">
+                                <p class="flash_message">{{ message }}</p>
+                                <div id="close_message">
+                                    <form action="" method="POST">
+                                        {# <!--The name atr. of the button must be the same, otherwise bad request error --> #}
+                                        <button id="close_message_btn" name="add" type="submit" value="refresh">Close</button>
+                                    </form>
+                                </div>
+
+                            </div>
                         </div>
                     {% endfor %}
                 {% endif %}
             {% endwith %}
 
 
-            <div id="edit_categories">
-                <div id="edit_categories_container">
-                    <form class="edit_categories_form" action="" method="POST">
-                        <input id="category_name" name="category_name" size="30" type="text" placeholder="Add Category Name">
-                        <button id="submit_category_btn" name="add" type="submit" value="add_category"> Add </button>
-                    </form>
-
-                    <form class="edit_categories_form" action="" method="POST">
-                        <select id="categories_to_remove" name="categories_to_remove">
-                            <option value="">Select a category to delete</option>
-                            {% for category in categories %}
-                            <option name="{{category}}">{{category}}</option>
-                            {% endfor %}
-                        </select>
-
-                        <button id="remove_category_btn" name="add" type="submit" value="remove_category"> Remove </button>
-                    </form>
-                </div>
-            </div>
-
-                <button id="edit_categories_btn" onclick="document.getElementById('edit_categories').style.display='block'">Edit Categories</button>
 
             <div id="show_products">
 
-
                 <div id="products_list">
+
+                    {# <!--Add product - Edit Categories, drop down menu--> #}
+                    <div id="add_product">
+
+                        <form  class="add_product_form" action=""  method="POST" style="display:block">
+                            <input id="product_name" name="product_name"  type="text" placeholder="Add Product Name"><br>
+                            <textarea  id="product_description" name="product_description" placeholder="Add Description" ></textarea><br>
+                            <input id="product_price" name="price"  type="number" placeholder="Add Price"><br>
+                            <input id="availability" name="product_availability"  type="number" placeholder="Availability"><br>
+                            <select name="categories" id="categories">
+                                <option value="">Select a category</option>
+                                {% for category in categories %}
+                                    <option  name="{{category}}">{{category}}</option>
+                                {% endfor %}
+                            </select><br>
+                            <button id="submit_product_btn" name="add" type="submit" value="add_product"> Add </button>
+                        </form>
+                    </div>
+                    <div id="edit_categories">
+                        <div id="edit_categories_container">
+                            <form class="edit_categories_form" action="" method="POST">
+                                <input id="category_name" name="category_name" size="30" type="text" placeholder="Add Category Name">
+                                <button id="submit_category_btn" name="add" type="submit" value="add_category"> Add </button>
+                            </form>
+
+                            <form class="edit_categories_form" action="" method="POST">
+                                <select id="categories_to_remove" name="categories_to_remove">
+                                    <option value="">Select a category to delete</option>
+                                    {% for category in categories %}
+                                    <option name="{{category}}">{{category}}</option>
+                                    {% endfor %}
+                                </select>
+
+                                <button id="remove_category_btn" name="add" type="submit" value="remove_category"> Remove </button>
+                            </form>
+                        </div>
+                    </div>
+
+                                <div id="refresh_button">
+                                    <form action="" method="POST">
+                                        {# <!--The name atr. of the button must be the same, otherwise bad request error --> #}
+                                        <button id="refresh" name="add" type="submit" value="refresh"><img src="{{ url_for('static', filename='img/refresh-button_green.png') }}" ></button>
+                                    </form>
+                                </div>
+
+
+                    {# <!--TODO change name to ~table_menu--> #}
+                    <div id="add_edit_menu">
+                            <img id="table_menu_img" src="{{ url_for('static', filename='img/edit_menu.png') }}" alt="edit menu">
+
+                        <div id="add_edit_content">
+                            <button id="edit_categories_btn" onclick="document.getElementById('edit_categories').style.display='block'">Edit Categories</button>
+                            <button id="add_product_btn" onclick="document.getElementById('add_product').style.display='block'"> Add Product</button>
+                        </div>
+                    </div>
+                    {# <!------------------------------------------------>#}
+
                     <table class="products_list_table">
                         <tr>
                             <th>Name</th>
@@ -149,8 +168,10 @@
                                 </form>
                                     <p style="display:inline-block; margin:0 7px;">|</p>
                                     <form action="" method="POST">
+                                    <input type="hidden" value="{{ pr_availability }}" name="current_qty">
                                     <input  type="hidden" value="{{ pr_id }}" name="update_availability_id">
-                                    <input type="number" value="update_availability_qty" style="width:40px;">
+                                    <input type="hidden" value="{{ pr_name }}" name="product_to_update">
+                                    <input type="number" name="update_availability_qty" style="width:40px;">
                                     <button class="product_list_btn" id="update_availability_btn" name="add" type="submit" value="update_availability">Add</button>
                                 </form>
                             </td>
