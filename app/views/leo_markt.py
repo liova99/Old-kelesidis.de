@@ -1,7 +1,9 @@
 # coding=utf-8
 from flask import render_template, Blueprint, flash, request,redirect
+from bokeh.embed import components
 
 from ..my_func.leo_markt import *  # my functions
+from ..my_func.my_plots import leo_markt_total_chart as lmtc # total income chart
 
 leo_markt_blueprint = Blueprint("leo_markt", __name__)
 
@@ -12,19 +14,9 @@ def leo_markt_details():
         show_details_id = request.form.get("details_id")
         print(show_details_id)
         details = show_details(show_details_id)
-        # product_id = {"tweets" :[
-        #               {"content" : "hello"},
-        #               {"message" : "jsajdjd"} ]
-        #               }
-        # # product_id =  request.form.get("show_details_id")
-        # print (product_id)
 
-        @leo_markt_blueprint.context_processor
-        def utility_processor():
-            details = leo_markt_details()
-            return dict(details = details)
+        return details
 
-        return details #json.dumps(detailes)
 
 @leo_markt_blueprint.route("/leo_markt/", methods = ["GET", "POST"])
 def leo_martk():
@@ -33,6 +25,10 @@ def leo_martk():
 
     categories = import_categories()
     products_zip = show_products()
+
+    # total income chart
+    f = lmtc()
+    script, div = components(f)
 
     # request.form[" form name"] == "form value"
     if (request.method == "POST") and (request.form["add"] == "add_product"):
@@ -46,7 +42,7 @@ def leo_martk():
          remove_category()
     elif (request.method == "POST" ) and (request.form['add'] == "refresh"):
         return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
-                               products_zip = products_zip)
+                               products_zip = products_zip, script = script, div = div)
     elif (request.method == "POST" ) and (request.form['add'] == "delete_product"):
         delete_product()
     elif (request.method == "POST") and (request.form['add'] == "show_products"):
@@ -58,5 +54,6 @@ def leo_martk():
         print("nothing pressed")
 
     print("render Template")
+
     return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
-                           products_zip = products_zip)
+                           products_zip = products_zip, script = script, div = div)

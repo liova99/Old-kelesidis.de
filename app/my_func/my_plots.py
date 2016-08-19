@@ -9,6 +9,9 @@ from bokeh.models import HoverTool, Range1d
 from bokeh.plotting import figure
 from bokeh.models.sources import ColumnDataSource as cds
 
+import MySQLdb
+from config import mysql_connect
+
 # import the different color background
 from bokeh.models import BoxAnnotation as ba
 
@@ -362,3 +365,72 @@ def coutinho():
 
 # ========== END Liverpool ====================================
 
+# ================= Leo Markt =================================
+
+def leo_markt_total_chart():
+    cur, conn = mysql_connect('leo_markt')
+
+    df = pd.read_sql(""" SELECT id, name, price, category, date FROM sold """, con = conn)
+    df = df.set_index(df.id)
+
+    conn.close()
+    cur.close()
+    # ==== Hover Tool configuration ====
+
+    names = [i for i in df.name]
+    categories = [i for i in df.category]
+
+    dates = pd.Series(df.date)
+    dates = dates.dt.strftime("%d.%m.%Y").tolist()
+
+    prices = []
+    for price in df.price:
+        prices.append('{:,.2f}€'.format(price).replace(",", "X").replace(".", ",").replace("X", "."))
+
+    # Column Data Sources for hover tool
+
+    source_line = cds({
+        "Sold": dates,
+        "Name": names,
+        "Category": categories,
+        "Price": prices
+    })
+
+    source_circle = cds({
+        "Sold": dates,
+        "Name": names,
+        "Category": categories,
+        "Price": prices
+    })
+
+    TOOLTIPS = [
+        ("Sold", " @Sold"),
+        ("Product Name", " @Name"),
+        ("Category", " @Category"),
+        ("Price", " @Price")
+    ]
+
+    TOOLS = 'pan,wheel_zoom,box_zoom,crosshair,resize,reset,save,hover'
+
+    # Define figure
+    f = figure(height = 370, width = 800, x_axis_type = "datetime", tools = TOOLS,  responsive = True)
+
+    f.title = "Total Income chart"
+    f.xaxis.axis_label = 'Date (Y/M/D)'
+    f.yaxis.axis_label = 'Total income (EURO)'
+
+    # Current gross income [700, 500, 300,500] --> [1200, 1500, 2000]
+    current_gross = [0]
+    for i in df.price:
+        current_gross.append(i + current_gross[-1])
+
+    f.line(df.date, current_gross, source = source_line, color="green")
+    f.circle(df.date, current_gross, size = 5, source = source_circle, color="green",)
+
+    # more Hover Tools configuration
+    p_hover = f.select(HoverTool)
+    p_hover.tooltips = TOOLTIPS
+
+    return f
+
+        # =============== END Leo Markt

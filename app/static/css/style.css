@@ -1274,8 +1274,18 @@ table.products_list_table_2 td {
 } 
 
 
+/* Leo Markt total income chart*/
 
+.leo_mark_chart {
+    width: 800px;
+    margin: 50px auto;
+    padding: 1em;
 
+}
+
+div.leo_mark_chart a {
+    border: none;
+}
 
 /* ********************** */
 
