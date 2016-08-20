@@ -23,13 +23,6 @@
 
             </div>
 
-                        {% with errors = get_flashed_messages(category_filter=["error"]) %}
-                            {% if errors %}
-                                {% for message in errors %}
-                                    {{ message }}
-                                {% endfor %}
-                            {% endif %}
-                        {% endwith %}
 
 
 
@@ -59,13 +52,31 @@
                 <div id="products_list">
 
                     {# <!--Add product - Edit Categories, drop down menu--> #}
-                    <div id="add_product">
+                    <div id="add_product" style="display:block">
+
                         <form  class="add_product_form" action=""  method="POST" style="display:block">
-                            <input id="product_name" name="product_name"  type="text" placeholder="Add Product Name"><br>
+
+                            {% with errors = get_flashed_messages(category_filter=["name_error"]) %}
+                                {% if errors %}
+                                    {% for message in errors %}
+                                        {{ message }}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                            <br><br>
+                            {% with errors = get_flashed_messages(category_filter=["price_error"]) %}
+                                {% if errors %}
+                                    {% for message in errors %}
+                                        {{ message }}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+
+                            <input id="product_name" name="product_name"  type="text" placeholder="Add Product Name" required><br>
                             <textarea  id="product_description" name="product_description" placeholder="Add Description" ></textarea><br>
-                            <input id="product_price" name="price"  type="number" step="0.01" placeholder="Add Price"><br>
+                            <input id="product_price" name="price"  type="number" step="0.01" placeholder="Add Price" required><br>
                             <input id="availability" name="product_availability"  type="number" placeholder="Availability"><br>
-                            <select name="categories" id="categories">
+                            <select name="categories" id="categories" required>
                                 <option value="">Select a category</option>
                                 {% for category in categories %}
                                     <option  name="{{category}}">{{category}}</option>
@@ -74,6 +85,7 @@
                             <button id="submit_product_btn" name="add" type="submit" value="add_product"> Add </button>
                         </form>
                     </div>
+
                     <div id="edit_categories">
                         <div id="edit_categories_container">
                             <form class="edit_categories_form" action="" method="POST">

@@ -7,6 +7,8 @@ from ..my_func.my_plots import leo_markt_total_chart as lmtc # total income char
 
 leo_markt_blueprint = Blueprint("leo_markt", __name__)
 
+
+
 # Get ajax Form:
 @leo_markt_blueprint.route("/leo_markt_details", methods = ["GET", "POST"])
 def leo_markt_details():
@@ -32,8 +34,31 @@ def leo_martk():
 
     # request.form[" form name"] == "form value"
     if (request.method == "POST") and (request.form["add"] == "add_product"):
-        add_product()
-        print ("product added")
+        product_name = request.form.get("product_name")
+        product_description = request.form.get("product_description")
+        price = request.form.get("price")
+        category = request.form.get("categories")
+        print("category is " + category)
+        availability = request.form.get("product_availability")
+        print (availability)
+
+        # checj
+        product_name = is_valid_name(product_name)
+        product_description = is_valid_text(product_description)
+        price = is_valid_price(price)
+        if category == "":
+            category = "Not defined"
+        if availability == "":
+            availability = "1"
+
+        if (price != False) and (product_description != False) and (product_name != False):
+            add_product(product_name, product_description, price, category, availability )
+            flash("%s was added" % product_name, "msg")
+        else:
+            return render_template("/leo_markt/add_product_error.html", title = title, categories = categories,
+                           products_zip = products_zip, script = script, div = div)
+
+
     elif (request.method== "POST") and (request.form["add"] == "update_availability"):
         update_availability()
     elif (request.method == "POST") and (request.form['add'] == "add_category"):
@@ -57,3 +82,9 @@ def leo_martk():
 
     return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
                            products_zip = products_zip, script = script, div = div)
+
+
+@leo_markt_blueprint.route("/leo_markt/add_product_error", methods = ["GET", "POST"])
+def add_product_error():
+
+    return render_template("/leo_markt/add_product_error.html")

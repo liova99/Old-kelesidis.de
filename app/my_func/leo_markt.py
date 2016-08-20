@@ -10,14 +10,89 @@ import pandas as pd
 # The chart is in my_plots.py
 
 # TODO make a Rename category func.
+
+def is_valid_price(num):
+
+    if len(num) == 1:
+        return num
+
+    elif num.strip() :
+        if (num[-1] == ".") or (num[-1] == ",") :
+            num = num[:-2]
+            print(num)
+
+        if (num[-2]== ",") or (num[-2] == "."):
+            num = num[:] + "0"
+            print(num + " type 458.5 or 458,5")
+
+
+        if ("," in num) or ("." in num):
+
+            if (num[-3] == ",") and ("." in num):
+                num = num.replace(",", "X").replace(".", "").replace("X", ".")
+                print(num + " type 12.356,23")
+
+            elif (num[-3] == ".") and ("," in num):
+                num = num.replace(",", "")
+                print(num + " type 25,569.25")
+
+            elif (num[-3] == ".") and  (num.count(".") > 1) :
+                num = num.replace(".", "")
+                num = num[:-2] + "." + num[-2:]
+                print(num + " type 50.845.55")
+
+            elif (num[-3] == ",") and (num.count(",") > 1) :
+                num = num.replace(",", "")
+                num = num[:-2] + "." + num[-2:]
+                print(num, " Type 50,585,50")
+
+            elif (num[-3] == ".") or (num[-3] == ","):
+                num = num.replace(",", ".")
+                print(num + " type 455,55 or 45.55")
+
+            elif ( num[-3] != ",") or (num[-3] != "."):
+                # num = num.replace(",", "").replace(".", "")
+                flash("Check your price number, price format is 4999,99, max price is 99999,99", "price_error")
+                print(num + " type 455.589 or 455,585")
+                return False
+
+        try:
+            if float(num) > 99999.99:
+                flash("Check your price number, price format is 4999,99, max price is 99999,99", "price_error")
+                return False
+            else:
+                return num
+        except ValueError:
+                 flash("Check your price number, price format is 4999,99, max price is 99999,99", "price_error")
+                 return False
+    else:
+        flash("Add a Price. Price format is 4999,99, max price is 99999,99", "price_error")
+        return False
+
+
 def is_valid_name(name):
-    if (not name.strip(" ")) or ((len(name) > 32) or (len(name) < 2)):
+
+    if (name.strip()):
+        if (len(name) <= 32) and (len(name) >= 2):
+            return name.strip(" ")
+        else:
+            flash("Name must be max 32 characters and min 2.", "name_error")
+            return False
+    else:
+        flash("Name is required.", "name_error")
         return False
 
 
-def is_valid_texx(text):
-    if (not text.strip(" ")) or ((len(text) > 255) or (len(text) < 2)):
-        return False
+def is_valid_text(text):
+
+    if text.strip():
+        if (len(text) < 255) or (len(text) > 2):
+            return text
+        else:
+            flash("Description must be max 255 characters", "error_text")
+            return False
+
+
 
 
 def import_categories():
@@ -31,32 +106,21 @@ def import_categories():
     return categories
 
 
-def add_product():
-    # TODO user input checks, unicode error, negative price flash("You are so negative...")
+def add_product(product_name, product_description, price, category, availability):
+    # TODO negative price flash("You are so negative...")
 
     if request.method == "POST":
-        product_name = request.form.get("product_name")
-        product_description = request.form.get("product_description")
-        price = request.form.get("price")
-        category = request.form.get("categories")
-        availability = request.form.get("product_availability")
 
-        # validation checks
-        if (not product_name.strip()) or ((len(product_name) > 32) or (len(product_name) < 2)) and \
-        (not product_description.strip()) or ((len(product_description) > 255) or (len(product_description) < 2)) and \
-        (not price.strip() or (price > 99999,99)) and (category == "Select a category") and (availability > 11):
-            flash("Error", "error")
-        else:
+        cur, conn = mysql_connect("leo_markt")
+        cur.execute("""INSERT INTO products (name, description, price, category, availability) VALUES (%s,%s,%s,%s,%s)""",
+                    (product_name, product_description, price, category, availability))
+        conn.commit()
+        print ("changes committed")
+        cur.close()
+        conn.close()
+        print ("Connection closed")
+        return True
 
-            cur, conn = mysql_connect("leo_markt")
-            cur.execute("""INSERT INTO products (name, description, price, category, availability) VALUES (%s,%s,%s,%s,%s)""",
-                        (product_name, product_description, price, category, availability))
-            conn.commit()
-            print ("changes committed")
-            cur.close()
-            conn.close()
-            print ("Connection closed")
-            flash("%s was added" % product_name)
 
 def update_availability():
 
@@ -75,10 +139,10 @@ def update_availability():
 
     if new_qty == 1:
         flash(""" Done!
-        You have now 1 %s """ % product_to_update)
+        You have now 1 %s """ % product_to_update, "msg")
     else:
         flash(""" Done!
-        you have now %s %s' s """ % (new_qty, product_to_update))
+        you have now %s %s' s """ % (new_qty, product_to_update), "msg")
 
 
 def add_category():
@@ -100,7 +164,7 @@ def add_category():
     # TODO: check if input is empty
     # TODO replace return render_template with return redirect
     if (request.method == "POST") and (category_exists() == False):
-            flash("%s category already exists" % new_category)
+            flash("%s category already exists" % new_category, "msg")
             return render_template("/leo_markt/leo_markt.html", title =title, categories = categories)
 
     else:
@@ -111,7 +175,7 @@ def add_category():
         cur.close()
         conn.close()
         print ("Connection closed")
-        flash("%s category added" % new_category)
+        flash("%s category added" % new_category, "msg")
         # TODO make auto refresh and update the category list (Ajax/js)
 
 
@@ -126,7 +190,7 @@ def remove_category():
         cur.close()
         conn.close()
         print("connection closed")
-        flash("%s category was removed" % selected_category)
+        flash("%s category was removed" % selected_category, "msg")
 
 
 def show_products():
@@ -173,7 +237,7 @@ def sell_product():
         conn.commit()
         cur.close()
         conn.close()
-        flash("%s Sold" % product_to_sell)
+        flash("%s Sold" % product_to_sell, "msg")
 
 
 def show_details(show_details_id):
@@ -221,5 +285,5 @@ def delete_product():
         conn.commit()
         cur.close()
         conn.close()
-        flash("%s was deleted" % product_to_delete)
+        flash("%s was deleted" % product_to_delete, "msg")
 
