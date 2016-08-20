@@ -7,8 +7,6 @@ from ..my_func.my_plots import leo_markt_total_chart as lmtc # total income char
 
 leo_markt_blueprint = Blueprint("leo_markt", __name__)
 
-
-
 # Get ajax Form:
 @leo_markt_blueprint.route("/leo_markt_details", methods = ["GET", "POST"])
 def leo_markt_details():
@@ -42,7 +40,7 @@ def leo_martk():
         availability = request.form.get("product_availability")
         print (availability)
 
-        # checj
+        # check TODO
         product_name = is_valid_name(product_name)
         product_description = is_valid_text(product_description)
         price = is_valid_price(price)
@@ -57,14 +55,22 @@ def leo_martk():
         else:
             return render_template("/leo_markt/add_product_error.html", title = title, categories = categories,
                            products_zip = products_zip, script = script, div = div)
-
-
     elif (request.method== "POST") and (request.form["add"] == "update_availability"):
         update_availability()
     elif (request.method == "POST") and (request.form['add'] == "add_category"):
-        add_category()
+        category_name = request.form.get("category_name")
+        if is_valid_category(category_name) != False:
+            add_category()
+        else:
+            return render_template("/leo_markt/edit_category_error.html", title = title, categories = categories,
+                                   products_zip = products_zip, script = script, div = div)
     elif (request.method == "POST" ) and (request.form['add'] == "remove_category"):
-         remove_category()
+        category_name = request.form.get("category_name")
+        if is_valid_category(category_name) != False:
+            remove_category()
+        else:
+            return render_template("/leo_markt/edit_category_error.html", title = title, categories = categories,
+                                   products_zip = products_zip, script = script, div = div)
     elif (request.method == "POST" ) and (request.form['add'] == "refresh"):
         return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
                                products_zip = products_zip, script = script, div = div)
@@ -88,3 +94,9 @@ def leo_martk():
 def add_product_error():
 
     return render_template("/leo_markt/add_product_error.html")
+
+
+@leo_markt_blueprint.route("/leo_markt/edit_category_error", methods = ["GET", "POST"])
+def add_category_error():
+
+    return render_template("/leo_markt/edit_category_error.html")

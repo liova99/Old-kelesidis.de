@@ -730,7 +730,14 @@ input[name=button_arrow] {
 	margin: 10px 10px 10px 10px;
 */}
 
-/* ******** leo_markt *************
+/* ******** leo_markt *************/
+
+.head_msg {
+    margin: 1em auto;
+    width: 500px;
+    font-family: "verona script";
+    font-size: 3em;
+    color: green;}
 
 /*****  Add Product ********/
 
@@ -870,7 +877,8 @@ input[name=button_arrow] {
 }
 #edit_categories_container {
     width: 350px;
-    height: 250;
+    min-height: 250px;
+    height: auto;
     background-color: white;
     margin: 10px auto;
     padding: 50px 40px;
@@ -984,7 +992,8 @@ input[name=button_arrow] {
 }
 
 #show_detail_content {
-    width: 500px;
+    width: 650px;
+    min-height: 400px;
     margin: 70 auto;
     padding: 40px 30px;
     background-color: white;
@@ -1015,8 +1024,21 @@ input[name=button_arrow] {
 #show_price {
     display: inline-block;
     margin: 20px;
-    
 }
+
+#product_img {
+    width: 180px;
+    height: 160px;
+    background-color: green;
+    color: white;
+    float: right;
+    margin: 0 10px;
+    text-align: center;
+    padding: 30px 35px;
+    font-size: large;
+    font-family: "courier new";
+}
+
 
 #show_description {
     width: 60%;
@@ -1481,6 +1503,17 @@ form input#submit:hover {
 
 #close_message_btn:hover {
     opacity: .9;
+}
+
+/* Flash error msg (on add_product form) */
+
+.flash_error{
+    padding: 1em;
+    background-color: #F44336;
+    font-family: "courier new";
+    font-size: .9em; 
+    color: white;
+    border-radius: 4px;
 }
 
 

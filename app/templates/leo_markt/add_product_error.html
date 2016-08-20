@@ -17,15 +17,9 @@
 <body >
     <div id="container">
         <div id="content">
-
-            <div id="sales_charts">
-
-
+            <div class="head_msg">
+                <h3> Leo Markt Is welcome You</h3>
             </div>
-
-
-
-
             {% with messages = get_flashed_messages(category_filter=["msg"]) %}
                 {% if messages%}
                     {% for message in messages %}
@@ -59,15 +53,19 @@
                             {% with errors = get_flashed_messages(category_filter=["name_error"]) %}
                                 {% if errors %}
                                     {% for message in errors %}
-                                        {{ message }}
+                                        <div class="flash_error">
+                                            {{ message }}
+                                        </div>
                                     {% endfor %}
                                 {% endif %}
                             {% endwith %}
-                            <br><br>
+                            <br>
                             {% with errors = get_flashed_messages(category_filter=["price_error"]) %}
                                 {% if errors %}
                                     {% for message in errors %}
-                                        {{ message }}
+                                        <div class="flash_error">
+                                            {{ message }}
+                                        </div>
                                     {% endfor %}
                                 {% endif %}
                             {% endwith %}
@@ -88,13 +86,24 @@
 
                     <div id="edit_categories">
                         <div id="edit_categories_container">
+                            {% with errors = get_flashed_messages(category_filter=["name_error"]) %}
+                                {% if errors %}
+                                    {% for message in errors %}
+                                        <div class="flash_error">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+
+
                             <form class="edit_categories_form" action="" method="POST">
                                 <input id="category_name" name="category_name" size="30" type="text" placeholder="Add Category Name">
                                 <button id="submit_category_btn" name="add" type="submit" value="add_category"> Add </button>
                             </form>
 
                             <form class="edit_categories_form" action="" method="POST">
-                                <select id="categories_to_remove" name="categories_to_remove">
+                                <select id="categories_to_remove" name="categories_to_remove" required>
                                     <option value="">Select a category to delete</option>
                                     {% for category in categories %}
                                     <option name="{{category}}">{{category}}</option>

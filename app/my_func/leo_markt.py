@@ -11,20 +11,19 @@ import pandas as pd
 
 # TODO make a Rename category func.
 
+
 def is_valid_price(num):
 
     if len(num) == 1:
         return num
-
-    elif num.strip() :
-        if (num[-1] == ".") or (num[-1] == ",") :
+    elif num.strip():
+        if (num[-1] == ".") or (num[-1] == ","):
             num = num[:-2]
             print(num)
 
-        if (num[-2]== ",") or (num[-2] == "."):
+        if (num[-2] == ",") or (num[-2] == "."):
             num = num[:] + "0"
             print(num + " type 458.5 or 458,5")
-
 
         if ("," in num) or ("." in num):
 
@@ -36,12 +35,12 @@ def is_valid_price(num):
                 num = num.replace(",", "")
                 print(num + " type 25,569.25")
 
-            elif (num[-3] == ".") and  (num.count(".") > 1) :
+            elif (num[-3] == ".") and (num.count(".") > 1):
                 num = num.replace(".", "")
                 num = num[:-2] + "." + num[-2:]
                 print(num + " type 50.845.55")
 
-            elif (num[-3] == ",") and (num.count(",") > 1) :
+            elif (num[-3] == ",") and (num.count(",") > 1):
                 num = num.replace(",", "")
                 num = num[:-2] + "." + num[-2:]
                 print(num, " Type 50,585,50")
@@ -50,7 +49,7 @@ def is_valid_price(num):
                 num = num.replace(",", ".")
                 print(num + " type 455,55 or 45.55")
 
-            elif ( num[-3] != ",") or (num[-3] != "."):
+            elif (num[-3] != ",") or (num[-3] != "."):
                 # num = num.replace(",", "").replace(".", "")
                 flash("Check your price number, price format is 4999,99, max price is 99999,99", "price_error")
                 print(num + " type 455.589 or 455,585")
@@ -58,21 +57,24 @@ def is_valid_price(num):
 
         try:
             if float(num) > 99999.99:
-                flash("Check your price number, price format is 4999,99, max price is 99999,99", "price_error")
+                flash("Check your price number, price format is 4999,99. Max price is 99999,99", "price_error")
+                return False
+            elif float(num) < 0:
+                flash("You are so negative! price format is 4999,99 Max price is 99999,99", "price_error")
                 return False
             else:
                 return num
         except ValueError:
-                 flash("Check your price number, price format is 4999,99, max price is 99999,99", "price_error")
-                 return False
+            flash("Check your price number, price format is 4999,99. Max price is 99999,99", "price_error")
+            return False
     else:
-        flash("Add a Price. Price format is 4999,99, max price is 99999,99", "price_error")
+        flash("Add a Price. Price format is 4999,99. Max price is 99999,99", "price_error")
         return False
 
 
 def is_valid_name(name):
 
-    if (name.strip()):
+    if name.strip():
         if (len(name) <= 32) and (len(name) >= 2):
             return name.strip(" ")
         else:
@@ -93,6 +95,16 @@ def is_valid_text(text):
             return False
 
 
+def is_valid_category(name):
+
+    if name.strip():
+        if (len(name) <= 32) and (len(name) >= 2):
+            return name.strip(" ")
+        else:
+            flash("Category Name must be max 32 characters and min 2.", "category_error")
+            return False
+    flash("Your input is empty. Category Name must be max 32 characters and min 2.", "category_error")
+    return False
 
 
 def import_categories():
@@ -107,7 +119,6 @@ def import_categories():
 
 
 def add_product(product_name, product_description, price, category, availability):
-    # TODO negative price flash("You are so negative...")
 
     if request.method == "POST":
 
@@ -198,6 +209,9 @@ def show_products():
     cur, conn = mysql_connect("leo_markt")
     selected_category = request.form.get("category_to_show")
 
+    if selected_category == "":
+        flash("Please select a category ", "msg")
+
     if (request.method == "POST") and (request.form['add'] == "show_products"):
         df = pd.read_sql(""" SELECT * FROM products where category = '%s' """ % selected_category, con = conn)
     elif (request.method == "POST") and (request.form['add'] == "refresh"):
@@ -286,4 +300,3 @@ def delete_product():
         cur.close()
         conn.close()
         flash("%s was deleted" % product_to_delete, "msg")
-

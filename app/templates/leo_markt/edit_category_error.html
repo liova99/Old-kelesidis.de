@@ -34,6 +34,7 @@
                                         <button id="close_message_btn" name="add" type="submit" value="refresh">Close</button>
                                     </form>
                                 </div>
+
                             </div>
                         </div>
                     {% endfor %}
@@ -47,8 +48,30 @@
                 <div id="products_list">
 
                     {# <!--Add product - Edit Categories, drop down menu--> #}
-                    <div id="add_product">
+                    <div id="add_product" >
+
                         <form  class="add_product_form" action=""  method="POST" style="display:block">
+
+                            {% with errors = get_flashed_messages(category_filter=["name_error"]) %}
+                                {% if errors %}
+                                    {% for message in errors %}
+                                        <div class="flash_error">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                            <br>
+                            {% with errors = get_flashed_messages(category_filter=["price_error"]) %}
+                                {% if errors %}
+                                    {% for message in errors %}
+                                        <div class="flash_error">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+
                             <input id="product_name" name="product_name"  type="text" placeholder="Add Product Name" required><br>
                             <textarea  id="product_description" name="product_description" placeholder="Add Description" ></textarea><br>
                             <input id="product_price" name="price"  type="number" step="0.01" placeholder="Add Price" required><br>
@@ -63,10 +86,21 @@
                         </form>
                     </div>
 
-                    <div id="edit_categories">
+                    <div id="edit_categories" style="display:block">
                         <div id="edit_categories_container">
+                            {% with errors = get_flashed_messages(category_filter=["category_error"]) %}
+                                {% if errors %}
+                                    {% for message in errors %}
+                                        <div class="flash_error">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+
+
                             <form class="edit_categories_form" action="" method="POST">
-                                <input id="category_name" name="category_name" size="30" type="text" placeholder="Add Category Name" required>
+                                <input id="category_name" name="category_name" size="30" type="text" placeholder="Add Category Name">
                                 <button id="submit_category_btn" name="add" type="submit" value="add_category"> Add </button>
                             </form>
 
@@ -86,8 +120,7 @@
                                 <div id="refresh_button">
                                     <form action="" method="POST">
                                         {# <!--The name atr. of the button must be the same, otherwise bad request error --> #}
-                                        <button id="refresh" name="add" type="submit" value="refresh">
-                                            <img src="{{ url_for('static', filename='img/refresh-button_green.png') }}" ></button>
+                                        <button id="refresh" name="add" type="submit" value="refresh"><img src="{{ url_for('static', filename='img/refresh-button_green.png') }}" ></button>
                                     </form>
                                 </div>
 
@@ -168,8 +201,7 @@
                                     <input  type="hidden" value="{{ pr_id }}" name="update_availability_id">
                                     <input type="hidden" value="{{ pr_name }}" name="product_to_update">
                                     <input type="number" name="update_availability_qty" style="width:40px;">
-                                    <button class="product_list_btn" id="update_availability_btn" name="add" type="submit"
-                                            value="update_availability" title="To remove add negative number">Add</button>
+                                    <button class="product_list_btn" id="update_availability_btn" name="add" type="submit" value="update_availability">Add</button>
                                 </form>
                             </td>
                         </tr>
@@ -188,16 +220,13 @@
             </div>
 
             <div id="show_details_box" >
+                <div id="product_image"></div>
                 <div id="show_detail_content" >
                     <h1 id="show_head" >Item Details</h1>
                     <!--<h1 id="show_category"> </h1>-->
                     <div id="name_price">
                         <h1 id="show_name"></h1>
                         <h1 id="show_price"> </h1>
-                    </div>
-                    <div id="product_img">
-                        <p> Image upload </p>
-                        <p> Not ready yet</p>
                     </div>
                     <p id="show_description"></p>
                     <h4 id="show_availability"> </h4>
