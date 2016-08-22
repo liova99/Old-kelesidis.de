@@ -79,13 +79,6 @@ def leo_martk():
     return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
                            products_zip = products_zip, script = script, div = div)
 
-
-@leo_markt_blueprint.route("/leo_markt/how")
-def how():
-    title = "Inside Leo Markt"
-
-    return render_template("/leo_markt/how.html", title = title)
-
 # Get ajax Form:
 @leo_markt_blueprint.route("/leo_markt_details", methods = ["GET", "POST"])
 def leo_markt_details():

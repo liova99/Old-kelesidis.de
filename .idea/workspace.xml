@@ -2,25 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0885dd5e-ba9e-4770-a3b2-b124b8322601" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/add_prd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/chart.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/db_visual.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/leo_markt_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/leo_markt_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/leo_markt_design.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/product_details.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/sold_modal.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/welcome.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/leo_markt/how.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/img/Thumbs.db" afterPath="$PROJECT_DIR$/app/static/img/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/font/Verona_Script.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/img/edit_menu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/img/products/iphone_3gs.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/img/refresh-button-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/img/refresh-button_green.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/img/refresh-button_white-green.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/Leo_Markt.ipynb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/leo_markt/how.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/my_func/leo_markt.py" afterPath="$PROJECT_DIR$/app/my_func/leo_markt.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/js/main.js" afterPath="$PROJECT_DIR$/app/static/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/finance.html" afterPath="$PROJECT_DIR$/app/templates/finance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/index.html" afterPath="$PROJECT_DIR$/app/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/leo_markt/add_product_error.html" afterPath="$PROJECT_DIR$/app/templates/leo_markt/add_product_error.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/leo_markt/edit_category_error.html" afterPath="$PROJECT_DIR$/app/templates/leo_markt/edit_category_error.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html" afterPath="$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/leo_markt.py" afterPath="$PROJECT_DIR$/app/views/leo_markt.py" />
     </list>
     <ignored path="flaskapp.iws" />
@@ -42,10 +33,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="leo_markt.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="leo_markt.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/my_func/leo_markt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
+            <state relative-caret-position="540">
               <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
               <folding>
                 <element signature="e#15#38#0" expanded="true" />
@@ -75,7 +66,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="leo_markt.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="leo_markt.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="634">
@@ -124,8 +115,8 @@
       <file leaf-file-name="leo_markt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/leo_markt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1640">
-              <caret line="86" column="63" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
+            <state relative-caret-position="1600">
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding>
                 <element signature="e#15#84#0" expanded="true" />
               </folding>
@@ -205,8 +196,8 @@
         <option value="$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html" />
         <option value="$PROJECT_DIR$/app/templates/leo_markt/add_product_error.html" />
         <option value="$PROJECT_DIR$/app/templates/leo_markt/edit_category_error.html" />
-        <option value="$PROJECT_DIR$/app/views/leo_markt.py" />
         <option value="$PROJECT_DIR$/app/templates/leo_markt/how.html" />
+        <option value="$PROJECT_DIR$/app/views/leo_markt.py" />
       </list>
     </option>
   </component>
@@ -320,6 +311,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flaskapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flaskapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leo_markt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flaskapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flaskapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -343,28 +374,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flaskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flaskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -770,11 +779,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38426626" sideWeight="0.48333332" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22239032" sideWeight="0.48333332" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09375" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22532895" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5829228" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6447368" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -787,7 +797,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13651316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30921054" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1160,14 +1169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/add_product_error.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3180">
@@ -1178,6 +1179,36 @@
             <element signature="n#style#0;n#p#0;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#3;n#form#2;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/how.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="11569" column="27" selection-start-line="11569" selection-start-column="27" selection-end-line="11569" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#3;n#form#2;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/leo_markt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1600">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding>
+            <element signature="e#15#84#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1196,9 +1227,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/my_func/leo_markt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
+        <state relative-caret-position="540">
           <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
           <folding>
             <element signature="e#15#38#0" expanded="true" />
@@ -1213,41 +1252,6 @@
             <element signature="e#8167#8820#0" expanded="false" />
             <element signature="e#8867#9561#0" expanded="false" />
             <element signature="e#9590#10015#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/leo_markt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1640">
-          <caret line="86" column="63" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
-          <folding>
-            <element signature="e#15#84#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/how.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="11569" column="27" selection-start-line="11569" selection-start-column="27" selection-end-line="11569" selection-end-column="27" />
-          <folding>
-            <element signature="n#script#1;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#1;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#2;n#html#0;n#!!top" expanded="false" />
-            <marker date="1471827047753" expanded="false" signature="954:321971" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#3;n#form#2;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
