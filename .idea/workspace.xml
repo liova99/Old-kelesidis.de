@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0885dd5e-ba9e-4770-a3b2-b124b8322601" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/my_func/leo_markt.py" afterPath="$PROJECT_DIR$/app/my_func/leo_markt.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html" afterPath="$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/my_func/my_plots.py" afterPath="$PROJECT_DIR$/app/my_func/my_plots.py" />
     </list>
     <ignored path="flaskapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +27,7 @@
       <file leaf-file-name="leo_markt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/my_func/leo_markt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
+            <state relative-caret-position="107">
               <caret line="245" column="13" selection-start-line="245" selection-start-column="13" selection-end-line="245" selection-end-column="13" />
               <folding>
                 <element signature="e#15#38#0" expanded="true" />
@@ -42,6 +41,16 @@
                 <element signature="e#9214#9908#0" expanded="false" />
                 <element signature="e#9937#10362#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my_plots.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/my_func/my_plots.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="425" column="70" selection-start-line="425" selection-start-column="70" selection-end-line="425" selection-end-column="70" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,10 +111,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="leo_markt.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="leo_markt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/leo_markt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
+            <state relative-caret-position="1382">
               <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding>
                 <element signature="e#15#84#0" expanded="true" />
@@ -178,7 +187,6 @@
         <option value="$PROJECT_DIR$/app/views/contact.py" />
         <option value="$PROJECT_DIR$/app/templates/leo_markt/test_box.html" />
         <option value="$PROJECT_DIR$/app/static/css/style.css" />
-        <option value="$PROJECT_DIR$/app/my_func/my_plots.py" />
         <option value="$PROJECT_DIR$/app/templates/finance.html" />
         <option value="$PROJECT_DIR$/app/templates/index.html" />
         <option value="$PROJECT_DIR$/app/static/js/main.js" />
@@ -188,6 +196,7 @@
         <option value="$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html" />
         <option value="$PROJECT_DIR$/app/my_func/leo_markt.py" />
         <option value="$PROJECT_DIR$/app/views/leo_markt.py" />
+        <option value="$PROJECT_DIR$/app/my_func/my_plots.py" />
       </list>
     </option>
   </component>
@@ -291,6 +300,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flaskapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flaskapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_func" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -699,7 +726,14 @@
       <option name="project" value="LOCAL" />
       <updated>1471831279516</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="negative avilability bug fix">
+      <created>1471862914494</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1471862914494</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -790,7 +824,8 @@
     <MESSAGE value="Create user input checks," />
     <MESSAGE value="Basic debug, ready to upload on server" />
     <MESSAGE value="make some css changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="make some css changes" />
+    <MESSAGE value="negative avilability bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="negative avilability bug fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1062,13 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/my_func/my_plots.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="380" column="0" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/contact.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-174">
@@ -1153,9 +1181,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/leo_markt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1382">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="e#15#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/my_func/leo_markt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
+        <state relative-caret-position="107">
           <caret line="245" column="13" selection-start-line="245" selection-start-column="13" selection-end-line="245" selection-end-column="13" />
           <folding>
             <element signature="e#15#38#0" expanded="true" />
@@ -1172,13 +1210,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/leo_markt.py">
+    <entry file="file://$PROJECT_DIR$/app/my_func/my_plots.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="e#15#84#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="241">
+          <caret line="425" column="70" selection-start-line="425" selection-start-column="70" selection-end-line="425" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>

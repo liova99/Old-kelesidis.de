@@ -423,6 +423,7 @@ def leo_markt_total_chart():
     current_gross = [0]
     for i in df.price:
         current_gross.append(i + current_gross[-1])
+    current_gross.remove(0) # remove the zero from the list, otherwise the first sale will be == to 0
 
     f.line(df.date, current_gross, source = source_line, color="green")
     f.circle(df.date, current_gross, size = 5, source = source_circle, color="green",)
