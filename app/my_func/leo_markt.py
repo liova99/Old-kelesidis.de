@@ -140,21 +140,22 @@ def update_availability():
     current_qty = request.form.get("current_qty")
     product_to_update = request.form.get("product_to_update")
     new_qty = int(current_qty) + int(update_availability_qty)
+    if new_qty >= 0:
+        cur, conn = mysql_connect("leo_markt")
+        cur.execute(""" UPDATE products SET availability = availability + %s WHERE id= %s """, (update_availability_qty, product_id))
+        conn.commit()
 
-    cur, conn = mysql_connect("leo_markt")
-    cur.execute(""" UPDATE products SET availability = availability + %s WHERE id= %s """, (update_availability_qty, product_id))
-    conn.commit()
+        cur.close()
+        conn.close()
 
-    cur.close()
-    conn.close()
-
-    if new_qty == 1:
-        flash(""" Done!
-        You have now 1 %s """ % product_to_update, "msg")
+        if new_qty == 1:
+            flash(""" Done!
+            You have now 1 %s """ % product_to_update, "msg")
+        else:
+            flash(""" Done!
+            you have now %s %s' s """ % (new_qty, product_to_update), "msg")
     else:
-        flash(""" Done!
-        you have now %s %s' s """ % (new_qty, product_to_update), "msg")
-
+        flash("You can not have negative availability", "msg")
 
 def add_category():
 
@@ -237,19 +238,24 @@ def show_products():
 
 
 def sell_product():
-    if request.method == "POST":
-        product_to_sell_id = request.form.get("sell_product_id")
-        print (product_to_sell_id)
-        product_to_sell = request.form.get("sell_product")
 
-        cur, conn = mysql_connect("leo_markt")
-        cur.execute("""  UPDATE products SET availability = availability - 1 where id = %s  """, (product_to_sell_id,))
-        cur.execute("""INSERT INTO sold (id,name,description,price,category)
-         select id,name,description, price, category from products where id= %s """, (product_to_sell_id,))
-        conn.commit()
-        cur.close()
-        conn.close()
-        flash("%s Sold" % product_to_sell, "msg")
+
+    if request.method == "POST":
+        if request.form.get("current_avl") == "0":
+            flash("You can not sell product that you don't have. Update availability first", "msg")
+        else:
+            product_to_sell_id = request.form.get("sell_product_id")
+            print (product_to_sell_id)
+            product_to_sell = request.form.get("sell_product")
+
+            cur, conn = mysql_connect("leo_markt")
+            cur.execute("""  UPDATE products SET availability = availability - 1 where id = %s  """, (product_to_sell_id,))
+            cur.execute("""INSERT INTO sold (id,name,description,price,category)
+             select id,name,description, price, category from products where id= %s """, (product_to_sell_id,))
+            conn.commit()
+            cur.close()
+            conn.close()
+            flash("%s Sold" % product_to_sell, "msg")
 
 
 def show_details(show_details_id):
