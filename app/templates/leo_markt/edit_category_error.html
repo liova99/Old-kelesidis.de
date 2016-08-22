@@ -19,7 +19,7 @@
         <div id="content">
 
             <div class="head_msg">
-                <h3> Leo Markt Is welcome You</h3>
+                <h3> Leo Markt welcomes You</h3>
             </div>
 
             {% with messages = get_flashed_messages(category_filter=["msg"]) %}
@@ -142,17 +142,6 @@
                             <th>Price</th>
                             <th>Availability</th>
                             <th>Category</th>
-                            <!--<th style="width:180px;">-->
-                                <!--<form action="" method="POST">-->
-                                    <!--<select name="category_to_show">-->
-                                        <!--<option value="">Select a category</option>-->
-                                        <!--{% for category in categories %}-->
-                                        <!--<option name="{{category}}">{{category}}</option>-->
-                                        <!--{% endfor %}-->
-                                    <!--</select>-->
-                                    <!--<button id="show" name="add" type="submit" value="show_products">Show</button>-->
-                                <!--</form>-->
-                            <!--</th>-->
                         </tr>
                     {% for pr_id, pr_name, pr_price, pr_availability, pr_categories in products_zip %}
                         <tr id="{{ pr_id }}" onclick="id_num(this);
@@ -171,7 +160,7 @@
                         <tr>
                             <th>
                                 <form action="" method="POST">
-                                    <select name="category_to_show">
+                                    <select name="category_to_show" required>
                                         <option value="">Select a category</option>
                                         {% for category in categories %}
                                         <option name="{{category}}">{{category}}</option>
@@ -201,7 +190,8 @@
                                     <input  type="hidden" value="{{ pr_id }}" name="update_availability_id">
                                     <input type="hidden" value="{{ pr_name }}" name="product_to_update">
                                     <input type="number" name="update_availability_qty" style="width:40px;">
-                                    <button class="product_list_btn" id="update_availability_btn" name="add" type="submit" value="update_availability">Add</button>
+                                    <button class="product_list_btn" id="update_availability_btn" name="add" type="submit"
+                                        value="update_availability" title="To remove add negative number">Add</button>
                                 </form>
                             </td>
                         </tr>

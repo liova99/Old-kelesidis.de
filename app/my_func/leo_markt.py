@@ -172,8 +172,6 @@ def add_category():
     categories = import_categories()
     new_category = request.form.get("category_name").title()
 
-    # TODO: check if input is empty
-    # TODO replace return render_template with return redirect
     if (request.method == "POST") and (category_exists() == False):
             flash("%s category already exists" % new_category, "msg")
             return render_template("/leo_markt/leo_markt.html", title =title, categories = categories)
@@ -255,22 +253,11 @@ def sell_product():
 
 
 def show_details(show_details_id):
+
         cur, conn = mysql_connect("leo_markt")
 
         cur.execute(""" SELECT name, description, price, category, availability FROM products WHERE id = %s """,
                     (show_details_id,))
-
-        # cur returns a tuple, use for looop to extract data and add to variables
-
-        # items = cur.fetchall()
-        # items_list = [
-        #     items[0][0],
-        #     items[0][1],
-        #     '{:,.2f}€'.format(items[0][2]).replace(",", "X").replace(".", ",").replace("X", "."),
-        #     items[0][3],
-        #     items[0][4]
-        # ]
-        #
         for i in cur:
             items_dict = {
                 "name": i[0],

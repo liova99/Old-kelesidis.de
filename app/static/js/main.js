@@ -11,13 +11,9 @@ function id_num(elem_id){
 }
 */
 
-
 function do_nothing(){
     
 }
-
-
-//TODO replace jquery with JS. http://youmightnotneedjquery.com/
 
 /* ***************Ajax **************/
 function id_num(elem_id)  {
@@ -36,10 +32,7 @@ function id_num(elem_id)  {
             document.getElementById("show_price").innerHTML =  obj.price;
             document.getElementById("show_availability").innerHTML = "Availability " + obj.availability;
             //document.getElementById("show_category").innerHTML =  obj.category;
-
             // modal
-
-
             // $("div#results").text(data);
         }
     });

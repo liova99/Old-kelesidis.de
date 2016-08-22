@@ -13,13 +13,14 @@
 <script type=text/javascript>
   $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 </script>
+                    {# <!--TODO make templates for error pages, or better add ajax --> #}
 
 <body >
     <div id="container">
         <div id="content">
 
             <div class="head_msg">
-                <h3> Leo Markt Is welcome You</h3>
+                <h3> Leo Markt welcomes You</h3>
             </div>
 
             {% with messages = get_flashed_messages(category_filter=["msg"]) %}
@@ -39,8 +40,6 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-
-
 
             <div id="show_products">
 
@@ -83,13 +82,13 @@
                         </div>
                     </div>
 
-                                <div id="refresh_button">
-                                    <form action="" method="POST">
-                                        {# <!--The name atr. of the button must be the same, otherwise bad request error --> #}
-                                        <button id="refresh" name="add" type="submit" value="refresh">
-                                            <img src="{{ url_for('static', filename='img/refresh-button_green.png') }}" ></button>
-                                    </form>
-                                </div>
+                    <div id="refresh_button">
+                        <form action="" method="POST">
+                            {# <!--The name atr. of the button must be the same, otherwise bad request error --> #}
+                            <button id="refresh" name="add" type="submit" value="refresh">
+                                <img src="{{ url_for('static', filename='img/refresh-button_green.png') }}" ></button>
+                        </form>
+                    </div>
 
 
                     {# <!--TODO change name to ~table_menu--> #}
@@ -109,17 +108,6 @@
                             <th>Price</th>
                             <th>Availability</th>
                             <th>Category</th>
-                            <!--<th style="width:180px;">-->
-                                <!--<form action="" method="POST">-->
-                                    <!--<select name="category_to_show">-->
-                                        <!--<option value="">Select a category</option>-->
-                                        <!--{% for category in categories %}-->
-                                        <!--<option name="{{category}}">{{category}}</option>-->
-                                        <!--{% endfor %}-->
-                                    <!--</select>-->
-                                    <!--<button id="show" name="add" type="submit" value="show_products">Show</button>-->
-                                <!--</form>-->
-                            <!--</th>-->
                         </tr>
                     {% for pr_id, pr_name, pr_price, pr_availability, pr_categories in products_zip %}
                         <tr id="{{ pr_id }}" onclick="id_num(this);
@@ -138,7 +126,7 @@
                         <tr>
                             <th>
                                 <form action="" method="POST">
-                                    <select name="category_to_show">
+                                    <select name="category_to_show" required>
                                         <option value="">Select a category</option>
                                         {% for category in categories %}
                                         <option name="{{category}}">{{category}}</option>
@@ -215,13 +203,6 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"> </script>
-
-<script>
-
-
-
-
-</script>
 
 {% endblock %}
 

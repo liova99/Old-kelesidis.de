@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0885dd5e-ba9e-4770-a3b2-b124b8322601" name="Default" comment="Create user input checks,">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/leo_markt/edit_category_error.html" />
+    <list default="true" id="0885dd5e-ba9e-4770-a3b2-b124b8322601" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/add_prd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/chart.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/db_visual.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/leo_markt_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/leo_markt_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/leo_markt_design.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/product_details.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/sold_modal.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/leo_markt_jupyter/welcome.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/leo_markt/how.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/img/Thumbs.db" afterPath="$PROJECT_DIR$/app/static/img/Thumbs.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/my_func/leo_markt.py" afterPath="$PROJECT_DIR$/app/my_func/leo_markt.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/css/style.css" afterPath="$PROJECT_DIR$/app/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/js/main.js" afterPath="$PROJECT_DIR$/app/static/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/finance.html" afterPath="$PROJECT_DIR$/app/templates/finance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/index.html" afterPath="$PROJECT_DIR$/app/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/leo_markt/add_product_error.html" afterPath="$PROJECT_DIR$/app/templates/leo_markt/add_product_error.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/leo_markt/edit_category_error.html" afterPath="$PROJECT_DIR$/app/templates/leo_markt/edit_category_error.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html" afterPath="$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/leo_markt.py" afterPath="$PROJECT_DIR$/app/views/leo_markt.py" />
     </list>
@@ -32,44 +45,46 @@
       <file leaf-file-name="leo_markt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/my_func/leo_markt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="105" column="45" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
+            <state relative-caret-position="1020">
+              <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
               <folding>
                 <element signature="e#15#38#0" expanded="true" />
                 <element signature="e#331#2534#0" expanded="false" />
                 <element signature="e#2567#2865#0" expanded="false" />
                 <element signature="e#2898#3100#0" expanded="false" />
+                <element signature="e#3137#3488#0" expanded="false" />
+                <element signature="e#3520#3812#0" expanded="false" />
+                <element signature="e#3903#4345#0" expanded="false" />
+                <element signature="e#4380#5120#0" expanded="false" />
+                <element signature="e#6405#6836#0" expanded="false" />
+                <element signature="e#8167#8820#0" expanded="false" />
+                <element signature="e#8867#9561#0" expanded="false" />
+                <element signature="e#9590#10015#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="leo_markt.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/leo_markt.py">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-182">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <file leaf-file-name="leo_markt.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contact.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/contact.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-174">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="634">
+              <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#3;n#form#2;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,12 +92,11 @@
       <file leaf-file-name="add_product_error.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/add_product_error.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="22" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="3180">
+              <caret line="159" column="76" selection-start-line="159" selection-start-column="76" selection-end-line="159" selection-end-column="76" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#tr#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#p#0;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#3;n#form#2;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -94,12 +108,11 @@
       <file leaf-file-name="edit_category_error.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/edit_category_error.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="3260">
+              <caret line="163" column="83" selection-start-line="163" selection-start-column="83" selection-end-line="163" selection-end-column="83" />
               <folding>
                 <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#tr#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#p#0;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#3;n#form#2;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -108,49 +121,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.py">
+      <file leaf-file-name="leo_markt.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/leo_markt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="my_plots.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/my_func/my_plots.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="380" column="0" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+            <state relative-caret-position="1640">
+              <caret line="86" column="63" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
               <folding>
-                <element signature="e#25#44#0" expanded="true" />
+                <element signature="e#15#84#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leo_markt.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2000">
-              <caret line="100" column="120" selection-start-line="100" selection-start-column="120" selection-end-line="100" selection-end-column="120" />
-              <folding>
-                <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#tr#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#p#0;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#3;n#form#2;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -163,8 +141,8 @@
         <option value="flaskapp" />
         <option value="Blog" />
         <option value="Python Script" />
-        <option value="FlaskApp" />
         <option value="HTML File" />
+        <option value="FlaskApp" />
       </list>
     </option>
   </component>
@@ -178,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../blog/app/templates/personal/personal.html" />
         <option value="$PROJECT_DIR$/../blog/app/templates/personal/poem_rus.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$USER_HOME$/AppData/Local/Temp/Bokeh Docs.url" />
@@ -197,7 +174,6 @@
         <option value="$PROJECT_DIR$/app/templates/Bio.HTML" />
         <option value="$PROJECT_DIR$/app/templates/football/en/epl/liverpool/coutinho.html" />
         <option value="$PROJECT_DIR$/app/templates/bio.html" />
-        <option value="$PROJECT_DIR$/app/templates/finance.html" />
         <option value="$PROJECT_DIR$/app/views/bio.py" />
         <option value="$PROJECT_DIR$/../blog/app/contact.py" />
         <option value="$PROJECT_DIR$/app/templates/contact_succes.html" />
@@ -214,7 +190,6 @@
         <option value="$PROJECT_DIR$/../blog/config.py" />
         <option value="$PROJECT_DIR$/../blog/app/templates/contact.html" />
         <option value="$PROJECT_DIR$/app/templates/base.html" />
-        <option value="$PROJECT_DIR$/app/templates/index.html" />
         <option value="$USER_HOME$/Desktop/nikol-design.ru/.gitignore" />
         <option value="$PROJECT_DIR$/app/views/football.py" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
@@ -222,13 +197,16 @@
         <option value="$PROJECT_DIR$/app/views/contact.py" />
         <option value="$PROJECT_DIR$/app/templates/leo_markt/test_box.html" />
         <option value="$PROJECT_DIR$/app/static/css/style.css" />
-        <option value="$PROJECT_DIR$/app/static/js/main.js" />
         <option value="$PROJECT_DIR$/app/my_func/my_plots.py" />
+        <option value="$PROJECT_DIR$/app/templates/finance.html" />
+        <option value="$PROJECT_DIR$/app/templates/index.html" />
+        <option value="$PROJECT_DIR$/app/static/js/main.js" />
         <option value="$PROJECT_DIR$/app/my_func/leo_markt.py" />
-        <option value="$PROJECT_DIR$/app/views/leo_markt.py" />
+        <option value="$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html" />
         <option value="$PROJECT_DIR$/app/templates/leo_markt/add_product_error.html" />
         <option value="$PROJECT_DIR$/app/templates/leo_markt/edit_category_error.html" />
-        <option value="$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html" />
+        <option value="$PROJECT_DIR$/app/views/leo_markt.py" />
+        <option value="$PROJECT_DIR$/app/templates/leo_markt/how.html" />
       </list>
     </option>
   </component>
@@ -342,7 +320,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leo_markt_jupyter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -360,7 +342,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -378,11 +360,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="leo_markt" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -404,18 +386,18 @@
     </excluded-roots>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\levan\Dropbox\PyCharmProjects\flaskapp\app\static\leo_markt_jupyter" />
+      <recent name="C:\Users\levan\Dropbox\PyCharmProjects\blog\app\templates" />
+      <recent name="C:\Users\levan\Dropbox\PyCharmProjects\Py_group" />
+      <recent name="C:\Users\levan\Dropbox\PyCharmProjects\blog\app" />
+      <recent name="C:\Users\levan\Dropbox\PyCharmProjects\LF_Converter" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\levan\Dropbox\PyCharmProjects\blog\app\templates" />
       <recent name="C:\Users\levan\Dropbox\PyCharmProjects\Py_group\app\static\css" />
       <recent name="C:\Users\levan\Dropbox\PyCharmProjects\blog\static" />
       <recent name="C:\Users\levan\Dropbox\PyCharmProjects\flaskapp\app\mod_auth" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\levan\Dropbox\PyCharmProjects\blog\app\templates" />
-      <recent name="C:\Users\levan\Dropbox\PyCharmProjects\Py_group" />
-      <recent name="C:\Users\levan\Dropbox\PyCharmProjects\blog\app" />
-      <recent name="C:\Users\levan\Dropbox\PyCharmProjects\LF_Converter" />
-      <recent name="C:\Users\levan\Dropbox\PyCharmProjects\flaskapp\app\views" />
     </key>
   </component>
   <component name="RunManager" selected="Python.__init__">
@@ -767,7 +749,14 @@
       <option name="project" value="LOCAL" />
       <updated>1471714691920</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Basic debug, ready to upload on server">
+      <created>1471726894722</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1471726894722</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -780,27 +769,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15128593" sideWeight="0.48333332" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30427632" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38426626" sideWeight="0.48333332" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09375" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22532895" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6447368" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19572368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ultimate PasteBin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17246597" sideWeight="0.51666665" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30921054" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13651316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30921054" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -856,25 +845,19 @@
     <MESSAGE value="create total income chart with auto udate" />
     <MESSAGE value="make some basic validations check" />
     <MESSAGE value="Create user input checks," />
-    <option name="LAST_COMMIT_MESSAGE" value="Create user input checks," />
+    <MESSAGE value="Basic debug, ready to upload on server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic debug, ready to upload on server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="86" />
+      <option name="time" value="87" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../blog/app/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="39" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../blog/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
@@ -1058,13 +1041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/finance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/js/bokeh-0.11.1.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1076,14 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22480">
           <caret line="1124" column="0" selection-start-line="1124" selection-start-column="0" selection-end-line="1124" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1091,17 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="40" column="31" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#53#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2080">
-          <caret line="104" column="28" selection-start-line="104" selection-start-column="28" selection-end-line="104" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,7 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="605" column="18" selection-start-line="605" selection-start-column="18" selection-end-line="605" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,7 +1073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="2472" column="23" selection-start-line="2472" selection-start-column="23" selection-end-line="2472" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,7 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1133,7 +1087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="1835" column="0" selection-start-line="1835" selection-start-column="0" selection-end-line="1835" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1141,7 +1094,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-854">
           <caret line="206" column="7" selection-start-line="206" selection-start-column="7" selection-end-line="206" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,7 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="31" column="66" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1157,7 +1108,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,7 +1115,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="936" column="0" selection-start-line="936" selection-start-column="0" selection-end-line="936" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,7 +1122,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1181,9 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="380" column="0" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#44#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1191,7 +1136,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-174">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1199,39 +1143,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/my_func/leo_markt.py">
+    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="105" column="45" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
-          <folding>
-            <element signature="e#15#38#0" expanded="true" />
-            <element signature="e#331#2534#0" expanded="false" />
-            <element signature="e#2567#2865#0" expanded="false" />
-            <element signature="e#2898#3100#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="153" column="42" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/leo_markt.py">
+    <entry file="file://$PROJECT_DIR$/app/templates/finance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-182">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="96">
+          <caret line="32" column="87" selection-start-line="32" selection-start-column="87" selection-end-line="32" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/add_product_error.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="22" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="3180">
+          <caret line="159" column="76" selection-start-line="159" selection-start-column="76" selection-end-line="159" selection-end-column="76" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#tr#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#p#0;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#3;n#form#2;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1241,12 +1184,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/edit_category_error.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="3260">
+          <caret line="163" column="83" selection-start-line="163" selection-start-column="83" selection-end-line="163" selection-end-column="83" />
           <folding>
             <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#tr#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#p#0;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#3;n#form#2;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1254,13 +1196,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/my_func/leo_markt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+          <folding>
+            <element signature="e#15#38#0" expanded="true" />
+            <element signature="e#331#2534#0" expanded="false" />
+            <element signature="e#2567#2865#0" expanded="false" />
+            <element signature="e#2898#3100#0" expanded="false" />
+            <element signature="e#3137#3488#0" expanded="false" />
+            <element signature="e#3520#3812#0" expanded="false" />
+            <element signature="e#3903#4345#0" expanded="false" />
+            <element signature="e#4380#5120#0" expanded="false" />
+            <element signature="e#6405#6836#0" expanded="false" />
+            <element signature="e#8167#8820#0" expanded="false" />
+            <element signature="e#8867#9561#0" expanded="false" />
+            <element signature="e#9590#10015#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/leo_markt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1640">
+          <caret line="86" column="63" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
+          <folding>
+            <element signature="e#15#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/how.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="11569" column="27" selection-start-line="11569" selection-start-column="27" selection-end-line="11569" selection-end-column="27" />
+          <folding>
+            <element signature="n#script#1;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#1;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#2;n#html#0;n#!!top" expanded="false" />
+            <marker date="1471827047753" expanded="false" signature="954:321971" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/leo_markt/leo_markt.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2000">
-          <caret line="100" column="120" selection-start-line="100" selection-start-column="120" selection-end-line="100" selection-end-column="120" />
+        <state relative-caret-position="634">
+          <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#tr#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#p#0;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#3;n#form#2;n#td#0;n#tr#1;n#table#1;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

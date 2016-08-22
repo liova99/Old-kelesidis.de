@@ -7,16 +7,6 @@ from ..my_func.my_plots import leo_markt_total_chart as lmtc # total income char
 
 leo_markt_blueprint = Blueprint("leo_markt", __name__)
 
-# Get ajax Form:
-@leo_markt_blueprint.route("/leo_markt_details", methods = ["GET", "POST"])
-def leo_markt_details():
-    if request.method == "POST":
-        show_details_id = request.form.get("details_id")
-        print(show_details_id)
-        details = show_details(show_details_id)
-
-        return details
-
 
 @leo_markt_blueprint.route("/leo_markt/", methods = ["GET", "POST"])
 def leo_martk():
@@ -90,6 +80,24 @@ def leo_martk():
                            products_zip = products_zip, script = script, div = div)
 
 
+@leo_markt_blueprint.route("/leo_markt/how")
+def how():
+    title = "Inside Leo Markt"
+
+    return render_template("/leo_markt/how.html", title = title)
+
+# Get ajax Form:
+@leo_markt_blueprint.route("/leo_markt_details", methods = ["GET", "POST"])
+def leo_markt_details():
+    if request.method == "POST":
+        show_details_id = request.form.get("details_id")
+        print(show_details_id)
+        details = show_details(show_details_id)
+
+        return details
+
+
+# render this clone pages if user make an error in the input e.g. add negative price
 @leo_markt_blueprint.route("/leo_markt/add_product_error", methods = ["GET", "POST"])
 def add_product_error():
 
@@ -100,3 +108,4 @@ def add_product_error():
 def add_category_error():
 
     return render_template("/leo_markt/edit_category_error.html")
+
