@@ -11,8 +11,27 @@ function id_num(elem_id){
 }
 */
 
-function do_nothing(){
-    
+function add_product(obj){
+
+    var formDAta = {
+        'product_name'          : $('#product_name').val();
+        'product_description'   : $('#product_description').val();
+        'product_price'         : $('#product_price').val();
+        'availability'          : $('#availability').val();
+        'categories'            : $('#categories').val();
+    }
+    $.ajax({
+        url:"/leo_markt_add_product",
+        type: "POST",
+        data: {formDAta}
+    });
+
+    .done(function(data){
+        console.log(data);
+    })
+
+    event.preventDefault();
+
 }
 
 /* ***************Ajax **************/

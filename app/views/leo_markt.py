@@ -22,29 +22,31 @@ def leo_martk():
 
     # request.form[" form name"] == "form value"
     if (request.method == "POST") and (request.form["add"] == "add_product"):
-        product_name = request.form.get("product_name")
-        product_description = request.form.get("product_description")
-        price = request.form.get("price")
-        category = request.form.get("categories")
-        print("category is " + category)
-        availability = request.form.get("product_availability")
-        print (availability)
+        pass
+        # product_name = request.form.get("product_name")
+        # product_description = request.form.get("product_description")
+        # price = request.form.get("price")
+        # category = request.form.get("categories")
+        # print("category is " + category)
+        # availability = request.form.get("product_availability")
+        # print (availability)
+        #
+        # # check TODO
+        # product_name = is_valid_name(product_name)
+        # product_description = is_valid_text(product_description)
+        # price = is_valid_price(price)
+        # if category == "":
+        #     category = "Not defined"
+        # if availability == "":
+        #     availability = "1"
+        #
+        # if (price != False) and (product_description != False) and (product_name != False):
+        #     add_product(product_name, product_description, price, category, availability )
+        #     flash("%s was added" % product_name, "msg")
+        # else:
+        #     return render_template("/leo_markt/add_product_error.html", title = title, categories = categories,
+        #                    products_zip = products_zip, script = script, div = div)
 
-        # check TODO
-        product_name = is_valid_name(product_name)
-        product_description = is_valid_text(product_description)
-        price = is_valid_price(price)
-        if category == "":
-            category = "Not defined"
-        if availability == "":
-            availability = "1"
-
-        if (price != False) and (product_description != False) and (product_name != False):
-            add_product(product_name, product_description, price, category, availability )
-            flash("%s was added" % product_name, "msg")
-        else:
-            return render_template("/leo_markt/add_product_error.html", title = title, categories = categories,
-                           products_zip = products_zip, script = script, div = div)
     elif (request.method== "POST") and (request.form["add"] == "update_availability"):
         update_availability()
     elif (request.method == "POST") and (request.form['add'] == "add_category"):
@@ -79,7 +81,9 @@ def leo_martk():
     return render_template("/leo_markt/leo_markt.html", title = title, categories = categories,
                            products_zip = products_zip, script = script, div = div)
 
-# Get ajax Form:
+# ========= Ajax Forms =============== :
+
+# show details
 @leo_markt_blueprint.route("/leo_markt_details", methods = ["GET", "POST"])
 def leo_markt_details():
     if request.method == "POST":
@@ -88,6 +92,20 @@ def leo_markt_details():
         details = show_details(show_details_id)
 
         return details
+
+# add product
+@leo_markt_blueprint.route("/leo_markt_add_product", methods = ["GET", "POST"])
+def leo_markt_add_product():
+    if request.method == "POST":
+        product_name = request.form.get("product_name")
+        product_description = request.form.get("product_description")
+        price = request.form.get("price")
+        availability = request.form.get("product_availability")
+        category = request.form.get("categories")
+
+
+        return add_product(product_name, product_description, price, category, availability)
+
 
 
 # render this clone pages if user make an error in the input e.g. add negative price

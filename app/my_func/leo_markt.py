@@ -130,6 +130,7 @@ def add_product(product_name, product_description, price, category, availability
         cur.close()
         conn.close()
         print ("Connection closed")
+        flash("%s was added" % product_name, "msg")
         return True
 
 

@@ -47,7 +47,7 @@
 
                     {# <!--Add product - Edit Categories, drop down menu--> #}
                     <div id="add_product">
-                        <form  class="add_product_form" action=""  method="POST" style="display:block">
+                        <form  class="add_product_form" action=""  method="POST" style="display:block" >
                             <input id="product_name" name="product_name"  type="text" placeholder="Add Product Name" required><br>
                             <textarea  id="product_description" name="product_description" placeholder="Add Description" ></textarea><br>
                             <input id="product_price" name="price"  type="number" step="0.01" placeholder="Add Price" required><br>
@@ -58,7 +58,7 @@
                                     <option  name="{{category}}">{{category}}</option>
                                 {% endfor %}
                             </select><br>
-                            <button id="submit_product_btn" name="add" type="submit" value="add_product"> Add </button>
+                            <button id="submit_product_btn" name="add" type="button" value="add_product" onclick="add_product(this)"> Add </button>
                         </form>
                     </div>
 

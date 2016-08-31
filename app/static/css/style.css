@@ -186,9 +186,15 @@ div.ariane img {}
 }
 
 .index_p2 {
+    background: url("/static/img/index/editor_ready.gif") no-repeat center,
+                url("/static/img/index/note_p2.png") no-repeat left ,
+                url("/static/img/index/caffe_phone.png") no-repeat right,
+                url("/static/img/index/wood_p2_bg.jpg") repeat;
 	margin-top: 10px;
-	text-align: center;
+	/*text-align: center;*/
 	height: 100vh;
+    background-size: 680px auto, auto,  auto,cover;
+    background-position: center, 5%, right;
 }
 
 div.index_p2 p {
@@ -1545,7 +1551,7 @@ form input#submit:hover {
 @media all and (max-height: 600px) {
 
     .index_p2 {
-        height: auto;}
+        }
     .hello {
         height: auto;
         
