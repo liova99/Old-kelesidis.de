@@ -15,11 +15,12 @@ background: url(path or link) repead;
 img {max-width: 100%}
 
 html, body {
+    overflow-x: hidden;
 	font-size: 100%;
 	height: 100%;
 	width: 100%;
   	margin: 0;
-  	min-width: 1100px;
+  	/*min-width: 1100px;*/
 }
 
 a {
@@ -160,9 +161,8 @@ div.hello p {
 	font-family: "Waiting for the Sunrise";
 }
 
-.ariane_wrapper {}
 .ariane {
-    width: 470px;
+    width: 70%;
     margin: 0 auto;
 }
 .ariane_img {}
@@ -193,9 +193,15 @@ div.ariane img {}
 	margin-top: 10px;
 	/*text-align: center;*/
 	height: 100vh;
-    background-size: 680px auto, auto,  auto,cover;
+    background-size: 600px auto, auto,  auto,cover;
     background-position: center, 5%, right;
 }
+
+#p2_top_img {display: none;}
+#editor_ready{display: none;}
+#phone_mobile {display: none;}
+#editor_mobile {display: none;}
+
 
 div.index_p2 p {
 	text-align: left;
@@ -1548,14 +1554,59 @@ form input#submit:hover {
     to {transform: scale(1)}
 }
 
-@media all and (max-height: 600px) {
+@media all and (max-width: 1100px) and (min-width: 730px) {
 
-    .index_p2 {
-        }
-    .hello {
+    .hello {height: auto; margin-top: 25px;}
+
+
+    div.navbar a { font-size: 1.5em; }
+    div#beta { display: none; }
+    div.navbar_github img {width: 35px;}
+
+    .index_p2 { 
+        background:
+                    url("/static/img/index/caffe.png") no-repeat right,
+                    url("/static/img/index/wood_p2_bg.jpg") repeat;
+        margin-top: 20px;
+        /*text-align: center;*/
         height: auto;
-        
+        background-size:auto,cover;
     }
+
+    #p2_top_img {display: block; text-align: center; padding: 18px 0;}
+
+    #phone_mobile {
+        display: block;
+        margin: 20px auto;
+        width: 392px;
+        height: auto;
+    }
+    #editor_ready {display: inline-block; width: 90%;}
 }
 
+@media all and (max-width: 729px) and (min-width: 400px) {
+
+    .hello {height: auto; margin-top: 25px;}
+
+    div.navbar a { font-size: 1.5em; }
+    div#beta { display: none; }
+    div.navbar_github img {width: 35px;}
+
+    .index_p2 {
+    background: url("/static/img/index/wood_p2_bg.jpg") repeat;
+    margin-top: 35px;
+    /*text-align: center;*/
+    height: auto;
+    background-size: cover;
+    }
+
+    #p2_top_img {display: block; text-align: center; padding: 18px 0;}
+    #phone_mobile {
+        display: block;
+        margin: 20px auto;
+        width: 392px;
+        height: auto;
+    }
+    #editor_mobile {display: inline-block; width: 90%;}
+}
 
