@@ -11,6 +11,47 @@ function id_num(elem_id){
 }
 */
 
+document.getElementById("toggle").addEventListener('click', function() {
+
+    if ( document.body.style.backgroundColor != "white" ) {
+        console.log("close");
+        document.getElementById("header").style.cssText = "position: fixed; left: -250px;";
+        document.getElementById("toggle").style.cssText = "";
+       // document.body.style.backgroundColor = "white" ;
+        document.getElementsByTagName("body")[0].style.cssText = "background-color: white;"
+
+    } else {
+        console.log("open")
+        document.getElementById("header").style.cssText = "position: absolute; left:0px;";
+        document.getElementById("toggle").style.cssText = "position: absolute; left:250px;";
+        //document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        document.getElementsByTagName("body")[0].style.cssText = "background-color: #ffffff; overflow: hidden;";
+        //document.body.style.cssText = "backgroundColor: rgba(0,0,0,0.4); z-index:101" ;
+        //document.body.style.z-index = "101";
+
+    }
+
+});
+
+/*
+
+function open_side_menu(){
+    document.getElementById("header").style.cssText = "position: absolute; left:0px;";
+    document.getElementById("toggle").style.cssText = "position: absolute; left:250px;";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+
+
+}
+
+function closeNav() {
+        document.getElementById("header").style.cssText = "position: fixed; left: -250px;";
+        document.getElementById("toggle").style.cssText = "";
+
+        document.body.style.backgroundColor = "white";
+}
+*/
+
+/*
 function add_product(obj){
 
     var formDAta = {
@@ -33,6 +74,7 @@ function add_product(obj){
     event.preventDefault();
 
 }
+*/
 
 /* ***************Ajax **************/
 function id_num(elem_id)  {

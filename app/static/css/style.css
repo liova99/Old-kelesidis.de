@@ -15,7 +15,6 @@ background: url(path or link) repead;
 img {max-width: 100%}
 
 html, body {
-    overflow-x: hidden;
 	font-size: 100%;
 	height: 100%;
 	width: 100%;
@@ -73,6 +72,9 @@ table#player_name tr:nth-child(odd){
 
 
 /* ================ */
+
+#side_menu_toggle { display: none; }
+#toggle {display: none;}
 
 #header {
 	background-color: black;
@@ -1588,9 +1590,39 @@ form input#submit:hover {
 
     .hello {height: auto; margin-top: 25px;}
 
+
+    #header {
+        width: 240px;
+        padding: .1em;
+        position: fixed;
+        left: -250px;
+        top: 0;
+        height: 100%;
+        opacity: .9;
+        z-index: 101;
+        transition: left .7s;
+    }
+
+    #toggle {
+        display: block;
+        font-size: 3em;
+        float: left;
+        margin: 5px 10px; 
+        cursor: pointer;
+        color: #000;
+        transition: left .7s;
+        position: absolute;
+        left: 5px;
+    }
+    
+    #toggle:hover {opacity: .7;}
+
+    .navbar {display: block;}
     div.navbar a { font-size: 1.5em; }
-    div#beta { display: none; }
-    div.navbar_github img {width: 35px;}
+    div.navbar a:hover { font-size: 1.5em; text-decoration: none; color: white;}
+
+    #beta { display: none; }
+    div.navbar_github img {width: 35px; margin: 0 0 15px 15px;}
 
     .index_p2 {
     background: url("/static/img/index/wood_p2_bg.jpg") repeat;
@@ -1610,3 +1642,58 @@ form input#submit:hover {
     #editor_mobile {display: inline-block; width: 90%;}
 }
 
+@media all and (max-width: 399px){
+
+    .hello {height: auto; margin-top: 25px;}
+
+
+    #header {
+        width: 210px;
+        padding: .1em;
+        position: fixed;
+        left: -250px;
+        top: 0;
+        height: 100%;
+        opacity: .9;
+        z-index: 101;
+        transition: left .7s;
+    }
+
+    #toggle {
+        display: block;
+        font-size: 3em;
+        float: left;
+        margin-left: -16px; 
+        cursor: pointer;
+        color: #000;
+        transition: left .7s;
+        position: absolute;
+        left: 5px;
+    }
+    
+    #toggle:hover {opacity: .7;}
+
+    .navbar {display: block;}
+    div.navbar a { font-size: 1.2em; }
+    div.navbar a:hover { font-size: 1.2em; text-decoration: none; color: white;}
+
+    #beta { display: none; }
+    div.navbar_github img {width: 35px; margin: 0 0 15px 15px;}
+
+    .index_p2 {
+    background: url("/static/img/index/wood_p2_bg.jpg") repeat;
+    margin-top: 35px;
+    /*text-align: center;*/
+    height: auto;
+    background-size: cover;
+    }
+
+    #p2_top_img {display: block; text-align: center; padding: 18px 0;}
+    #phone_mobile {
+        display: block;
+        margin: 20px auto;
+        width: 392px;
+        height: auto;
+    }
+    #editor_mobile {display: inline-block; width: 90%;}
+}
