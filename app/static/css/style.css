@@ -148,7 +148,7 @@ div.navbar_github img{
 .hello {
 	margin-top: 10px;
 	text-align: center;
-	height: 100vh;
+	/*height: 100vh;*/
 }
 
 div.hello h1 {
@@ -188,15 +188,24 @@ div.ariane img {}
 }
 
 .index_p2 {
-    background: url("/static/img/index/editor_ready.gif") no-repeat center,
-                url("/static/img/index/note_p2.png") no-repeat left ,
-                url("/static/img/index/caffe_phone.png") no-repeat right,
-                url("/static/img/index/wood_p2_bg.jpg") repeat;
+    background: 
+                url("/static/img/index/skills_new/window.png") no-repeat ,
+                url("/static/img/index/skills_new/ramka.png") no-repeat ,
+                url("/static/img/index/skills_new/books.png") no-repeat ,
+                url("/static/img/index/skills_new/skills_new_bg.jpg") repeat;
+                /*url("/static/img/index/wood_p2_bg.jpg") repeat;*/
 	margin-top: 10px;
 	/*text-align: center;*/
-	height: 100vh;
-    background-size: 600px auto, auto,  auto,cover;
-    background-position: center, 5%, right;
+	/*height: 100vh;*/
+    background-size: auto, auto, auto, cover;
+    background-position: 2% 5%, 90% 5%, 70% 15%, center;
+}
+
+#index2_table_note {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 200px;
 }
 
 #p2_top_img {display: none;}
@@ -232,6 +241,8 @@ div.index_p2 h2 {
 	color: DarkMagenta;
 }
 
+/* web skils */
+
 #index_p3 {
 	text-align: center;
 	height: 100vh;
@@ -246,6 +257,8 @@ div.index_p2 h2 {
 div#web_logo  h2 {
 	padding: .4em;
 }
+
+#index_p3_bg {}
 
 #web_knowledge {
 	margin: 6em auto 0 auto;
@@ -292,6 +305,9 @@ div#web_logo  h2 {
 	width: 1100px;
 }
 
+#skills_video {
+    float: left;    
+}
 
 /*image headers*/
 
@@ -1562,6 +1578,7 @@ form input#submit:hover {
 
 
     div.navbar a { font-size: 1.5em; }
+    div.navbar a:hover {font-size: 1.5}
     div#beta { display: none; }
     div.navbar_github img {width: 35px;}
 

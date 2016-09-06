@@ -11,6 +11,12 @@ function id_num(elem_id){
 }
 */
 
+/* typing text effect on index page_2 */
+var myString = "def Python(): \
+    level = ' beginner' " ;
+
+
+            /* Side menu for screens smaller than 730px */
 document.getElementById("toggle").addEventListener('click', function() {
 
     if ( document.body.style.backgroundColor != "white" ) {
@@ -28,9 +34,7 @@ document.getElementById("toggle").addEventListener('click', function() {
         document.getElementsByTagName("body")[0].style.cssText = "background-color: #ffffff; overflow: hidden;";
         //document.body.style.cssText = "backgroundColor: rgba(0,0,0,0.4); z-index:101" ;
         //document.body.style.z-index = "101";
-
     }
-
 });
 
 /*
@@ -76,7 +80,7 @@ function add_product(obj){
 }
 */
 
-/* ***************Ajax **************/
+/* *************** Ajax **************/
 function id_num(elem_id)  {
 
     var details_id = elem_id.id
