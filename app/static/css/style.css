@@ -1,10 +1,10 @@
 /* html and body height 100% otherwise
 the footer don't stay down,  */
 
-/* defaults 
+/* defaults
 
 background: url(path or link) repead;
- */ 
+ */
 
 *{
 	margin: 0;
@@ -46,7 +46,7 @@ a:hover {
 }
 
 .player_name_div {
-	
+
     display: inline-block;
     float: right;
     margin: 1.5em;
@@ -97,6 +97,7 @@ div.navbar a:hover {
 	font-size: 1em;
 	text-decoration: none;
 	color: white;
+    transition: color .2s ease-in-out;
 }
 
 .navbar_github {
@@ -119,7 +120,7 @@ div.navbar_github img{
 #content {
 	/*border: solid 1px black;*/
 	/*border-radius: 5px;*/
-	margin: .4em .2em;
+	/*margin: .4em .2em;*/
 	height: inherit;
 }
 
@@ -146,15 +147,41 @@ div.navbar_github img{
 }
 
 .hello {
-	margin-top: 10px;
+/*    background-image: url('/static/img/index/clouds.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;*/
+	min-height: 680px;
 	text-align: center;
+    margin-bottom: 150px;
+    position: relative;
 	/*height: 100vh;*/
 }
 
-div.hello h1 {
+#clouds_left {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+#clouds_right {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+}
+
+#hello_header {
 	font-size: 6em;
 	color: green;
 	font-family: "Josefin Sans";
+    z-index: 10;
+}
+
+#hello_txt {
+    position: absolute;
+    top: 17%;
+    left: 28%;
+    z-index: 10;
 }
 
 div.hello p {
@@ -164,8 +191,11 @@ div.hello p {
 }
 
 .ariane {
-    width: 70%;
+    width: 100%;
+    position: absolute;
+    top: 40%;
     margin: 0 auto;
+    z-index: 10;
 }
 .ariane_img {}
 
@@ -187,31 +217,47 @@ div.ariane img {}
 	border-radius: 4px;
 }
 
+
 .index_p2 {
-    background: 
-                url("/static/img/index/skills_new/window.png") no-repeat ,
-                url("/static/img/index/skills_new/ramka.png") no-repeat ,
-                url("/static/img/index/skills_new/books.png") no-repeat ,
-                url("/static/img/index/skills_new/skills_new_bg.jpg") repeat;
+    background:
+                url("/static/img/index/skills_new/bg.jpg") repeat;
                 /*url("/static/img/index/wood_p2_bg.jpg") repeat;*/
 	margin-top: 10px;
 	/*text-align: center;*/
 	/*height: 100vh;*/
-    background-size: auto, auto, auto, cover;
-    background-position: 2% 5%, 90% 5%, 70% 15%, center;
+    background-size:cover;
+		background-attachment: fixed;
 }
 
 #index2_table_note {
-    max-width: 960px;
+    /*max-width: 960px;*/
     width: 100%;
     margin: 0 auto;
-    padding-top: 200px;
+    padding-top: 300px;
+    height: 680px;
+    position: relative;
+
 }
 
-#p2_top_img {display: none;}
-#editor_ready{display: none;}
-#phone_mobile {display: none;}
-#editor_mobile {display: none;}
+/********************* Drag Elements *************************/
+
+
+#p2_ramka{position: absolute;  left: 85%; top: 7%; }
+#p2_cactus {position: absolute;  left: 5%; top: 2%;}
+#p2_caffe {position: absolute;  left: 85%; top: 50%;}
+#p2_calculator {position: absolute; left: 75%; top: 30%;}
+#p2_clip {position: absolute; z-index: 10; left: 20%; top: 40%;}
+#p2_clip_big {position: absolute;  z-index: 10; left: 50%; top: 73%;}
+#p2_code_note {position: absolute;  left: 15%; top: 44%;}
+#p2_laptop {position: absolute;  z-index: 12; left: 37%; top: -8%;}
+#p2_note_graphs {position: absolute;  left: 18%; top: 3%;}
+#p2_pencil_black {position: absolute;  left: 17%; top: 25%;}
+#p2_pencil_blue {position: absolute;  left: 30%; top: 25%;}
+#p2_pencil_green {position: absolute;  left: 25%; top: 73%;}
+#p2_phone {position: absolute;  left: 10%; top: 45%;}
+#p2_trash {position: absolute;  left: 65%; top: 65%;}
+
+#index2_notebook {display: none;}
 
 
 div.index_p2 p {
@@ -260,6 +306,8 @@ div#web_logo  h2 {
 
 #index_p3_bg {}
 
+#index3_bg_mobile {display: none;}
+
 #web_knowledge {
 	margin: 6em auto 0 auto;
 	width: 480px;
@@ -297,7 +345,7 @@ div#web_logo  h2 {
 }
 
 #web_proj_content {
-	
+
 }
 
 #web_proj {
@@ -306,7 +354,7 @@ div#web_logo  h2 {
 }
 
 #skills_video {
-    float: left;    
+    float: left;
 }
 
 /*image headers*/
@@ -316,7 +364,7 @@ div#web_logo  h2 {
 	width: 300px;
 	height: auto;
 	margin: 0 90;
-	
+
 }
 
 
@@ -338,7 +386,7 @@ div#nikol_port_img img:hover {
 }
 
 div#saridis_img img {
-    
+
     cursor:pointer;
 	width: 100%;
 	height: auto;
@@ -372,7 +420,7 @@ div#saridis_img img:hover {
 	height: 2em;
 	background-color: #546E7A;
 	display: inline-block;
-	
+
 }
 
 #data_logo_1 {
@@ -488,7 +536,7 @@ div#saridis_img img:hover {
 
 .barchart_power_index {
 	display: none;
-	
+
 }
 
 .index_chart_cout {
@@ -513,7 +561,7 @@ div#saridis_img img:hover {
 	width:350px;
 	height: auto;
 	margin-left: 1em;
-	
+
 }
 
 #ndex_chart_stock_wrapper {
@@ -590,7 +638,7 @@ div#index_notes_content p{
 /* Chart.html */
 #HLevelLine {
 	padding-right: 10px;
-	
+
 	height: auto;
 	width: 48%;
 	border: solid 1px #E0E0E0;
@@ -605,12 +653,12 @@ div#index_notes_content p{
 	display: inline-block;
 	width: 48%;
 	height: auto;
-	
+
 	margin: 10px;
 	border: solid 1px #E0E0E0;
 	background-color: #F9F9F9;
 	border-radius: 5px;
-	
+
 }
 /* ********************** */
 
@@ -646,8 +694,8 @@ input[name=chart] {
 	width: 85%;
 	border: solid 1px #E0E0E0;
 	border-radius: 3px;
-}	
-	
+}
+
 input[name=button_arrow] {
 	float: right;
 	height: 25px;
@@ -659,7 +707,7 @@ input[name=button_arrow] {
 /* chart */
 
 #main_content {
-	
+
 }
 
 #finance_chart {
@@ -684,7 +732,7 @@ input[name=button_arrow] {
 	display: inline-block;
 	padding: 5px;
 	width: auto;
-	border:1px solid #E0E0E0; 
+	border:1px solid #E0E0E0;
 	border-radius: 5px;
 	float: none;
 	margin:10px 15px;
@@ -694,12 +742,12 @@ input[name=button_arrow] {
 .info_table {
 	width: 100%;
 	border-collapse: collapse;
-	border:1px solid #ffffff; 
+	border:1px solid #ffffff;
 }
 
 .info_table tr,th,td {
 	border:1px solid rgba(255, 255, 255, 0);
-}	
+}
 .info_table th {
 	padding: 0em 1em 0em 0em;
 }
@@ -740,7 +788,7 @@ input[name=button_arrow] {
 }
 
 .rating_chart {
-	
+
 	display: inline-block;
 	padding: .5em;
 	border: solid 1px #E0E0E0;
@@ -772,16 +820,16 @@ input[name=button_arrow] {
 /*****  Add Product ********/
 
 #add_product {
-    display: none;  
-    position: fixed; 
-    z-index: 1; 
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; 
-    height:100%; 
-    overflow: none; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    width: 100%;
+    height:100%;
+    overflow: none;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
@@ -863,20 +911,20 @@ input[name=button_arrow] {
     font-family: "courie new";
     width: 6em;
     height: 1.6em;
-    -webkit-border-radius: 3px; 
+    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 4px;
     border:2px solid #008000;
-    font-weight:bold; 
-    text-align: center; 
-    color: #ffffff; 
+    font-weight:bold;
+    text-align: center;
+    color: #ffffff;
     background-color: #008000;
     margin: 7px auto;
 }
 
 #submit_product_btn:hover {
     cursor: pointer;
-    border:2px solid #04a604; 
+    border:2px solid #04a604;
     background-color: #04a604;
 
 }
@@ -888,16 +936,16 @@ input[name=button_arrow] {
 /**** Edit Categories *****/
 
 #edit_categories {
-    display: none;  
-    position: fixed; 
-    z-index: 1; 
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; 
-    height:100%; 
-    overflow: none; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    width: 100%;
+    height:100%;
+    overflow: none;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
     padding-top: 60px;
 }
 
@@ -967,19 +1015,19 @@ input[name=button_arrow] {
     font-family: "courie new";
     width: 6em;
     height: 1.6em;
-    -webkit-border-radius: 3px; 
+    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 4px;
     border:2px solid #008000;
-    font-weight:bold; 
-    text-align: center; 
-    color: #ffffff; 
+    font-weight:bold;
+    text-align: center;
+    color: #ffffff;
     background-color: #008000;
     margin: 7px auto;
 }
 #submit_category_btn:hover {
     cursor: pointer;
-    border:2px solid #04a604; 
+    border:2px solid #04a604;
     background-color: #04a604;}
 
 #remove_category_btn {
@@ -987,36 +1035,36 @@ input[name=button_arrow] {
     font-family: "courie new";
     width: 6em;
     height: 1.6em;
-    -webkit-border-radius: 3px; 
+    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 4px;
     border:2px solid #F44336;
-    font-weight:bold; 
-    text-align: center; 
-    color: #ffffff; 
+    font-weight:bold;
+    text-align: center;
+    color: #ffffff;
     background-color: #F44336;
     margin: 7px auto;
 }
 
 #remove_category_btn:hover {
     cursor: pointer;
-    border:2px solid #fa6a5f; 
-    background-color: #fa6a5f;    
+    border:2px solid #fa6a5f;
+    background-color: #fa6a5f;
 }
 
 /**** Show details ****************/
 
 #show_details_box {
-    display: none;  
-    position: fixed; 
-    z-index: 1; 
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; 
-    height:100%; 
-    overflow: none; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    width: 100%;
+    height:100%;
+    overflow: none;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
 #show_detail_content {
@@ -1101,12 +1149,12 @@ input[name=button_arrow] {
     top: -3px;
     display: block;
     position: relative;
-} 
+}
 
 
 #add_edit_content {
     display: none;
-    
+
 }
 
 
@@ -1114,20 +1162,20 @@ div#add_edit_menu img {
     width: 35px;
     float: right;
     margin: 0 .5em .5em .5em;
-}    
+}
 
 #edit_categories_btn {
     font-size: 1em;
     font-family: "courie new";
     width: 9em;
     height: auto;
-    -webkit-border-radius: 3px; 
+    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 4px;
     border:2px solid #008000;
-    font-weight:bold; 
-    text-align: center; 
-    color: #ffffff; 
+    font-weight:bold;
+    text-align: center;
+    color: #ffffff;
     background-color: #008000;
     margin: 7px auto;
     padding: .3em;
@@ -1144,13 +1192,13 @@ div#add_edit_menu img {
     font-family: "courie new";
     width: 9em;
     height: auto;
-    -webkit-border-radius: 3px; 
+    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 4px;
     border:2px solid #008000;
-    font-weight:bold; 
-    text-align: center; 
-    color: #ffffff; 
+    font-weight:bold;
+    text-align: center;
+    color: #ffffff;
     background-color: #008000;
     margin: 7px auto;
     padding: .3em;
@@ -1226,9 +1274,9 @@ table.products_list_table tr:nth-child(even):hover{
 
 
 table.products_list_table tr:nth-child(odd){
-    background-color: #1f9f1f; 
-    color: white; 
-    cursor: pointer; 
+    background-color: #1f9f1f;
+    color: white;
+    cursor: pointer;
 }
 
 table.products_list_table tr:nth-child(odd):hover{
@@ -1320,7 +1368,7 @@ table.products_list_table_2 td {
 .product_list_btn:hover {
     cursor: pointer;
     opacity: 0.8;
-} 
+}
 
 
 /* Leo Markt total income chart*/
@@ -1349,7 +1397,7 @@ div.leo_mark_chart a {
 	position: static;
 	text-align: center;
 	margin: 0 auto;
-	
+
 }
 
 #footer p {
@@ -1373,7 +1421,7 @@ div.leo_mark_chart a {
     margin-right: 60px;
     padding: 10px;
     color: #4b4949;
-      
+
 }
 
 #contact {
@@ -1389,7 +1437,7 @@ form[name=contact ] p{
   font-family: "courier new";
   color: #4b4949;
 }
- 
+
 form input#name,
 form input#email {
     width: 400px;
@@ -1415,7 +1463,7 @@ form input#email:focus {
     outline: 0;
 
 }
- 
+
 form textarea#message {
     width: 500px;
     height: 100px;
@@ -1437,19 +1485,19 @@ form textarea#message:focus {
     outline: 0;
 }
 
- 
+
 form input#submit {
     font-size: 1.5em;
     font-family: "courie new";
     width: 6em;
     height: 1.6em;
-    -webkit-border-radius: 3px; 
+    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 4px;
     border:2px solid #008000;
-    font-weight:bold; 
-    text-align: center; 
-    color: #ffffff; 
+    font-weight:bold;
+    text-align: center;
+    color: #ffffff;
     background-color: #008000;
 /*    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #e5e5e5));
     background-image: -webkit-linear-gradient(top, #f4f4f4, #e5e5e5);
@@ -1458,10 +1506,10 @@ form input#submit {
     background-image: -o-linear-gradient(top, #f4f4f4, #e5e5e5);
     background-image: linear-gradient(top, #f4f4f4, #e5e5e5);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f4f4f4, endColorstr=#e5e5e5);
 */}
- 
+
 form input#submit:hover {
   cursor: pointer;
-  border:2px solid #04a604; 
+  border:2px solid #04a604;
   background-color: #04a604;
 /*  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dbdbdb), color-stop(100%, #cccccc));
   background-image: -webkit-linear-gradient(top, #dbdbdb, #cccccc);
@@ -1483,12 +1531,12 @@ form input#submit:hover {
 .flash_wrapper {
     width: 100%;
     height: 100%;
-    position: fixed; 
+    position: fixed;
     left: 0;
     top: 0;
-    z-index: 1; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    z-index: 1;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
     padding-top: 60px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -1538,7 +1586,7 @@ form input#submit:hover {
     padding: 1em;
     background-color: #F44336;
     font-family: "courier new";
-    font-size: .9em; 
+    font-size: .9em;
     color: white;
     border-radius: 4px;
 }
@@ -1547,7 +1595,7 @@ form input#submit:hover {
 @-moz-document url-prefix() {
 
 /*    .img_link {
-        
+
     }
 
     .navbar {
@@ -1559,14 +1607,14 @@ form input#submit:hover {
 
 @font-face {
     font-family: "verona script";
-    src: url('../font/Verona_Script.ttf') 
+    src: url('../font/Verona_Script.ttf')
 }
 
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)}
     to {-webkit-transform: scale(1)}
 }
-    
+
 @keyframes animatezoom {
     from {transform: scale(0)}
     to {transform: scale(1)}
@@ -1578,29 +1626,23 @@ form input#submit:hover {
 
 
     div.navbar a { font-size: 1.5em; }
-    div.navbar a:hover {font-size: 1.5}
+    div.navbar a:hover {font-size: 1.5em;}
     div#beta { display: none; }
     div.navbar_github img {width: 35px;}
 
-    .index_p2 { 
+    .index_p2 {
         background:
-                    url("/static/img/index/caffe.png") no-repeat right,
-                    url("/static/img/index/wood_p2_bg.jpg") repeat;
-        margin-top: 20px;
-        /*text-align: center;*/
-        height: auto;
-        background-size:auto,cover;
+                    url("/static/img/index/skills_new/ramka.png") no-repeat;
+        margin-top: 10px;
+        background-size: auto;
+        background-position: 90% 5%;
     }
 
-    #p2_top_img {display: block; text-align: center; padding: 18px 0;}
+    #index2_table_note {display: none;}
+    #index2_notebook{ display:block; max-width: 531px; width: 100%; margin: 0 auto; padding-top: 200px;}
 
-    #phone_mobile {
-        display: block;
-        margin: 20px auto;
-        width: 392px;
-        height: auto;
-    }
-    #editor_ready {display: inline-block; width: 90%;}
+
+
 }
 
 @media all and (max-width: 729px) and (min-width: 400px) {
@@ -1624,14 +1666,14 @@ form input#submit:hover {
         display: block;
         font-size: 3em;
         float: left;
-        margin: 5px 10px; 
+        margin: 5px 10px;
         cursor: pointer;
         color: #000;
         transition: left .7s;
         position: absolute;
         left: 5px;
     }
-    
+
     #toggle:hover {opacity: .7;}
 
     .navbar {display: block;}
@@ -1642,22 +1684,29 @@ form input#submit:hover {
     div.navbar_github img {width: 35px; margin: 0 0 15px 15px;}
 
     .index_p2 {
-    background: url("/static/img/index/wood_p2_bg.jpg") repeat;
-    margin-top: 35px;
-    /*text-align: center;*/
-    height: auto;
-    background-size: cover;
+        background:
+                    url("/static/img/index/skills_new/ramka.png") no-repeat;
+
+        margin-top: 10px;
+        background-size: auto;
+        background-position:  90% 5%;
     }
 
-    #p2_top_img {display: block; text-align: center; padding: 18px 0;}
-    #phone_mobile {
-        display: block;
-        margin: 20px auto;
-        width: 392px;
-        height: auto;
-    }
-    #editor_mobile {display: inline-block; width: 90%;}
-}
+    #index2_table_note {display: none;}
+    #index2_notebook{
+        display:block;
+        max-width: 531px;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 200px;
+        }
+
+    #index_p3 {height: auto; }
+    #index_p3_bg {display: none;}
+    #index3_bg_mobile {display: block; max-width: 729px; margin: 0 auto;}
+    div#index3_bg_mobile img { }
+
+}/*end media -400*/
 
 @media all and (max-width: 399px){
 
@@ -1680,14 +1729,14 @@ form input#submit:hover {
         display: block;
         font-size: 3em;
         float: left;
-        margin-left: -16px; 
+        margin-left: -16px;
         cursor: pointer;
         color: #000;
         transition: left .7s;
         position: absolute;
         left: 5px;
     }
-    
+
     #toggle:hover {opacity: .7;}
 
     .navbar {display: block;}
@@ -1698,19 +1747,26 @@ form input#submit:hover {
     div.navbar_github img {width: 35px; margin: 0 0 15px 15px;}
 
     .index_p2 {
-    background: url("/static/img/index/wood_p2_bg.jpg") repeat;
-    margin-top: 35px;
-    /*text-align: center;*/
-    height: auto;
-    background-size: cover;
+        background:
+                    url("/static/img/index/skills_new/ramka.png") no-repeat;
+
+        margin-top: 10px;
+        background-size: auto;
+        background-position:  90% 5%;
     }
 
-    #p2_top_img {display: block; text-align: center; padding: 18px 0;}
-    #phone_mobile {
-        display: block;
-        margin: 20px auto;
-        width: 392px;
-        height: auto;
-    }
-    #editor_mobile {display: inline-block; width: 90%;}
+    #index2_table_note {display: none;}
+    #index2_notebook{
+        display:block;
+        max-width: 531px;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 200px;
+        padding-bottom: 20px;
+        }
+
+    #index_p3 {height: inherit; }
+    #index_p3_bg {display: none;}
+    #index3_bg_mobile {display: block; max-width: 729px; margin: 0 auto;}
+    div#index3_bg_mobile img { }
 }

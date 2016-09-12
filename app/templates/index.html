@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
     <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" />
 {% endblock head %}
@@ -21,16 +21,26 @@
 <div id="container">
     <div id="content">
 
-        <div class="hello">
-            <h1>Hello!</h1>
-            <p><span style="font-weight: bold;">My</span> name is <span style="font-weight: bold;">Levan</span></p>
-            <p>When i grow up i want to be an <span style="font-weight: bold;">astronaut</span></p><br>
+        <div class="hello"> 
 
-                <div class="ariane">
+            <div id="clouds_left">
+                <img src=" {{ url_for('static', filename='img/index/hello/clouds_left.png') }} " alt="photoshop clouds">
+            </div>
 
-                    <div class="ariane_img">
-                        <a href="https://around.com/ariane.html" class="img_link" target="_blank" > <img src="{{ url_for('static', filename='img/index/ariane_final.png') }}" title="Ariane 5 story"></a>
+            <div id="clouds_right">
+                <img src=" {{ url_for('static', filename='img/index/hello/clouds_right.png') }} " alt="photoshop clouds">
+            </div>
 
+            <h1 id="hello_header">Hello!</h1>
+
+            <span id="hello_txt">
+                <p><span style="font-weight: bold;">My</span> name is <span style="font-weight: bold;">Levan</span></p>
+                <p>When i grow up i want to be an <span style="font-weight: bold;">astronaut</span></p><br>
+             </span>
+
+            <div class="ariane">
+                <div class="ariane_img" id="ariane_img">
+                    <a href="https://around.com/ariane.html" class="img_link" target="_blank" > <img src="{{ url_for('static', filename='img/index/ariane_final.png') }}" title="Ariane 5 story"></a>
                 </div>
             </div>
 
@@ -39,14 +49,25 @@
         <div class="index_p2">
 
             <div id="index2_table_note">
+                <img draggable="false"  id="p2_trash"  src="{{ url_for('static', filename='img/index/skills_new/trash.png') }}">
+                <img draggable="false"  id="p2_cactus"  src="{{ url_for('static', filename='img/index/skills_new/cactus.png') }}">
+                <img draggable="false"  id="p2_caffe"   src="{{ url_for('static', filename='img/index/skills_new/caffe.png') }}">
+                <img draggable="false"  id="p2_calculator"  src="{{ url_for('static', filename='img/index/skills_new/calculator.png') }}">
+                <img draggable="false"  id="p2_clip"   src="{{ url_for('static', filename='img/index/skills_new/clip.png') }}">
+                <img draggable="false"  id="p2_clip_big"  src="{{ url_for('static', filename='img/index/skills_new/clip_big.png') }}">
+                <img draggable="false"  id="p2_code_note"  src="{{ url_for('static', filename='img/index/skills_new/code_note.png') }}">
+                <img draggable="false"  id="p2_laptop"  src="{{ url_for('static', filename='img/index/skills_new/laptop.png') }}">
+                <img draggable="false"  id="p2_note_graphs"  src="{{ url_for('static', filename='img/index/skills_new/note_graphs.png') }}">
+                <img draggable="false"  id="p2_pencil_black"  src="{{ url_for('static', filename='img/index/skills_new/pencil_black.png') }}">
+                <img draggable="false"  id="p2_pencil_blue"  src="{{ url_for('static', filename='img/index/skills_new/pencil_blue.png') }}">
+                <img draggable="false"  id="p2_pencil_green"  src="{{ url_for('static', filename='img/index/skills_new/pencil_green.png') }}">
+                <img draggable="false"  id="p2_phone"   src="{{ url_for('static', filename='img/index/skills_new/phone.png') }}">
+                <img draggable="false"  id="p2_ramka"  src="{{ url_for('static', filename='img/index/skills_new/ramka.png') }}">
 
-                <img src="{{ url_for('static', filename='img/index/skills_new/table_note.gif') }}">
             </div>
 
-            <div id="p2_top_img">
-                <img id="phone_mobile" src="{{ url_for('static', filename='img/index/phone_mobile.png')  }} ">
-                <img id="editor_mobile" src="{{ url_for('static', filename='img/index/editor_small.gif')  }} ">
-                <img id="editor_ready" src="{{ url_for('static', filename='img/index/editor_small.gif')  }} ">
+            <div id="index2_notebook">
+                <img  src="{{ url_for('static', filename='img/index/skills_new/notebook.png') }}">
             </div>
 
 
@@ -62,6 +83,13 @@
             <div id="index_p3_bg">
                 <img src="{{ url_for('static', filename='img/index/index_skills.jpg') }}">
             </div>
+
+            <div id="index3_bg_mobile">
+                <img src="{{ url_for('static', filename='img/index/web/back_end.jpg') }}">
+                <img src="{{ url_for('static', filename='img/index/web/scale.jpg') }}">
+                <img src="{{ url_for('static', filename='img/index/web/front_end.jpg') }}">
+            </div>
+
 
 <!--
             <div id="web_knowledge">

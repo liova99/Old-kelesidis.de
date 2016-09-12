@@ -10,6 +10,9 @@
 # from bokeh.models.sources import ColumnDataSource
 #=====================================================
 
+import sys
+sys.path.append('C:/Users/levan/Dropbox/PyCharmProjects/flaskapp')
+
 from bokeh.embed import components
 from flask import Flask, render_template, request, redirect,url_for
 from webbrowser import open
@@ -17,8 +20,8 @@ from flask_mail import Mail, Message
 
 # MySQL connection
 # Warning! the password import must be above the connection import!!
-from app.passwords import *
-from config import mysql_connect
+from passwords import *
+
 
 app = Flask(__name__)
 mail = Mail()
@@ -45,6 +48,8 @@ app.register_blueprint(contact_blueprint)
 app.register_blueprint(bio_blueprint)
 app.register_blueprint(contact_success_blueprint)
 app.register_blueprint(leo_markt_blueprint)
+
+
 
 @app.route('/', methods = ['GET', 'POST'])
 def homepage():
