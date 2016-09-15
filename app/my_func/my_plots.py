@@ -19,8 +19,8 @@ from flask import request
 
 # Sample data for the http://kelesidis.de/charts/
 
-sample = pd.read_table('http://kelesidis.de/static/data/sample.txt')
 
+sample = pd.read_table('http://kelesidis.de/static/data/sample.txt')
 
 # =============== http://kelesidis.de/charts/  page ========================
 

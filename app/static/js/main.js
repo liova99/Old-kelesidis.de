@@ -151,7 +151,7 @@ function drag(elem_id) {
     };
 }
 
-/**** Paralax jquery*/
+/************************ Paralax jquery **********************************/
 
 /*/$(window).scroll(function() {
     var wScroll = $(this).scrollTop();
@@ -163,11 +163,16 @@ function drag(elem_id) {
     });
 });
 */
-/* Paralax raw JavaScript  (other way) */
 
-window.addEventListener("scroll", parallax, false);
+/*************** Paralax raw JavaScript  (other way) ********************/
+
+var min_width = window.matchMedia( "(min-width: 729px)" ); // window width is 730px or more
+
+window.addEventListener('scroll', parallax, false);
 
 function parallax() {
+      
+
 
     var yScroll =  document.body.scrollTop;  // how much user scrolls,
 
@@ -177,14 +182,14 @@ function parallax() {
     var hello_txt = document.getElementById('hello_txt');
     var hello_header = document.getElementById('hello_header');
 
-    var clouds_left = document.getElementById('clouds_left')
-    var clouds_right = document.getElementById('clouds_right')
+    var clouds_left = document.getElementById('clouds_left');
+    var clouds_right = document.getElementById('clouds_right');
 
     ariane.style.cssText =  'transform: translate(0px, ' + -((yScroll) /1.5) + 'px )'
     hello_txt.style.cssText =  'transform: translate(0px, ' + -((yScroll) /.5) + 'px )'
     hello_header.style.cssText =  'transform: translate(0px, ' + -((yScroll) /.5) + 'px )'
-    clouds_left.style.cssText =  'transform: translate(' + -((yScroll) /4) + 'px,' +  '0px )'
-    clouds_right.style.cssText =  'transform: translate(' + -((yScroll) /4) + 'px,' +  '0px )'
+    clouds_left.style.cssText =  'transform: translate(' + -((yScroll) /3) + 'px,' +  '0px )'
+    clouds_right.style.cssText =  'transform: translate(' + -((yScroll) /6) + 'px,' +  '0px )'
     
 
 
@@ -216,8 +221,9 @@ function parallax() {
         caffe.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+400)/15) + 'px,' + ((yScroll-index2_bgYScroll+400) /4.5) + 'px )'
     }
     if(yScroll > index2_bgYScroll-500){
-        
-        laptop.style.cssText =  'transform: translate(0px, ' + -((yScroll-index2_bgYScroll+500) /7) + 'px )'
+
+        trash.style.cssText =  'transform: translate(0px, ' + ((yScroll-index2_bgYScroll+500) /6) + 'px )'
+        laptop.style.cssText =  'transform: translate(0px, ' + -((yScroll-index2_bgYScroll+500) /5) + 'px )'
         phone.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/15) + 'px,' + ((yScroll-index2_bgYScroll+500) /4.5) + 'px )'
 
         //var pencil_black_pos = pencil_black.getBoundingClientRect();
@@ -227,5 +233,6 @@ function parallax() {
 
         calculator.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/15) + 'px,' + ((yScroll-index2_bgYScroll+500) /4.5) + 'px )'
     }   
-}
+
+} // paralax ()
 
