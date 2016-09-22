@@ -26,10 +26,12 @@ a {
     text-decoration: none;
     color: #008000;
     border-bottom: 1px dotted #008000;
+    transition: color .3s ease-in-out;
 }
 a:hover {
     color: 00a200;
     border-bottom: 1px dotted #00a200;
+    transition: color .3s ease-in-out;
 }
 
 .img_link {
@@ -361,7 +363,7 @@ div#nikol_port_img img:hover {
  }
 
  div#visit_nikol a:hover {
-    background-color: #000;
+    background-color: #717171;
     transition: all .3s ease-in-out;
  }
 
@@ -425,7 +427,7 @@ div#visit_saridis a {
 }
 
 div#visit_saridis a:hover {
-    background-color: #000;
+    background-color: #3f85da;
     transition: all .3s ease-in-out;
 
 }
@@ -444,6 +446,7 @@ div#visit_saridis a:hover {
   	transition: all 0.3s cubic-bezier(.25,.8,.25,1);}
 */
 }
+
 #data_logo {
 	margin-left: .3em;
 	width: .6em;
@@ -603,6 +606,7 @@ div#coutinho_chart a {border:none;}
 }
 
 #index_finance{
+    float: left;
     width: 60%;
     height: auto;
     margin-left: 20px; 
@@ -617,6 +621,15 @@ div#coutinho_chart a {border:none;}
 
 #select_chart_form_index {text-align: center;}
 
+#index_chart_input {
+    width: 100%;
+}
+
+form input#index_chart_input:focus {
+    border: 1px solid #e0e0e0;
+    outline: 0;
+}
+
 #finance_chart_index {
     display: inline-block;
     padding: 15px;
@@ -626,7 +639,40 @@ div#coutinho_chart a {border:none;}
     height: auto;
     background-color: #fff;
 }
+#finance_chart_index a {border: none;}
 
+#finance_header_container {
+    margin-top: 200px; 
+    margin-right: 25px;
+    width: 30%;
+    float: right;
+    color: #fff;
+    font-family: 'courier new';
+}
+
+div#finance_header_container h3 {text-align: center;}
+
+#visit_finance {
+    width: 150px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+div#visit_finance a {
+    border: 2px solid #ffffff;
+    padding: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+}
+
+div#visit_finance a:hover {
+    background-color: #0086b9;
+    transition: all .3s ease-in-out;
+}
 
 /********* index notes *******************/
 

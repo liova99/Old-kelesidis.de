@@ -150,7 +150,7 @@
                     <div id="select_chart_form_index">
                         <form action="" target="_blank" method="POST">
                             <fieldset id="form_index">
-                                    <input type="text"  name="chart" placeholder="Write a NASDAQ company symbol e.g AAPL">
+                                    <input type="text" id="index_chart_input"  name="chart" placeholder="Write a NASDAQ company symbol e.g AAPL">
                                     <!-- <input type="image" value="Open Window" title="Geht Los" name="button_arrow" src="{{ url_for('static', filename='img/button_arrow.png') }}"> -->
                             </fieldset>
                         </form>
@@ -162,6 +162,18 @@
                     </div>
 
                 </div>
+
+                <div id="finance_header_container">
+                    <h3> historical stock data chart</h3>
+                    <br>
+                    <p>a web app which takes as input a symbol of a NASDAQ company (e.g. TSLA for Tesla, AAPL for apple)
+                        and return a beautiful chart with historical stock prices from 2010 until the last trade day.</p>
+                        <p> hover the chart to see more info</p>
+
+                    <div id="visit_finance"> <a href="#"> visit page </a> </div>  
+
+                </div>    
+
 
             </div>    
 
@@ -178,7 +190,7 @@
 
             
 
-<!--
+
         <div id="index_notes">
 
             <div id="index_notes_content">
@@ -186,18 +198,15 @@
                 <h1>║ Notes</h1>
                 <p>This website uses Python Flask under the hood.</p>
                 <p>Data analysis with pandas and MySQL</p>
-
                 <p>The visualizations were made with <a href="http://bokeh.pydata.org/en/latest/" target="_blank"> bokeh</a>.</p>
                 <p>Source code on <a href="https://github.com/liova99/kelesidis.de" target="_blank">GitHub</a>. </p>
-
-                <p>Do not scale the webpage to see if it’s responsive, it isn't yet. </p>
 
                 <p></p>
 
             </div>
 
         </div>
--->
+
 
 
     </div>
