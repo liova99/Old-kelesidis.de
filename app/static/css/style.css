@@ -221,7 +221,7 @@ div.ariane img {}
 	border-radius: 4px;
 }
 
-
+/***************** index p2 < proramming Skills> ****/
 .index_p2 {
     background:
                 url("/static/img/index/skills_new/bg.jpg") no-repeat;
@@ -242,9 +242,6 @@ div.ariane img {}
     position: relative;
 
 }
-
-/********************* Drag Elements *************************/
-
 
 #p2_ramka{position: absolute;  left: 85%; top: 7%; }
 #p2_cactus {position: absolute;  left: 5%; top: 2%;}
@@ -268,28 +265,6 @@ div.index_p2 p {
 	text-align: left;
 }
 
-/* < Programming skills > */
-div.index_p2 h2 {
-	font-size: 2.5em;
-	font-weight: bold;
-	color: BlueViolet;
-	font-family:'courier new';
-}
-
-#program_text {
-	width: 600px;
-	margin: 90px auto;
-}
-
-#program_text p {
-	font-family:'courier new';
-	font-size: 1.7em;
-	font-weight: bold;
-}
-
-.code_highlited_mag{
-	color: DarkMagenta;
-}
 
 /* web skils */
 
@@ -312,63 +287,40 @@ div#web_logo  h2 {
 
 #index3_bg_mobile {display: none;}
 
-#web_knowledge {
-	margin: 6em auto 0 auto;
-	width: 480px;
-	text-align: left;
+
+
+/****** index p4 projects **************/
+
+#index_p4 {}
+
+#projects {
+    margin: 10px auto;
+    font-family: 'courier new';
+    font-size: 2em;
+    width:230px;
 }
 
-#photoshop {
-	display: inline-block;
-    font-size: 1.4em;
-    border: 3px solid #31C5F0;
-    background-color: #211f39;
-    color: #31C5F0;
-    padding: 7px 10px;
-    margin-left: 10px;
+/********** Web Designe ****************/
+
+/***** Nikol ********/
+
+#index_p4_web_dvp {
+    
 }
 
-#illustrator {
-	display: inline-block;
-	font-size: 1.4em;
-	border: 3px solid #ff7f18;
-	color: #ff7f18;
-	background-color: #2c1b0f;
-	padding: 7px 10px;
-    margin-left: 10px;
+#nikol_container {
+    width: 100%;
+    height: 290px;
+    padding: 50px 0;
+    background: url('/static/img/index/prj/nikol_bg.jpg') no-repeat;
+    background-attachment: fixed;
 }
-
-#sony {
-    display: inline-block;
-    font-size: 1.4em;
-    border: 3px solid #e6e6ff;
-    background-color: #5e5f5f;
-    color: #e6e6ff;
-    padding: 7px 10px;
-    margin-left: 10px;
-}
-
-#web_proj_content {
-
-}
-
-#web_proj {
-	margin: 6em auto 1em auto;
-	width: 1100px;
-}
-
-#skills_video {
-    float: left;
-}
-
-/*image headers*/
 
 #nikol_port_img {
 	float: left;
 	width: 300px;
-	height: auto;
-	margin: 0 90;
-
+	height: 290px;
+	margin-left: 50px;
 }
 
 
@@ -383,27 +335,101 @@ div#nikol_port_img img:hover {
 	 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
  }
 
+#nikol_header_container {
+    float: left;
+    margin: 80px auto auto 40px;
+    color: #ffffff;
+    font-family: 'courier new';
+}
+
+ #nikol_header {}
+ #visit_nikol {
+    width: 150px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 70px;
+    
+ }
+ div#visit_nikol a {
+    border: 2px solid #ffffff;
+    padding: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+ }
+
+ div#visit_nikol a:hover {
+    background-color: #000;
+    transition: all .3s ease-in-out;
+ }
+
+/****** Saridis **************/
+
+#saridis_container {
+    background: url('/static/img/index/prj/saridis_bg.jpg') no-repeat;
+    /*background-attachment: fixed;*/
+    width: 100%;
+    height: 290px;
+    padding: 50px 0;
+}
+
 #saridis_img {
-	float: left;
-	width: 600px;
-	height: auto;
+	float: right;
+	width: 300px;
+	height: 290px;
+    margin-right: 20px;
 }
 
 div#saridis_img img {
-
     cursor:pointer;
-	width: 100%;
+	width: 90%;
 	height: auto;
-	padding-top: 10px;
+	/*padding-top: 10px;*/
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  	transition: all 0.3s cubic-bezier(.25,.8,.25,1);}
+  	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
 
 div#saridis_img img:hover {
 	 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-#index_p4 {
+#saridis_header_container {
+    float: right;
+    margin: 80px 70px auto auto;
+    color: #ffffff;
+    font-family: 'courier new';
+
 }
+
+#saridis_header {
+
+}
+
+#visit_saridis {
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+div#visit_saridis a {
+    border: 2px solid #ffffff;
+    padding: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+}
+
+div#visit_saridis a:hover {
+    background-color: #000;
+    transition: all .3s ease-in-out;
+
+}
+
 
 /* ======Index Data Logo ===========*/
 
@@ -532,32 +558,33 @@ div#saridis_img img:hover {
 }
 /* ======== End Data Logo =========== */
 
-.index_chart_wrapper {
-	min-width: 1100px;
-	width: 90%;
-	margin: 10px auto;
+/********* Coutinho *****************/
+
+#coutinho_chart_container {
+    height: 680px;
+    padding: 12px 0;
+    background: url('/static/img/index/prj/coutinho_bg.jpg') no-repeat;
+    background-attachment: fixed;
 }
 
-.barchart_power_index {
-	display: none;
-
+#coutinho_chart {
+    float: left;
+    width: 60%;
+    height: auto;
+    margin: 95px 30px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
 }
 
-.index_chart_cout {
-	min-width: 1100px;
-	width: 90%;
-	margin: 10px auto;
-}
+div#coutinho_chart a {border:none;}
 
-.rating_chart_index {
-	display: inline-block;
-	padding: .5em;
-	border: solid 1px #E0E0E0;
-	border-radius: 5px;
-	/*margin: 1%;*/
-	width: 60%;
-	height: auto;
-
+#coutinho_header_container {
+    margin-top: 120px; 
+    width: 33%;
+    float: left;
+    color: #1b9be6;
+    font-family: 'courier new';
 }
 
 .index_coutihno_img {
@@ -568,38 +595,40 @@ div#saridis_img img:hover {
 
 }
 
-#ndex_chart_stock_wrapper {
+/***** Finance index ******************/
 
+#index_chart_stock_container {
+    background: url('/static/img/index/prj/finance_bg.jpg') no-repeat;
+    height: 680px;
 }
 
-#index_chart_stock {
-
+#index_finance{
+    width: 60%;
+    height: auto;
+    margin-left: 20px; 
+    
 }
 
-#info_table_index {
-	float: right;
+#form_index{ 
     display: inline-block;
-    padding: 5px;
-    width: auto;
-    border: 1px solid #E0E0E0;
-    border-radius: 5px;
-    /* float: none; */
-    margin: 10px 15px;
-    max-height: 30%;
-}
+    width: 70%;
+    margin: 50px auto;
+ }
+
+#select_chart_form_index {text-align: center;}
 
 #finance_chart_index {
     display: inline-block;
-    /* float: left; */
     padding: 15px;
-    border: solid 1px #E0E0E0;
     border-radius: 5px;
-    margin: 10px auto auto 7%;
-    min-width: 685px;
-    max-width: 800px;
-    width: 63%;
+    /*margin: 0 auto auto 7%;*/
+    width: 100%;
     height: auto;
+    background-color: #fff;
 }
+
+
+/********* index notes *******************/
 
 #index_notes {
 	width: 55%;
@@ -673,13 +702,6 @@ div#index_notes_content p{
 #select_chart_form{
 	text-align: center;
     margin-top: 3em;
-}
-
-#select_chart_form_index {
-	text-align: center;
-	border-top: solid 1px silver;
-    margin-top: 3em;
-
 }
 
 

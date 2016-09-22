@@ -334,7 +334,7 @@ def coutinho():
 
     # make figure,( the tools links to the TOOLS we create earlier, as the source with source_cp / _na )
     # responsive = True, make the plot to be responsive in web pages, when minimize maximize etc.
-    p_lfc = figure(x_axis_type = 'datetime', width = 800, height = 450, tools = TOOLS, responsive = True)
+    p_lfc = figure(x_axis_type = 'datetime', width = 800, height = 450, tools = TOOLS, responsive = True, title = 'Coutinho Ratings Season 2015/2016')
 
     # df_cp line
     p_lfc.line(df_cp.index, df_cp.Rating, color = 'DodgerBlue', source = source_cp)

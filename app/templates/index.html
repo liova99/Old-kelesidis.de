@@ -85,83 +85,75 @@
                 <img src="{{ url_for('static', filename='img/index/web/front_end.jpg') }}">
             </div>
 
-
-<!--
-            <div id="web_knowledge">
-                <div id="photoshop"><h3>photoshop</h3></div>
-                <div id="illustrator"><h3>illustrator</h3></div>
-                <div id="sony"><h3>sony vegas </h3></div>
-            </div>
-
-            <div id="web_proj_content">
-                <div id="web_proj">
-
-                        <div id="nikol_port_img">
-                            <a href="http://www.nikol-design.ru" target="_blank"> <img src=" {{ url_for('static', filename='img/index/nikol.jpg') }} " title="Nikol design"> </a>
-                        </div>
-
-                        <div id="saridis_img">
-                            <img src="{{ url_for('static', filename='img/index/saridis_s.png') }}" title="Saridis Travel">
-                        </div>
-                </div>
-            </div>
--->
-
         </div>
-<!--
+
+ 
+
+
+
+
         <div id="index_p4">
 
-            <div id="data_logo_wrapper">
-                <div id="data_logo"></div>
-                <div id="data_logo_1"></div>
-                <div id="data_logo_2"></div>
-                <div id="data_logo_3"></div>
-                <div id="data_logo_4"></div>
-                <div id="data_logo_5"></div>
-                <div id="data_logo_6"></div>
-                <div id="data_logo_7"></div>
-                <div id="data_logo_8"></div>
-                <div id="data_logo_9"></div>
-                <div id="data_logo_10"></div>
-                <div id="data_logo_11"></div>
-                <div id="data_logo_12"></div>
-                <div id="data_logo_13"></div>
+            <div id="projects">
+                <h2> Projects </h2>
             </div>
 
-            <div class="index_chart_wrapper">
+            <div id="index_p4_web_dvp">
 
-                <div class="index_chart_cout">
-                     <div class="rating_chart_index">
+                <div id="nikol_container"> 
 
-                            {{ script|safe }}
-                            {{ div|safe }}
+                    <div id="nikol_port_img">
+                        <a href="http://www.nikol-design.ru" target="_blank"> <img src=" {{ url_for('static', filename='img/index/prj/nikol.jpg') }} " title="Nikol design"> </a>
                     </div>
 
-                    <div class="index_coutihno_img">
-                        <img  src="{{ url_for('static', filename = 'img/coutinho_photo.JPG') }}" >
+                    <div id="nikol_header_container">
+                        <h3 id="nikol_header">a minimalistic portfolio for a creative designer</h3>
+                        <div id="visit_nikol"> <a href="http://www.nikol-design.ru" target="_blank"> visit website</a> </div>
+                    </div>
+                </div>
+                
+                <div id="saridis_container">
+
+                    <div id="saridis_img">
+                        <img src="{{ url_for('static', filename='img/index/prj/saridis.jpg') }}" title="Saridis Travel">
+                    </div>
+
+                    <div id="saridis_header_container">
+                        <h3 id="saridis_header"> a website for a travel agency </h3>
+                        <br>
+                        <p id="saridis_closed">saridis travel closed in 2012 </p>
+                        <div id="visit_saridis"> <a href="#"> view more </a> </div>
                     </div>
 
                 </div>
-
-            <div id="index_chart_stock_wrapper">
-
-                <div id="select_chart_form_index">
-
-                <form action="" target="_blank" method="POST">
-
-                    <fieldset id="forms">
-                            <input type="text"  name="chart" placeholder="Write a NASDAQ company symbol e.g AAPL">
-                            <input type="image" value="Open Window" title="Geht Los" name="button_arrow" src="{{ url_for('static', filename='img/button_arrow.png') }}">
-                    </fieldset>
-
-                </form>
-
+                        
             </div>
 
-                <div id="index_chart_stock">
+            <div id="coutinho_chart_container">
 
-                    <div id="info_table_index">
-                        {{ info|safe }}
+                <div id="coutinho_chart">
+                    {{ script|safe }}
+                    {{ div|safe }}
+                </div>
+
+                <div id="coutinho_header_container">
+                    <h3> season ratings fc liverpool's player, Coutinho. </h3>
+                    <br>
+                    <p> hover with mouse to see each game info</p>
+                </div>
+            </div>   
+
+            <div id="index_chart_stock_container">
+
+                <div id="index_finance"> 
+
+                    <div id="select_chart_form_index">
+                        <form action="" target="_blank" method="POST">
+                            <fieldset id="form_index">
+                                    <input type="text"  name="chart" placeholder="Write a NASDAQ company symbol e.g AAPL">
+                                    <!-- <input type="image" value="Open Window" title="Geht Los" name="button_arrow" src="{{ url_for('static', filename='img/button_arrow.png') }}"> -->
+                            </fieldset>
+                        </form>
                     </div>
 
                     <div id="finance_chart_index">
@@ -169,12 +161,22 @@
                         {{ div2|safe }}
                     </div>
 
-            </div>
+                </div>
+
+            </div>    
+
         </div>
 
-            </div>
-        </div>
--->
+        <!-- {#  coutinho #} -->
+
+            <!-- <div class="index_coutihno_img">
+                <img  src="{{ url_for('static', filename = 'img/coutinho_photo.JPG') }}" >
+            </div> -->
+
+
+            
+
+            
 
 <!--
         <div id="index_notes">

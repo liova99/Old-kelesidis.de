@@ -232,7 +232,7 @@ function parallax() {
         pencil_blue.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/10) + 'px,' + 0 + 'px )'
 
         calculator.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/15) + 'px,' + ((yScroll-index2_bgYScroll+500) /4.5) + 'px )'
-    }   
+    } 
 
 } // paralax ()
 
