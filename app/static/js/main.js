@@ -12,6 +12,18 @@ function id_num(elem_id){
 */
 
 
+/***********************8 Index Page loading *****************/
+    
+window.addEventListener("load", function() {
+    var loading = document.getElementById('loading')
+    loading.remove();
+    document.getElementsByTagName("body")[0].style.cssText = "overflow: auto;"
+});
+    
+
+
+
+
             /* Side menu for screens smaller than 730px */
 document.getElementById("toggle").addEventListener('click', function() {
 
@@ -175,6 +187,7 @@ function parallax() {
 
 
     var yScroll =  document.body.scrollTop;  // how much user scrolls,
+    console.log("You scrolled: " + yScroll)
 
     /**************** Index p1 (hello) **************/
 
@@ -184,13 +197,13 @@ function parallax() {
 
     var clouds_left = document.getElementById('clouds_left');
     var clouds_right = document.getElementById('clouds_right');
-
-    ariane.style.cssText =  'transform: translate(0px, ' + -((yScroll) /1.5) + 'px )'
-    hello_txt.style.cssText =  'transform: translate(0px, ' + -((yScroll) /.5) + 'px )'
-    hello_header.style.cssText =  'transform: translate(0px, ' + -((yScroll) /.5) + 'px )'
-    clouds_left.style.cssText =  'transform: translate(' + -((yScroll) /3) + 'px,' +  '0px )'
-    clouds_right.style.cssText =  'transform: translate(' + -((yScroll) /6) + 'px,' +  '0px )'
-    
+    if(yScroll < 1300){
+        ariane.style.cssText =  'transform: translate(0px, ' + -((yScroll) /1.5) + 'px )'
+        hello_txt.style.cssText =  'transform: translate(0px, ' + -((yScroll) /.5) + 'px )'
+        hello_header.style.cssText =  'transform: translate(0px, ' + -((yScroll) /.5) + 'px )'
+        clouds_left.style.cssText =  'transform: translate(' + -((yScroll) /3) + 'px,' +  '0px )'
+        clouds_right.style.cssText =  'transform: translate(' + -((yScroll) /6) + 'px,' +  '0px )'
+    }
 
 
     /*************** Index p2 ***********************/
@@ -213,26 +226,28 @@ function parallax() {
 
     var index2_bgYScroll = index2_bg.offsetTop;  // position of index2_bg  from top
 
-    if(yScroll > index2_bgYScroll-400){
-        ramka.style.cssText =  'transform: translate(0px, ' + ((yScroll-index2_bgYScroll+400) /2.5) + 'px )'
-        cactus.style.cssText =  'transform: translate(0px, ' + ((yScroll-index2_bgYScroll+400) /3.2) + 'px )'
-        note_graphs.style.cssText =  'transform: translate(' + ((yScroll-index2_bgYScroll+400)/15) + 'px,' + ((yScroll-index2_bgYScroll+400) /5) + 'px )'
-        code_note.style.cssText =  'transform: translate(' + ((yScroll-index2_bgYScroll+400)/7) + 'px,' + -((yScroll-index2_bgYScroll+400) /8) + 'px )'
-        caffe.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+400)/15) + 'px,' + ((yScroll-index2_bgYScroll+400) /4.5) + 'px )'
-    }
-    if(yScroll > index2_bgYScroll-500){
+    if(yScroll < 2100){
 
-        trash.style.cssText =  'transform: translate(0px, ' + ((yScroll-index2_bgYScroll+500) /6) + 'px )'
-        laptop.style.cssText =  'transform: translate(0px, ' + -((yScroll-index2_bgYScroll+500) /5) + 'px )'
-        phone.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/15) + 'px,' + ((yScroll-index2_bgYScroll+500) /4.5) + 'px )'
+        if(yScroll > index2_bgYScroll-400){
+            ramka.style.cssText =  'transform: translate(0px, ' + ((yScroll-index2_bgYScroll+400) /2.5) + 'px )'
+            cactus.style.cssText =  'transform: translate(0px, ' + ((yScroll-index2_bgYScroll+400) /3.2) + 'px )'
+            note_graphs.style.cssText =  'transform: translate(' + ((yScroll-index2_bgYScroll+400)/15) + 'px,' + ((yScroll-index2_bgYScroll+400) /5) + 'px )'
+            code_note.style.cssText =  'transform: translate(' + ((yScroll-index2_bgYScroll+400)/7) + 'px,' + -((yScroll-index2_bgYScroll+400) /8) + 'px )'
+            caffe.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+400)/15) + 'px,' + ((yScroll-index2_bgYScroll+400) /4.5) + 'px )'
+        }
+        if(yScroll > index2_bgYScroll-500){
 
-        //var pencil_black_pos = pencil_black.getBoundingClientRect();
+            trash.style.cssText =  'transform: translate(0px, ' + ((yScroll-index2_bgYScroll+500) /6) + 'px )'
+            laptop.style.cssText =  'transform: translate(0px, ' + -((yScroll-index2_bgYScroll+500) /5) + 'px )'
+            phone.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/15) + 'px,' + ((yScroll-index2_bgYScroll+500) /4.5) + 'px )'
 
-        pencil_black.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/4) + 'px,' + ((yScroll-index2_bgYScroll+500) /4) + 'px )'
-        pencil_blue.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/10) + 'px,' + 0 + 'px )'
+            //var pencil_black_pos = pencil_black.getBoundingClientRect();
 
-        calculator.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/15) + 'px,' + ((yScroll-index2_bgYScroll+500) /4.5) + 'px )'
-    } 
+            pencil_black.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/4) + 'px,' + ((yScroll-index2_bgYScroll+500) /4) + 'px )'
+            pencil_blue.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/10) + 'px,' + 0 + 'px )'
 
+            calculator.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/15) + 'px,' + ((yScroll-index2_bgYScroll+500) /4.5) + 'px )'
+        } 
+    }    
 } // paralax ()
 
