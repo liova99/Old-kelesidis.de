@@ -49,7 +49,8 @@ app.register_blueprint(bio_blueprint)
 app.register_blueprint(contact_success_blueprint)
 app.register_blueprint(leo_markt_blueprint)
 
-
+# TODO Hide Static File
+# TODO make Saridis Travel page
 
 @app.route('/', methods = ['GET', 'POST'])
 def homepage():

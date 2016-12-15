@@ -168,7 +168,7 @@ def finance(selected_company):
     f = figure(height = 270, x_axis_type = "datetime", tools = TOOLS, responsive = True)
 
     # Add title and label
-    f.title = 'Historical Prices for ' + chart + " from 1.03.2010 until yesterday"
+    f.title = 'Historical Prices for ' + chart + " from 1.03.2010"
     f.xaxis.axis_label = 'Date'
     f.yaxis.axis_label = 'Open Prices'
 

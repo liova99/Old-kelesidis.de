@@ -25,9 +25,23 @@
     <!-- {# Loading... #} -->
     <script type="text/javascript">
         document.getElementsByTagName("body")[0].style.cssText = "overflow: hidden;"
-    </script>    
-    <div id="loading"><h1>Loading</h1> </div>
+
+        /*if( window.innerWidth < window.innerHeight) {
+            //alert("For better experience use on landscape mode")
+            document.getElementById("landscape_loading").style.cssText = "display:block; color:#fff; font-family: 'courier new'; ";
+        }*/
+    </script>   
+
+    <div id="loading">
+        <h1>Loading...</h1>
+        
+           <!--  <img src=" {{ url_for('static', filename='img/index/landscape.gif') }} ">
+            <br><br>
+            <h3> use landscape for better experience </h3> -->
+
+    </div>
     <!-- {# End Loading... #} -->
+
 
         <div class="hello"> 
 
@@ -46,11 +60,11 @@
                 <p>When i grow up i want to be an <span style="font-weight: bold;">astronaut</span></p><br>
              </span>
 
-            <div class="ariane">
+            <!-- <div class="ariane">
                 <div class="ariane_img" id="ariane_img">
                     <a href="https://around.com/ariane.html" class="img_link" target="_blank" > <img src="{{ url_for('static', filename='img/index/ariane_final.png') }}" title="Ariane 5 story"></a>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 
@@ -105,6 +119,12 @@
 
                 <div id="nikol_container"> 
 
+                    <!-- For screens less than 730 -->
+                    <div id="nikol_header_container_top">
+                        <h3 id="nikol_header">a minimalistic portfolio for a creative designer</h3>
+                    </div>
+                    <!--  -->
+
                     <div id="nikol_port_img">
                         <a href="http://www.nikol-design.ru" target="_blank"> <img src=" {{ url_for('static', filename='img/index/prj/nikol.jpg') }} " title="Nikol design"> </a>
                     </div>
@@ -113,9 +133,21 @@
                         <h3 id="nikol_header">a minimalistic portfolio for a creative designer</h3>
                         <div id="visit_nikol"> <a href="http://www.nikol-design.ru" target="_blank"> visit website</a> </div>
                     </div>
+
+                    <!-- For screens less than 730 -->
+                         <div id="visit_nikol_bottom" > <a href="http://www.nikol-design.ru" target="_blank"> visit website</a> </div>
+                    <!--  -->
+
+
                 </div>
                 
                 <div id="saridis_container">
+
+                <div id="saridis_header_container_top">
+                        <h3 id="saridis_header"> a website for a travel agency </h3>
+                        <br>
+                        <p id="saridis_closed">saridis travel closed in 2012 </p>
+                </div>
 
                     <div id="saridis_img">
                         <img src="{{ url_for('static', filename='img/index/prj/saridis.jpg') }}" title="Saridis Travel">
@@ -128,12 +160,33 @@
                         <div id="visit_saridis"> <a href="#"> view more </a> </div>
                     </div>
 
+                    <!-- For screens less than 730 -->
+                    <div id="visit_saridis_bottom"> <a href="#"> view more </a> </div>
+                    <!--  -->
+
                 </div>
                         
             </div>
 
             <div id="coutinho_chart_container">
 
+                <!-- For mobiles & tablets default dysplay hidden-->
+                <div id="coutinho_header_container_top">
+                    <h3> season ratings fc liverpool's player, Coutinho. </h3>
+                    <br>
+                    <p class="hover_chart"> hover the chart to see each game info</p>
+                    
+                </div>
+
+                <!-- <div id="lanscape_gif_coutinho">
+                    <img src=" {{ url_for('static', filename='img/index/landscape.gif') }} ">
+                    <br>
+                    <h3> use landscape to see the interactive chart </h3>
+                </div> -->
+
+                <div class="chart_not_available_coutinho">
+                    <h3 class="chart_not_available" style="margin-top:100px;">[chart preview is not available on your device]</h3>
+                </div>
                 <div id="coutinho_chart">
                     {{ script|safe }}
                     {{ div|safe }}
@@ -142,13 +195,23 @@
                 <div id="coutinho_header_container">
                     <h3> season ratings fc liverpool's player, Coutinho. </h3>
                     <br>
-                    <p> hover the chart to see each game info</p>
+                    <p  hover the chart to see each game info</p>
                 </div>
             </div>   
 
             <div id="index_chart_stock_container">
 
                 <div id="index_finance"> 
+                    <!-- For mobiles & tablets default dysplay hidden-->
+                    <div id="finance_header_container_top">
+                        <h3> historical stock data chart</h3>
+                        <br>
+                        <p>a web app which takes as input a symbol of a NASDAQ company (e.g. TSLA for Tesla, AAPL for apple)
+                            and return a beautiful chart with historical stock prices from 2010 until the last trade day.</p>
+                            <p class="hover_chart"> hover the chart to see more info</p>
+
+                    </div>   
+                    <!--  -->
 
                     <div id="select_chart_form_index">
                         <form action="" target="_blank" method="POST">
@@ -159,6 +222,16 @@
                         </form>
                     </div>
 
+                    <!-- <div id="lanscape_gif_finance">
+                        <img src=" {{ url_for('static', filename='img/index/landscape.gif') }} ">
+                        <br>
+                        <h3> use landscape to see the interactive chart </h3>
+                    </div> -->
+
+                    <div class="chart_not_available_finance">
+                        <h3 class="chart_not_available" >[chart preview is not available on your device]</h3>
+                    </div>
+
                     <div id="finance_chart_index">
                         {{ script2|safe }}
                         {{ div2|safe }}
@@ -166,12 +239,16 @@
 
                 </div>
 
+                <!-- For mobiles & tablets default dysplay hidden-->
+                    <div id="visit_finance_bottom"> <a href="http://kelesidis.de/historical_data/" target="_blank"> visit page </a> </div>  
+                <!--  -->
+
                 <div id="finance_header_container">
                     <h3> historical stock data chart</h3>
                     <br>
                     <p>a web app which takes as input a symbol of a NASDAQ company (e.g. TSLA for Tesla, AAPL for apple)
                         and return a beautiful chart with historical stock prices from 2010 until the last trade day.</p>
-                        <p> hover the chart to see more info</p>
+                        <p hover the chart to see more info</p>
 
                     <div id="visit_finance"> <a href="http://kelesidis.de/historical_data/" target="_blank"> visit page </a> </div>  
 

@@ -6,6 +6,8 @@ from bokeh.embed import components
 from app.passwords import *
 from config import mysql_connect
 
+# TODO Yahoo Debug
+
 finance_blueprint = Blueprint('finance_blueprint', __name__)
 
 # finance_data() need an argument, so: defaults={'fin': 'TSLA'}

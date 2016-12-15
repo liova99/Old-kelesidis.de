@@ -12,22 +12,40 @@ function id_num(elem_id){
 */
 
 
-/***********************8 Index Page loading *****************/
-    
+/********** Check Broswer ****************************/
+function whatBrowser() {
+    var ba = ["Edge","Chrome","Firefox","Safari","Opera","MSIE","Trident"];
+    var b, ua = navigator.userAgent;
+    for(var i=0; i < ba.length; i++){
+        if( ua.indexOf(ba[i]) > -1 ){
+            b = ba[i];
+            return b;
+        }
+    }
+}
+
+
+/*********************** Index Page loading *****************/
+  
 window.addEventListener("load", function() {
     var loading = document.getElementById('loading')
     loading.remove();
-    document.getElementsByTagName("body")[0].style.cssText = "overflow: auto;"
+    document.getElementsByTagName("body")[0].style.cssText = "overflow: auto; background-color:white;"
 });
     
+/**** Check if landscape in mobile **************/
 
+if( window.innerWidth < window.innerHeight) {
+    //alert("For better experience use on landscape mode")
+    //document.getElementById("landscape_loading").style.cssText = "display:block; color:#fff; font-family: 'courier new';"
+}
 
 
 
             /* Side menu for screens smaller than 730px */
 document.getElementById("toggle").addEventListener('click', function() {
 
-    if ( document.body.style.backgroundColor != "white" ) {
+    if ( document.body.style.backgroundColor != "white")  {
         console.log("close");
         document.getElementById("header").style.cssText = "position: fixed; left: -250px;";
         document.getElementById("toggle").style.cssText = "";
@@ -163,6 +181,8 @@ function drag(elem_id) {
     };
 }
 
+
+
 /************************ Paralax jquery **********************************/
 
 /*/$(window).scroll(function() {
@@ -178,12 +198,31 @@ function drag(elem_id) {
 
 /*************** Paralax raw JavaScript  (other way) ********************/
 
-var min_width = window.matchMedia( "(min-width: 729px)" ); // window width is 730px or more
+if(whatBrowser() == 'Trident' || whatBrowser() == 'Edge' || whatBrowser() == 'MSIE') { // if IE
+    alert('You may experience  "lagging" when using Internet Explorer or Microsoft Edge browser');
+}
 
-window.addEventListener('scroll', parallax, false);
+/**** If Windows Width < 729px stop paralax*/
+var min_width = window.matchMedia( "(min-width: 729px)" ); // window width is 730px or more
+min_width.addListener(sizeChange);
+sizeChange(min_width);
+function sizeChange(min_width) {
+    if (min_width.matches) {
+        console.log('run paralax')
+        window.addEventListener('scroll', parallax, false);
+    }
+    else {
+        window.removeEventListener('scroll', parallax, false);
+        console.log('parallax stop')
+    }
+}
+
+
+
+
+//window.addEventListener('scroll', parallax, false);
 
 function parallax() {
-      
 
 
     var yScroll =  document.body.scrollTop;  // how much user scrolls,
@@ -197,12 +236,13 @@ function parallax() {
 
     var clouds_left = document.getElementById('clouds_left');
     var clouds_right = document.getElementById('clouds_right');
-    if(yScroll < 1300){
-        ariane.style.cssText =  'transform: translate(0px, ' + -((yScroll) /1.5) + 'px )'
-        hello_txt.style.cssText =  'transform: translate(0px, ' + -((yScroll) /.5) + 'px )'
-        hello_header.style.cssText =  'transform: translate(0px, ' + -((yScroll) /.5) + 'px )'
-        clouds_left.style.cssText =  'transform: translate(' + -((yScroll) /3) + 'px,' +  '0px )'
-        clouds_right.style.cssText =  'transform: translate(' + -((yScroll) /6) + 'px,' +  '0px )'
+    if(yScroll < 1300 && (whatBrowser() != 'Trident' || whatBrowser() != 'Edge' || whatBrowser() != 'MSIE')  ){
+        //ariane.style.cssText =  'transform: translate(0px, ' + -((yScroll) /1.5) + 'px )'
+        hello_txt.style.cssText =  'transform: translateX(0px)' + 'translateY(' + ((yScroll) /2.2) + 'px )'
+        //hello_txt.style.cssText =  'transform: translate(0px, ' + ((yScroll) /2.2) + 'px )'
+        hello_header.style.cssText =  'transform: translate(0px, ' + ((yScroll) /1.5) + 'px )'
+        //clouds_left.style.cssText =  'transform: translate(' + -((yScroll) /3) + 'px,' +  '0px )'
+        //clouds_right.style.cssText =  'transform: translate(' + -((yScroll) /6) + 'px,' +  '0px )'
     }
 
 
@@ -248,6 +288,7 @@ function parallax() {
 
             calculator.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/15) + 'px,' + ((yScroll-index2_bgYScroll+500) /4.5) + 'px )'
         } 
-    }    
+    }   
+
 } // paralax ()
 

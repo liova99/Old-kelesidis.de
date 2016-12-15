@@ -5,6 +5,8 @@ from bokeh.embed import components
 from ..my_func.leo_markt import *  # my functions
 from ..my_func.my_plots import leo_markt_total_chart as lmtc # total income chart
 
+# TODO Refresh button overlay border etc ( den thimame ti enoo)
+
 leo_markt_blueprint = Blueprint("leo_markt", __name__)
 
 
