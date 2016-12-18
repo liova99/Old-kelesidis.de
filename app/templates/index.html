@@ -4,14 +4,47 @@
 
 {% block head%}
 {{ super() }}
+    
+            {# <!-- Prevent bokeh from loading on mobile devices --> #}
+  {#  <script type="text/javascript"> 
+        var bokehJs = document.createElement('script');
+        var min_width = window.matchMedia( "(min-width: 729px)" ); // window width is 730px or more
+        min_width.addListener(sizeChange);
+
+        sizeChange(min_width);
+        function sizeChange (min_width){
+            if(!min_width.matches) {
+                console.log('Try to stop Bokeh');
+                
+                console.log('removed')
+            }
+
+            else {
+                
+                /*bokehJs.setAttribute("type", "text/javascript")
+                 console.log('add type')
+                bokehJs.setAttribute("src", "{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}")
+                console.log('add surce')
+                
+                //document.head.appendChild(bokehJs) 
+                document.getElementsByTagName('head')[0].appendChild(bokehJs);
+
+                console.log('add to head')*/
+                console.log('run Bokeh');
+            }
+        }
+    </script> #}
+
+    {# <!-- End Bokeh script --> #}
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
 
     <meta name="description" content="Kelesidis Levan is a self-taught developer.
      He loves to code and consider himself as a creative person">
     <meta property="og:image" content="http://kelesidis.de/static/img/kelesidis%20levan.jpg" />
-
-
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
-    <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" />
@@ -19,6 +52,9 @@
 {% endblock head %}
 
 {% block content %}
+
+
+
 <div id="container">
     <div id="content">
 
@@ -188,6 +224,47 @@
                     <h3 class="chart_not_available" style="margin-top:100px;">[chart preview is not available on your device]</h3>
                 </div>
                 <div id="coutinho_chart">
+                    <script type="text/javascript"> 
+                        var bokehJs = document.createElement('script');
+                        var elem = document.getElementById('coutinho_chart');
+                        var min_width = window.matchMedia( "(min-width: 729px)" ); // window width is 730px or more
+                        min_width.addListener(sizeChange);
+
+                        sizeChange(min_width);
+                        function sizeChange (min_width){
+                            if(!min_width.matches) {
+                                console.log('Try to stop Bokeh');
+
+
+                                /*{# It would be nice to be able to remove an element
+                                    without referring to the parent. But sorry.
+                                    The DOM needs to know both the element you want to remove,
+                                    and its parent. Here is a common workaround:
+                                    Find the child you want to remove,
+                                    and use its parentNode property to find the parent: 
+                                #}*/
+
+                                elem.parentNode.removeChild(elem);
+                                console.log('removed')
+                            }
+
+                            else {
+                                
+                                /*bokehJs.setAttribute("type", "text/javascript")
+                                 console.log('add type')
+                                bokehJs.setAttribute("src", "{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}")
+                                console.log('add surce')
+                                
+                                //document.head.appendChild(bokehJs) 
+                                document.getElementsByTagName('head')[0].appendChild(bokehJs);
+
+                                console.log('add to head')*/
+                                console.log('run Bokeh');
+                            }
+                        }
+                    </script>
+
+
                     {{ script|safe }}
                     {{ div|safe }}
                 </div>

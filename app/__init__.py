@@ -1,4 +1,4 @@
-#=========== Unused imports ==========================
+# =========== Unused imports ==========================
 # from flask.ext.sqlalchemy import SQLAlchemy
 # import pandas as pd
 # import datetime
@@ -8,7 +8,7 @@
 # from bokeh.plotting import figure
 # import pandas.io.data as web
 # from bokeh.models.sources import ColumnDataSource
-#=====================================================
+# =====================================================
 
 import sys
 sys.path.append('C:/Users/levan/Dropbox/PyCharmProjects/flaskapp')
@@ -74,6 +74,26 @@ def homepage():
         return redirect('http://kelesidis.de/historical_data/%s' % (fin))
         #return redirect('http://kelesidis.de/#finance_chart_index')
 
+
+        # To prevent the loading of bokeh plots i add the next Jscript (check_width) which check if the screen
+        # is less than 729px and if that is true stop Bokeh from loadig.
+
+
+    check_width = """
+        var min_width = window.matchMedia( "(min-width: 729px)" );
+        min_width.addListener(sizeChange);
+        sizeChange(min_width);
+            if(!min_width.matches) {
+                console.log('Try to stop Bokeh');
+                console.log('removed')
+                return;
+            }
+    """
+
+    script = script[:59] + check_width + script[60:]
+    script2 = script2[:59] + check_width + script2[60:]
+
+
     return render_template('index.html', title = title, script = script, div = div,
                             script2 = script2, div2 = div2,info = info)
 
@@ -84,19 +104,19 @@ if __name__ == "__main__":
 
 
 #========================== INFO =====================================
-#  The foloving info is when we don't use blueprints we must import
-#  our views in the bottom.
-#=====================================================================
-#  If you are wondering why the import statement is at the end
-#  and not at the beginning of the script as it is always done,
-#  the reason is to avoid circular references,
-#  because you are going to see that the views module
-#  needs to import the app variable defined in this script.
-#  Putting the import at the end avoids the circular import error.
-#=========================END INFO ===================================
+""" The foloving info is when we don't use blueprints we must import
+ our views in the bottom.
+=====================================================================
+ If you are wondering why the import statement is at the end
+ and not at the beginning of the script as it is always done,
+ the reason is to avoid circular references,
+ because you are going to see that the views module
+ needs to import the app variable defined in this script.
+ Putting the import at the end avoids the circular import error.
+=========================END INFO ===================================
 
-#======== url_for, link test==========
-# with app.test_request_context():
-#     print (url_for('static'  css/'))
-#====================================
+======== url_for, link test==========
+with app.test_request_context():
+    print (url_for('static'  css/'))"""
+#===========================================================================
 

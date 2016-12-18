@@ -31,6 +31,7 @@ window.addEventListener("load", function() {
     var loading = document.getElementById('loading')
     loading.remove();
     document.getElementsByTagName("body")[0].style.cssText = "overflow: auto; background-color:white;"
+    
 });
     
 /**** Check if landscape in mobile **************/
@@ -202,18 +203,30 @@ if(whatBrowser() == 'Trident' || whatBrowser() == 'Edge' || whatBrowser() == 'MS
     alert('You may experience  "lagging" when using Internet Explorer or Microsoft Edge browser');
 }
 
-/**** If Windows Width < 729px stop paralax*/
+/**** If Windows Width < 729px stop paralax and bokeh */
 var min_width = window.matchMedia( "(min-width: 729px)" ); // window width is 730px or more
 min_width.addListener(sizeChange);
 sizeChange(min_width);
-function sizeChange(min_width) {
+
+function sizeChange(min_width) {  
+
+
     if (min_width.matches) {
-        console.log('run paralax')
         window.addEventListener('scroll', parallax, false);
+        window.addEventListener('scroll', Bokeh, false);
+
+        // add bokeh script tah to html
+       /* var head = document.getElementsByTagName('head')[0];
+        bokehScript = document.createElement('script');
+        bokehScript.setAttribute("src", "static/js/bokeh-0.11.1.min.js");
+        bokehScript.setAttribute("type", "text/javascript");
+        document.head.appendChild( bokehScript );*/
     }
     else {
+        //var bokehScript = document.getElementById('bokehScript')
+        //bokehScript.parentNode.removeChild( bokehScript );
+        
         window.removeEventListener('scroll', parallax, false);
-        console.log('parallax stop')
     }
 }
 
