@@ -75,10 +75,10 @@ def homepage():
         #return redirect('http://kelesidis.de/#finance_chart_index')
 
 
-        # To prevent the loading of bokeh plots i add the next Jscript (check_width) which check if the screen
-        # is less than 729px and if that is true stop Bokeh from loadig.
+    # To prevent the loading of bokeh plots i add the next Jscript (check_width) which check if the screen
+    # is less than 729px and if that is true stop Bokeh from loadig.
 
-
+    # TODO make the bokeh func to start and stop interactive (screen size changes) 
     check_width = """
         var min_width = window.matchMedia( "(min-width: 729px)" );
         min_width.addListener(sizeChange);
@@ -99,7 +99,7 @@ def homepage():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0")
 
 
 

@@ -4,48 +4,13 @@
 
 {% block head%}
 {{ super() }}
-    
-            {# <!-- Prevent bokeh from loading on mobile devices --> #}
-  {#  <script type="text/javascript"> 
-        var bokehJs = document.createElement('script');
-        var min_width = window.matchMedia( "(min-width: 729px)" ); // window width is 730px or more
-        min_width.addListener(sizeChange);
-
-        sizeChange(min_width);
-        function sizeChange (min_width){
-            if(!min_width.matches) {
-                console.log('Try to stop Bokeh');
-                
-                console.log('removed')
-            }
-
-            else {
-                
-                /*bokehJs.setAttribute("type", "text/javascript")
-                 console.log('add type')
-                bokehJs.setAttribute("src", "{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}")
-                console.log('add surce')
-                
-                //document.head.appendChild(bokehJs) 
-                document.getElementsByTagName('head')[0].appendChild(bokehJs);
-
-                console.log('add to head')*/
-                console.log('run Bokeh');
-            }
-        }
-    </script> #}
-
-    {# <!-- End Bokeh script --> #}
-
-    <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
 
     <meta name="description" content="Kelesidis Levan is a self-taught developer.
      He loves to code and consider himself as a creative person">
     <meta property="og:image" content="http://kelesidis.de/static/img/kelesidis%20levan.jpg" />
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
-    
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bokeh-0.11.1.min.css') }}"  type="text/css" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" />
 
@@ -54,28 +19,19 @@
 {% block content %}
 
 
-
 <div id="container">
     <div id="content">
 
-    <!-- {# Loading... #} -->
+            <!-- {# Loading... #} -->
     <script type="text/javascript">
         document.getElementsByTagName("body")[0].style.cssText = "overflow: hidden;"
-
-        /*if( window.innerWidth < window.innerHeight) {
-            //alert("For better experience use on landscape mode")
-            document.getElementById("landscape_loading").style.cssText = "display:block; color:#fff; font-family: 'courier new'; ";
-        }*/
     </script>   
 
     <div id="loading">
         <h1>Loading...</h1>
-        
-           <!--  <img src=" {{ url_for('static', filename='img/index/landscape.gif') }} ">
-            <br><br>
-            <h3> use landscape for better experience </h3> -->
-
-    </div>
+            <!--{# TODO add a gif on loading page #} -->
+           <!-- {# <img src=" {{ url_for('static', filename='img/index/landscape.gif') }} "> #} -->
+    </div> 
     <!-- {# End Loading... #} -->
 
 
@@ -91,10 +47,10 @@
 
             <h1 id="hello_header">Hello!</h1>
 
-            <span id="hello_txt">
+            <div id="hello_txt">
                 <p><span style="font-weight: bold;">My</span> name is <span style="font-weight: bold;">Levan</span></p>
                 <p>When i grow up i want to be an <span style="font-weight: bold;">astronaut</span></p><br>
-             </span>
+            </div>
 
             <!-- <div class="ariane">
                 <div class="ariane_img" id="ariane_img">
@@ -166,7 +122,7 @@
                     </div>
 
                     <div id="nikol_header_container">
-                        <h3 id="nikol_header">a minimalistic portfolio for a creative designer</h3>
+                        <h3 class="nikol_header">a minimalistic portfolio for a creative designer</h3>
                         <div id="visit_nikol"> <a href="http://www.nikol-design.ru" target="_blank"> visit website</a> </div>
                     </div>
 
@@ -180,9 +136,9 @@
                 <div id="saridis_container">
 
                 <div id="saridis_header_container_top">
-                        <h3 id="saridis_header"> a website for a travel agency </h3>
+                        <h3 class="saridis_header"> a website for a travel agency </h3>
                         <br>
-                        <p id="saridis_closed">saridis travel closed in 2012 </p>
+                        <p class="saridis_closed">saridis travel closed in 2012 </p>
                 </div>
 
                     <div id="saridis_img">
@@ -192,7 +148,7 @@
                     <div id="saridis_header_container">
                         <h3 id="saridis_header"> a website for a travel agency </h3>
                         <br>
-                        <p id="saridis_closed">saridis travel closed in 2012 </p>
+                        <p class="saridis_closed">saridis travel closed in 2012 </p>
                         <div id="visit_saridis"> <a href="#"> view more </a> </div>
                     </div>
 
@@ -224,47 +180,6 @@
                     <h3 class="chart_not_available" style="margin-top:100px;">[chart preview is not available on your device]</h3>
                 </div>
                 <div id="coutinho_chart">
-                    <script type="text/javascript"> 
-                        var bokehJs = document.createElement('script');
-                        var elem = document.getElementById('coutinho_chart');
-                        var min_width = window.matchMedia( "(min-width: 729px)" ); // window width is 730px or more
-                        min_width.addListener(sizeChange);
-
-                        sizeChange(min_width);
-                        function sizeChange (min_width){
-                            if(!min_width.matches) {
-                                console.log('Try to stop Bokeh');
-
-
-                                /*{# It would be nice to be able to remove an element
-                                    without referring to the parent. But sorry.
-                                    The DOM needs to know both the element you want to remove,
-                                    and its parent. Here is a common workaround:
-                                    Find the child you want to remove,
-                                    and use its parentNode property to find the parent: 
-                                #}*/
-
-                                elem.parentNode.removeChild(elem);
-                                console.log('removed')
-                            }
-
-                            else {
-                                
-                                /*bokehJs.setAttribute("type", "text/javascript")
-                                 console.log('add type')
-                                bokehJs.setAttribute("src", "{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}")
-                                console.log('add surce')
-                                
-                                //document.head.appendChild(bokehJs) 
-                                document.getElementsByTagName('head')[0].appendChild(bokehJs);
-
-                                console.log('add to head')*/
-                                console.log('run Bokeh');
-                            }
-                        }
-                    </script>
-
-
                     {{ script|safe }}
                     {{ div|safe }}
                 </div>
@@ -272,7 +187,7 @@
                 <div id="coutinho_header_container">
                     <h3> season ratings fc liverpool's player, Coutinho. </h3>
                     <br>
-                    <p  hover the chart to see each game info</p>
+                    <p>  hover the chart to see each game info</p>
                 </div>
             </div>   
 
@@ -325,7 +240,7 @@
                     <br>
                     <p>a web app which takes as input a symbol of a NASDAQ company (e.g. TSLA for Tesla, AAPL for apple)
                         and return a beautiful chart with historical stock prices from 2010 until the last trade day.</p>
-                        <p hover the chart to see more info</p>
+                        <p> hover the chart to see more info</p>
 
                     <div id="visit_finance"> <a href="http://kelesidis.de/historical_data/" target="_blank"> visit page </a> </div>  
 

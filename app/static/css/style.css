@@ -380,7 +380,7 @@ div#nikol_port_img img:hover {
     font-family: 'courier new';
 }
 
- #nikol_header {}
+ .nikol_header {}
 
  #visit_nikol_bottom {display: none;}
  #visit_nikol {
@@ -448,9 +448,7 @@ div#saridis_img img:hover {
 
 }
 
-#saridis_header {
-
-}
+.saridis_header {}
 
 #visit_saridis_bottom {display: none;} 
 #visit_saridis {
@@ -1901,6 +1899,7 @@ form input#submit:hover {
 
 @media all and (max-width: 729px) and (min-width: 400px) {
 
+    #loading {display: none;}
 
 /**** Side menu ******************/
     #header {
@@ -1921,7 +1920,7 @@ form input#submit:hover {
         z-index: 15;
         font-size: 3em;
         float: left;
-        margin: 5px 10px;
+        margin: .3em .3em;
         cursor: pointer;
         color: #000;
         transition: left .7s;
@@ -1994,9 +1993,9 @@ form input#submit:hover {
             font-family: 'courier new';
         }
 
-        #nikol_port_img {
-        float: none;
-        margin: 100px auto 0 auto;
+    #nikol_port_img {
+    float: none;
+    margin: 100px auto 0 auto;
     }
     div#nikol_port_img img {width: 100%;}
 
@@ -2198,7 +2197,11 @@ form input#submit:hover {
 
 }/*end media -400*/
 
+/******************* Media max 399 ******************/
+
 @media all and (max-width: 399px){
+
+    #loading {display: none;}
 
 
 /**** Side menu ******************/
@@ -2221,6 +2224,7 @@ form input#submit:hover {
         font-size: 3em;
         float: left;
         margin-left: -16px;
+        margin-top: .3em;
         cursor: pointer;
         color: #000;
         transition: left .7s;

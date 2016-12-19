@@ -29,7 +29,13 @@ function whatBrowser() {
   
 window.addEventListener("load", function() {
     var loading = document.getElementById('loading')
-    loading.remove();
+    //loading.remove();
+    try {
+        loading.parentNode.removeChild(loading);
+    } catch(e) {
+        // statements
+        console.log(e);
+    }
     document.getElementsByTagName("body")[0].style.cssText = "overflow: auto; background-color:white;"
     
 });
@@ -40,7 +46,6 @@ if( window.innerWidth < window.innerHeight) {
     //alert("For better experience use on landscape mode")
     //document.getElementById("landscape_loading").style.cssText = "display:block; color:#fff; font-family: 'courier new';"
 }
-
 
 
             /* Side menu for screens smaller than 730px */
@@ -208,35 +213,24 @@ var min_width = window.matchMedia( "(min-width: 729px)" ); // window width is 73
 min_width.addListener(sizeChange);
 sizeChange(min_width);
 
-function sizeChange(min_width) {  
 
+function sizeChange(min_width) {  
 
     if (min_width.matches) {
         window.addEventListener('scroll', parallax, false);
-        window.addEventListener('scroll', Bokeh, false);
 
-        // add bokeh script tah to html
-       /* var head = document.getElementsByTagName('head')[0];
-        bokehScript = document.createElement('script');
-        bokehScript.setAttribute("src", "static/js/bokeh-0.11.1.min.js");
-        bokehScript.setAttribute("type", "text/javascript");
-        document.head.appendChild( bokehScript );*/
     }
     else {
-        //var bokehScript = document.getElementById('bokehScript')
-        //bokehScript.parentNode.removeChild( bokehScript );
-        
         window.removeEventListener('scroll', parallax, false);
+      
     }
 }
-
 
 
 
 //window.addEventListener('scroll', parallax, false);
 
 function parallax() {
-
 
     var yScroll =  document.body.scrollTop;  // how much user scrolls,
     console.log("You scrolled: " + yScroll)

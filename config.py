@@ -4,7 +4,8 @@ from app.passwords import *
 import os
 
 DEBUG = True
-
+HOST="0.0.0.0"
+PORT = '5000'
 # Define the application directory
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
