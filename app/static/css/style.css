@@ -1930,6 +1930,13 @@ form input#submit:hover {
 
     /****** bio_big ******************/
     .bio {width: 70%; margin: 3em auto;}
+
+    /********* contact_big ************/
+
+    #contact_wrapper {width: auto; margin: 0;}
+    #contact_info{float: none; width: 30%; max-width: 300px; margin: 4em auto 4em 10em;}
+    #contact { width: 80%; margin: 2em auto; float: none; max-width: 530px;}
+    form input#submit {display: block;}
     
 
 } /**** end 1100 - 730 /* end_res_big **************************/
@@ -2246,6 +2253,16 @@ form input#submit:hover {
 
      /****** bio_med ******************/
     .bio {width: 80%; margin: 3em auto; border: none;}
+
+        /********* contact_med ************/
+
+    #contact_wrapper {width: auto; margin: 0;}
+    #contact_info{float: none; width:auto; max-width: 300px; margin: 6em auto 3em auto;}
+    #contact { width: 80%; margin: 2em auto; float: none; max-width: 530px;}
+
+    form input#name, form input#email {width: 70%;}
+    form textarea#message {width: 90%;}
+    form input#submit {display: block;}
 
 }/*end media - 400 end_med */
 
@@ -2588,5 +2605,15 @@ form input#submit:hover {
 
      /****** bio_small ******************/
     .bio {width: 80%; margin: 3em auto; border: none;}
+
+        /********* contact_med ************/
+
+    #contact_wrapper {width: auto; margin: 0;}
+    #contact_info{display: block; float: none; width:auto; max-width: 300px; margin: 5em auto 3em auto;}
+    #contact { width: 80%; margin: 2em auto; float: none; max-width: 530px;}
+
+    form input#name, form input#email {width: 70%;}
+    form textarea#message {width: 90%;}
+    form input#submit {display: block;}
 
 } /*min 399px*/
