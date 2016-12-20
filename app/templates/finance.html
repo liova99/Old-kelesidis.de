@@ -21,9 +21,12 @@
 {% block content %}
 
 <!--{# body tag in base tampelate#}-->
+<script type="text/javascript">
+        document.getElementsByTagName("body")[0].style.cssText = "overflow: auto;"
+</script>
 
 <div id="container">
-    <div id="content">
+    <div id="content" style="overflow-x:hidden;">
 
         <div id="select_chart_form">
 
@@ -38,12 +41,16 @@
 
         </div>
 
-        <div id="main_content">
+        <div id="finance_container">
 
             <div id="info_table_div">
                 {{ info|safe }}
             </div>
 
+            <div class="chart_not_available_finance">
+                <h3 class="chart_not_available" >[chart preview is not available on your device]</h3>
+            </div>
+            
             <div id="finance_chart">
             {{ script|safe }}
             {{ div|safe }}

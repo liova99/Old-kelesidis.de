@@ -42,4 +42,23 @@ def finance_data(selected_company):
 
     script, div = components(f)
 
+    # To prevent the loading of bokeh plots i add the next Jscript (check_width) which check if the screen
+    # is less than 729px and if that is true stop Bokeh from loadig.
+
+    # TODO make the bokeh func to start and stop interactive (screen size changes) 
+    check_width = """
+        var min_width = window.matchMedia( "(min-width: 729px)" );
+        min_width.addListener(sizeChange);
+        sizeChange(min_width);
+            if(!min_width.matches) {
+                console.log('Try to stop Bokeh');
+                console.log('removed')
+                return;
+            }
+    """
+
+    script = script[:59] + check_width + script[60:]
+
+    
+
     return render_template('finance.html', title = title, script = script, div = div, info = info)

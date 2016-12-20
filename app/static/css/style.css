@@ -825,7 +825,7 @@ input[name=chart] {
 	padding: .3em .3em;
 	float: left;
 	font-size: large;
-	width: 85%;
+	width: 100%;
 	border: solid 1px #E0E0E0;
 	border-radius: 3px;
 }
@@ -840,20 +840,20 @@ input[name=button_arrow] {
 
 /* chart */
 
-#main_content {
+#finance_container {
 
 }
 
 #finance_chart {
-	display: inline-block;
-	float: left;
+	/*display: inline-block;*/
+	/*float: left;*/
 	padding: 15px;
 	border: solid 1px #E0E0E0;
 	border-radius: 5px;
-	margin: 10px auto auto 7%;
+	margin: 35px auto 0 auto;
 	min-width: 685px;
 	max-width: 800px;
-	width: 63%;
+	/*width: 63%;*/
 	height: auto;
 }
 
@@ -863,13 +863,13 @@ input[name=button_arrow] {
 /* Info Table   */
 
 #info_table_div {
-	display: inline-block;
-	padding: 5px;
-	width: auto;
-	border:1px solid #E0E0E0;
-	border-radius: 5px;
-	float: none;
-	margin:10px 15px;
+	/*display: inline-block;*/
+	/*padding: 5px;*/
+	width: 40%;
+	/*border:1px solid #E0E0E0;*/
+	/*border-radius: 5px;*/
+	/*float: none;*/
+	margin:15px auto;
 	max-height: 30%;
 }
 
@@ -880,12 +880,13 @@ input[name=button_arrow] {
 }
 
 .info_table tr,th,td {
+    padding-top:3px; 
 	border:1px solid rgba(255, 255, 255, 0);
 }
 .info_table th {
 	padding: 0em 1em 0em 0em;
 }
-
+.info_table thead{font-size: large;}
 
 /* ********************** */
 
@@ -1773,8 +1774,9 @@ form input#submit:hover {
     to {transform: rotate(7deg); }
 }*/
 
-/******** Media queries / responsive*/
+/******** Media queries / responsive */
 
+/* res_big */
 @media all and (max-width: 1100px) and (min-width: 730px) {
 
     div.navbar a { font-size: 1.5em; }
@@ -1897,9 +1899,41 @@ form input#submit:hover {
 
     #index_notes { width: auto; }
 
+    /* ***** Historical_Stock_Data_big *************/
 
-} /**** end 1100 - 730 ***********************************/
+    #forms {
+        min-width: 450px; /* the input field*/
+    }
 
+    #info_table_div {
+        display: block;
+        margin: 10px auto;
+        width: 70%;
+    }
+
+    #finance_container {
+        overflow-x: hidden;
+        width: 100%;
+
+    }
+
+    #finance_chart {
+        overflow-x: hidden;
+        /*float: none;*/
+        width: 80%;
+        min-width: inherit;
+        max-width: none;
+        display: block;
+        padding: 0;
+        margin: 35px auto 0 auto;
+    }
+
+
+    
+
+} /**** end 1100 - 730 /* end_res_big **************************/
+
+/*res_med*/
 @media all and (max-width: 729px) and (min-width: 400px) {
 
     #loading {display: none;}
@@ -2172,8 +2206,6 @@ form input#submit:hover {
         transition: all .3s ease-in-out;
     }
 
-
-
     #index_finance {
         width: 80%;
         height: auto;
@@ -2191,7 +2223,29 @@ form input#submit:hover {
 
     #index_notes { width: auto; }
 
-}/*end media -400*/
+    /*finance_data_med */
+
+    #forms { min-width: 350px; } /* the input field*/
+
+    input[name=chart] {font-size: small;}    
+
+    #info_table_div {
+        display: block;
+        margin: 10px auto;
+        width: 70%;
+    }
+
+    #finance_container {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    #finance_chart { display: none; }
+
+    #finance_container .chart_not_available_finance { width: 80%; }
+
+
+}/*end media - 400 end_med*/
 
 /******************* Media max 399 ******************/
 
@@ -2510,5 +2564,25 @@ form input#submit:hover {
 
     #index_notes { width: 80%; }
    #div#index_notes_content p { font-size: 1em; }
+
+
+   /*finance_ data_small*/
+    input[name=chart] {font-size: .7em;}    
+
+    #info_table_div {
+        display: block;
+        margin: 10px auto;
+        width: 85%;
+    }
+
+    #finance_container {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    #finance_chart { display: none; }
+
+    #finance_container .chart_not_available_finance { width: 85%; height: auto; }
+
 
 } /*min 399px*/

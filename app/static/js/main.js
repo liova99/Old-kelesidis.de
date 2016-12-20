@@ -225,13 +225,13 @@ function sizeChange(min_width) {
       
     }
 }
-
+    
 
 
 //window.addEventListener('scroll', parallax, false);
-
-function parallax() {
-
+try {
+    function parallax() {
+    
     var yScroll =  document.body.scrollTop;  // how much user scrolls,
     console.log("You scrolled: " + yScroll)
 
@@ -295,7 +295,12 @@ function parallax() {
 
             calculator.style.cssText =  'transform: translate(' + -((yScroll-index2_bgYScroll+500)/15) + 'px,' + ((yScroll-index2_bgYScroll+500) /4.5) + 'px )'
         } 
-    }   
+    }
 
-} // paralax ()
+    } // paralax ()
+}
+catch(e) {
+    console.log(e)
+}
+
 
