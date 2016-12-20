@@ -907,18 +907,26 @@ input[name=button_arrow] {
 
 /* **** Liverpool  ****** */
 
+#coutinho_hero {
+    background: url('/static/img/index/prj/coutinho_bg.jpg') no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: -2em; /* because footer has margin-top 2em by default */
+}
+
 .player_name {
+    padding-top: 2em;
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 1.8em;
+    font-family: 'courier new';
+    color: #fff;
 }
 
 #chart_info_cont{
-	/*display: block; */
 	width: 80%;
-/*	min-width: 20%;
-*/	margin: .4em auto;
-	/*border:solid 2px red;*/
-	/*background-color: #E0E0E0;*/
+	margin: 2em auto 0 auto;
 	overflow: hidden;
 }
 
@@ -931,6 +939,7 @@ input[name=button_arrow] {
 	/*margin: 1%;*/
 	width: 70%;
 	height: auto;
+    background-color: white;
 }
 
 .player_info {
@@ -1931,6 +1940,11 @@ form input#submit:hover {
     /****** bio_big ******************/
     .bio {width: 70%; margin: 3em auto;}
 
+
+    /****** Coutinho_big ***************/
+    
+    #chart_info_cont {width: 90%;}
+
     /********* contact_big ************/
 
     #contact_wrapper {width: auto; margin: 0;}
@@ -2253,6 +2267,20 @@ form input#submit:hover {
 
      /****** bio_med ******************/
     .bio {width: 80%; margin: 3em auto; border: none;}
+
+
+    /****** Coutinho_med ***************/
+    
+    #chart_info_cont {width: 90%;}
+    .rating_chart {display: none;}
+
+    #chart_info_cont .chart_not_available_coutinho {
+        width: 70%;
+        display: inline-block;
+        height: auto;
+    }
+    .player_name {padding-top: 3em;}
+
 
         /********* contact_med ************/
 
@@ -2605,6 +2633,18 @@ form input#submit:hover {
 
      /****** bio_small ******************/
     .bio {width: 80%; margin: 3em auto; border: none;}
+
+/****** Coutinho_small ***************/
+    
+    #chart_info_cont {width: 90%;}
+    .rating_chart {display: none;}
+
+    #chart_info_cont .chart_not_available_coutinho {
+        width: 70%;
+        display: inline-block;
+        height: auto;
+    }
+    .player_name {padding-top: 3em;}    
 
         /********* contact_med ************/
 

@@ -1,4 +1,4 @@
-<!------------ Link for this page http://kelesidis.de/coutinho/  ------------------------------------->
+<!------------ Link for this page http://kelesidis.de/coutinho/  ------------------------------------ -->
 
 {% extends "base.html" %}
 <! DOCTYPE html>
@@ -17,11 +17,17 @@
 <script type="text/javascript" src="{{ url_for('static', filename='js/bokeh-0.11.1.min.js') }}"> </script>
 
 <body >
-    <div id="container">
-        <div id="content">
+    <div id="coutinho_hero">
+        
+
                 <h2 class="player_name">PHILIPPE COUTINHO</h2>
 
             <div id="chart_info_cont">
+
+                <div class="chart_not_available_coutinho">
+                    <h3 class="chart_not_available">[chart preview is not available on your device]</h3>
+                </div>
+
                 <div class="rating_chart">
 
                     {{ script|safe }}
@@ -30,15 +36,12 @@
 
                 <div class="player_info">
 
-                    <div class="player-info">
-        </div>
-
                     <img  src="{{ url_for('static', filename = 'img/coutinho_photo.JPG') }}" >
 
                 </div>
 
             </div>
-        </div>
+        
     </div>
 
 
