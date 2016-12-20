@@ -1928,7 +1928,8 @@ form input#submit:hover {
         margin: 35px auto 0 auto;
     }
 
-
+    /****** bio_big ******************/
+    .bio {width: 70%; margin: 3em auto;}
     
 
 } /**** end 1100 - 730 /* end_res_big **************************/
@@ -1977,7 +1978,6 @@ form input#submit:hover {
         height: auto;
         margin-top: 25px;
     }
-
 
 /************* index_p2 **********************/
 
@@ -2244,8 +2244,10 @@ form input#submit:hover {
 
     #finance_container .chart_not_available_finance { width: 80%; }
 
+     /****** bio_med ******************/
+    .bio {width: 80%; margin: 3em auto; border: none;}
 
-}/*end media - 400 end_med*/
+}/*end media - 400 end_med */
 
 /******************* Media max 399 ******************/
 
@@ -2584,5 +2586,7 @@ form input#submit:hover {
 
     #finance_container .chart_not_available_finance { width: 85%; height: auto; }
 
+     /****** bio_small ******************/
+    .bio {width: 80%; margin: 3em auto; border: none;}
 
 } /*min 399px*/
