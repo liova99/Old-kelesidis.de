@@ -16,6 +16,7 @@ img {max-width: 100%}
 
 html, body {
 	font-size: 100%;
+    min-height: 100%;
 	height: 100%;
 	width: 100%;
   	margin: 0;
@@ -256,6 +257,8 @@ div.ariane img {}
 }
 
 /***************** index p2 < proramming Skills> ****/
+
+#skills_img_div {display: none;} /*image for mobile devices*/
 .index_p2 {
     background:
                 url("/static/img/index/skills_new/bg.jpg") no-repeat;
@@ -1942,22 +1945,15 @@ form input#submit:hover {
     }
 
 
-
 /************* index_p2 **********************/
 
     .index_p2 {
-        background-image:
-            url('/static/img/index/skills_new/code_note.png'),
-            url('/static/img/index/skills_new/pencil_black.png'),
-            url('/static/img/index/skills_new/note_graphs.png'),
-            url('/static/img/index/skills_new/clip.png'),
-            url('/static/img/index/skills_new/bg_mobile.jpg');
-        
-        background-size: 80%, 40%, 35%, 12%, auto;
-        background-position:  center, 50% 90%, 9% 90%, 80% 90%, center; 
-        background-repeat: no-repeat;
+        background:
+        url(/static/img/index/skills_new/skills_mobile_1000sm.png);
+        background-size:170%;
+        background-position:  center; 
         height: 500px;
-        overflow-x: hidden;
+        background-attachment:fixed;
     }
 
     #hello_header {font-size: 4em;}
@@ -2241,28 +2237,30 @@ form input#submit:hover {
     div.navbar_github img {width: 35px; margin: 0 0 15px 15px;}
 
 /************ Hello *********************/
-    .hello {height: auto; margin-top: 25px;}
+    .hello {height: auto; margin-top: 25px; }
 
 /************* index_p2 **********************/
 
     .index_p2 {
-        background-image:
-            url('/static/img/index/skills_new/code_note.png'),
-            url('/static/img/index/skills_new/pencil_black.png'),
-            url('/static/img/index/skills_new/note_graphs.png'),
-            url('/static/img/index/skills_new/clip.png'),
-            url('/static/img/index/skills_new/bg_mobile.jpg');
-        
-        background-size: 80%, 40%, 35%, 12%, auto;
-        background-position:  center, 50% 90%, 9% 90%, 80% 90%, center; 
-        background-repeat: no-repeat;
+        background: url(/static/img/index/skills_new/skills_mobile_1000sm.png);
+        background-size: 170%;
+        background-position: center; 
         height: 500px;
-        overflow-x: hidden;
+        background-attachment: fixed;
     }
+
+    #skills_img_div {
+        display: none;
+        width: 90%;
+        height: auto;
+        padding-top: 25%;
+        margin: 0 auto;
+        float: none;
+    }
+    #skills_img {width: 100%; }
 
     #hello_header {font-size: 4em;}
     div.hello p {font-size: 2.5em; }
-
 
     #index2_table_note {display: none;}
 
