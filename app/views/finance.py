@@ -59,6 +59,4 @@ def finance_data(selected_company):
 
     script = script[:59] + check_width + script[60:]
 
-    
-
     return render_template('finance.html', title = title, script = script, div = div, info = info)

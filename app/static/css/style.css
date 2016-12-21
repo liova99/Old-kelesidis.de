@@ -899,7 +899,7 @@ input[name=button_arrow] {
     padding: 1em;
     border: 1px solid #efefef;
     border-radius: 4px;
-    margin: 0 auto;
+    margin: 3em auto 0 auto;
     font-size: 1.3em;
     font-family: georgia;
 }
@@ -914,6 +914,7 @@ input[name=button_arrow] {
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: -2em; /* because footer has margin-top 2em by default */
+    display: inline-table; /*landscape display bug fix */
 }
 
 .player_name {
