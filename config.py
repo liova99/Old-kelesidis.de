@@ -4,19 +4,20 @@ from app.passwords import *
 import os
 
 DEBUG = True
-HOST="0.0.0.0"
+HOST = "0.0.0.0"
 PORT = '5000'
 # Define the application directory
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
+
 # Define MySQL database
-#connection takes one argument, the db name.
+# connection takes one argument, the db name.
 def mysql_connect(db):
-    conn = connect(host= host,
-                           user = user ,
-                           passwd = passwd,
-                           db = db)
+    conn = connect(host = host,
+                   user = user,
+                   passwd = passwd,
+                   db = db)
     c = conn.cursor()
     return c, conn
 
@@ -29,7 +30,7 @@ def mysql_connect(db):
 THREADS_PER_PAGE = 2
 
 # Enable protection agains *Cross-site Request Forgery (CSRF)*
-CSRF_ENABLED     = True
+CSRF_ENABLED = True
 WTF_CSRF_ENABLED = True
 
 # Use a secure, unique and absolutely secret key for

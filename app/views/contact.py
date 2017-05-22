@@ -9,18 +9,19 @@ from app import mail
 contact_blueprint = Blueprint("contact", __name__)
 contact_success_blueprint = Blueprint("contact_success", __name__)
 
+
 @contact_blueprint.route("/contact/", methods = ["GET", "POST"])
 def contact():
     title = "Contact"
     form = contact_form()
 
     if request.method == "POST":
-        if form.validate() == False:
+        if form.validate() is False:
             flash("All fields are required.")
-            return render_template("contact.html",form = form, title = title)
+            return render_template("contact.html", form = form, title = title)
 
         else:
-            msg = Message(form.name.data, sender = 'levan@kelesidis.de', recipients = ['levan@kelesidis.de'] )
+            msg = Message(form.name.data, sender = 'levan@kelesidis.de', recipients = ['levan@kelesidis.de'])
             msg.body = """
             From: %s <%s>
             %s
@@ -30,6 +31,7 @@ def contact():
 
     elif request.method == "GET":
         return render_template("contact.html", form=form, title = title)
+
 
 @contact_success_blueprint.route("/contact_success/")
 def contact_success():

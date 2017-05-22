@@ -1,18 +1,16 @@
-# link for this page http://kelesidis.de/liverpool/, just to test some API and MySQL
-
-from flask import  render_template, Blueprint
+from flask import render_template, Blueprint
 from bokeh.embed import components
 # Temp imports for the API
-
 # MySQL connection
 # Warning! the password import must be above the connection import!!
 from app.passwords import *
 from config import mysql_connect
 
-#define blueprint
-football_blueprint = Blueprint('football', __name__ )
+# define blueprint
+football_blueprint = Blueprint('football', __name__)
 
 
+# link for this page http://kelesidis.de/liverpool/, just to test some API and MySQL
 @football_blueprint.route('/liverpool/')
 def liverpool():
     title = 'Liverpool YNWA'
@@ -22,18 +20,16 @@ def liverpool():
     players = players_api(64)
     names = players.name
 
-
     def team_atendance(team_id):
         global Team
         global Full
         cur, conn = mysql_connect('football_15_16')
-        # self explanatory, select column "team" and "full" from table attenadace....
+        #  self explanatory, select column "team" and "full" from table attenadace....
         cur.execute(('SELECT Team, Full FROM attendance_epl_s15 WHERE id=%d') % team_id)
         cur.close()
         conn.close()
         for (Team, Full) in cur:
             return Team, Full
-
 
     team, full = team_atendance(5)
 

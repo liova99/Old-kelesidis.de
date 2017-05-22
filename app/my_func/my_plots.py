@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-
+from app.passwords import quandl_key
+import quandl
+quandl.ApiConfig.api_key = quandl_key
 import pandas as pd
 import pandas.io.data as web
 import datetime
@@ -132,7 +134,13 @@ def finance(selected_company):
     end = datetime.datetime(2016, 4, 1)
 
     # df = web.get_data_yahoo( 'TSLA', start, end, interval='w' )
-    df = web.get_data_yahoo(chart, start)
+    try:
+        # df = web.get_data_yahoo(chart, start)
+        df = quandl.get("WIKI/AAPL", start_date = start)
+    except:
+        print('Quandl API Error')
+
+
 
     # convert the dates for the hover tool
     dates = pd.Series(df.index)
@@ -147,7 +155,7 @@ def finance(selected_company):
     low = [str(i) for i in df.Low]
     close_p = [str(i) for i in df.Close]
     vol = [str(i) for i in df.Volume]
-    adj = [str(i) for i in df['Adj Close']]
+    adj = [str(i) for i in df['Adj. Close']]
 
     TOOLS = 'pan,wheel_zoom,box_zoom,hover,crosshair,resize,reset'
 
