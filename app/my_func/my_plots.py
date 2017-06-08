@@ -136,7 +136,7 @@ def finance(selected_company):
     # df = web.get_data_yahoo( 'TSLA', start, end, interval='w' )
     try:
         # df = web.get_data_yahoo(chart, start)
-        df = quandl.get("WIKI/AAPL", start_date = start)
+        df = quandl.get("WIKI/%s" % chart, start_date = start)
     except:
         print('Quandl API Error')
 
