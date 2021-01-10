@@ -9,7 +9,7 @@ Cython==0.23.4
 decorator==4.0.9
 ecdsa==0.13
 entrypoints==0.2
-Flask==0.10.1
+Flask==1.0
 Flask-SQLAlchemy==2.1
 h5py==2.5.0
 html5lib==0.9999999
