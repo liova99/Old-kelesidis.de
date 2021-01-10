@@ -34,7 +34,7 @@ more-itertools==2.2
 nbconvert==4.2.0
 nbformat==4.0.1
 ndg-httpsclient==0.4.0
-notebook==4.2.0
+notebook==6.1.5
 numexpr==2.5
 numpy==1.10.4
 pandas==0.17.1
